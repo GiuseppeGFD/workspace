@@ -5,23 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>While</title>
+
+    <script>
+        function mostrar() {
+            var i = 1;
+            var codigohtml = document.getElementById("miDiv");
+            while (i < 7) {
+                codigohtml.innerHTML += "<h" + i + ">cabecera nivel " + i + "</h" + i + ">";
+                i++;
+            }
+            //i = 6;
+            do {
+                i--;
+                codigohtml.innerHTML += "<h" + i + ">cabecera nivel " + i + "</h" + i + ">";
+            } while (i > 1);
+        }
+    </script>
+
 </head>
 
-<body>
+<body onload="mostrar()">
     <div id="miDiv"></div>
-    <script>
-        var i = 1;
-        var codigohtml = document.getElementById("miDiv");
-        while (i < 7) {
-            codigohtml.innerHTML += "<h" + i + ">cabeceranivel " + i + "</h" + i + ">";
-            i++;
-        }
-        i = 6;
-        do {
-            codigohtml.innerHTML += "<h" + i + ">cabeceranivel " + i + "</h" + i + ">";
-            i--;
-        } while (i > 0);
-    </script>
+
 </body>
 
 </html>

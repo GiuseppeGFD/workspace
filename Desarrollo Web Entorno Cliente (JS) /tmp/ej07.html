@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+
+    <script>
+        function representar() {
+            var numero = parseInt(document.getElementById("texto1").value);
+            var respuesta = document.getElementById("respuesta");
+            document.getElementById("texto1").focus();
+
+            for (i = 1; i <= numero; i++) {
+                if (i > 0 && i < 7) {
+                    respuesta.innerHTML += "<h" + i + ">" + "Cabecera nivel " + i + "<h" + i + ">";
+                }
+            }
+        }   
+    </script>
+</head>
+
+<body>
+    <p>Ingresa un numero entero mayor <br>que <b>cero</b> para representar <b>Cabeceras</b></p>
+
+    <input type="text" value="" id="texto1">
+    <input type="button" value="confirmar" onclick=representar()>
+    <div id="respuesta"></div>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+    <script>
+        function ejecutar() {
+
+            var numero = parseInt(document.getElementById("textoIngresado").value);
+            var resultado = document.getElementById("miDiv");
+
+            esprimo = true;
+
+            for (i = numero - 1; i > 1; i--) {
+                if (numero % i == 0) {
+                    esprimo = false;
+                }
+            }
+
+            if (esprimo == true) {
+                resultado.innerHTML = "<h1 color=red> el numero " + numero + " <font color=blue>si</font> es primo</h1>"
+            } if (esprimo == false) {
+                resultado.innerHTML = "<h1 color=blue> el numero " + numero + " <font color=red>no</font> es primo</h1>"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h3>Ingresa un numero entero</h3>
+    <input type="text" id="textoIngresado">
+    <input type="button" value="Confirmar" onclick=ejecutar()>
+    <div id="miDiv"></div>
+
+
+</body>
+
+</html>

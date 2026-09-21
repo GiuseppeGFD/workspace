@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+
+    <script>
+        function ejecutar() {
+            var respuesta = document.getElementById("miDiv");
+
+            for (i = 1; i < 11; i++) {
+                for (j = 1; j < i; j++) {
+                    respuesta.innerHTML += j;
+                }
+                respuesta.innerHTML += "<br>";
+            }
+        }
+    </script>
+
+</head>
+
+<body onload=ejecutar()>
+    <div id="miDiv"></div>
+</body>
+
+</html>
