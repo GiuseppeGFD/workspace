@@ -4,7 +4,6 @@ $numeroMin = (int) 0;
 
 $esprimero = true;
 do {
-    // Le ponemos (int) para asegurar que lo que escribas se trate como un número
     $numeroEntero = (int) readline("Introduce un numero entero: ");
 
     if ($esprimero == true) {
@@ -16,7 +15,6 @@ do {
         if ($numeroEntero > $numeroMax) {
             $numeroMax = $numeroEntero;
         }
-        // ¡Cambiamos el elseif por un if normal!
         if ($numeroEntero < $numeroMin) {
             $numeroMin = $numeroEntero;
         }
