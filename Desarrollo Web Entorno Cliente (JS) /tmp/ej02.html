@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calcular() {
+            var seguro = confirm("ngga u rlly wanna calcular si es par o impar?");
+            var resultado = document.getElementById("mensaje");
+
+            if (seguro == true) {
+                var numero = parseInt(document.getElementById("valorNumerico").value);
+                if (numero % 2 == 0) {
+                    resultado.innerHTML = "el numero " + numero + " es Par";
+                } else {
+                    resultado.innerHTML = "el numero " + numero + " es Impar";
+                }
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <label>Introduce un numero</label><br>
+    <input type="text" id="valorNumerico">
+    <input type="button" onclick=calcular() value="CALCULAR">
+    <p id="mensaje"></p>
+</body>
+
+</html>

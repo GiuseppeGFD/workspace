@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function comparar() {
+            // 1. Mostramos la ventana de confirmación
+            var seguro = confirm("¿Estás seguro de querer comparar las edades?");
+
+            // 2. Si el usuario pulsa "Aceptar", 'seguro' será true
+            if (seguro == true) {
+
+                // Sacamos los textos de las cajas y los convertimos a números con parseInt()
+                var edadJuan = parseInt(document.getElementById("cajaJuan").value);
+                var edadLuis = parseInt(document.getElementById("cajaLuis").value);
+                var resultado = document.getElementById("mensaje");
+
+                // 3. Comparamos los números
+                if (edadJuan > edadLuis) {
+                    resultado.innerHTML = "Juan es mayor.";
+                } else if (edadLuis > edadJuan) {
+                    resultado.innerHTML = "Luis es mayor.";
+                } else if (edadJuan == edadLuis) {
+                    resultado.innerHTML = "Juan y Luis tienen la misma edad.";
+                } else {
+                    resultado.innerHTML = "Por favor, introduce números válidos.";
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Cajas de texto para las edades -->
+    <label>Edad de Juan:</label>
+    <input type="number" id="cajaJuan">
+    <br><br>
+
+    <label>Edad de Luis:</label>
+    <input type="number" id="cajaLuis">
+    <br><br>
+
+    <!-- Botón que activa la función al hacer clic -->
+    <button onclick="comparar()">Aceptar</button>
+
+    <!-- Aquí mostraremos el resultado -->
+    <p id="mensaje"></p>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+{
+    "code-runner.runInTerminal": true,
+    "code-runner.fileDirectoryAsCwd": true,
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.executorMap": {
+        "php": "/opt/homebrew/bin/php"
+    },
+    "php.validate.executablePath": "/opt/homebrew/bin/php",
+    "php.executablePath": "/opt/homebrew/bin/php"
+}

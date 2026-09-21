@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de números</title>
+    <script>
+        function calcularSuma(){
+            // 1. Sacamos el valor de las cajas y lo convertimos a número
+            let numero1 = document.getElementById('texto1').value;
+            let numero2 = document.getElementById('texto2').value;
+
+            // 2. Hacemos la suma
+            let suma = (Number)numero1 + (Number)numero2;
+
+            // 3. Mostramos el resultado en el párrafo de abajo
+            document.getElementById('resultado').innerText = "El resultado es: " + suma;
+        }
+    </script>
+</head>
+<body>
+    Numero 1 <input type="number" id="texto1"/><br>
+    Numero 2 <input type="number" id="texto2"/><br>
+    
+    <!-- El botón ahora solo llama a la función vacía -->
+    <input type="button" value="Sumar" onclick="calcularSuma()"/><br>
+    
+    <!-- Aquí es donde aparecerá la suma -->
+    <p id="resultado"></p>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calcular() {
+            var confirmacion = confirm("¿Estás seguro que quieres hacer el calculo?");
+            var numero = parseInt(document.getElementById("caja1").value);
+            var return1 = document.getElementById("solucion");
+            if (confirmacion == true) {
+                var i = 2;
+                do {
+                    if (numero % i == 0 && numero != i) {
+                        return1.innerHTML = "El numero " + numero + " es divisible entre " + i; break;
+                    } else {
+                        return1.innerHTML = "El número solo es divisible entre 1 y el mismo (" + numero + ")";
+                    }
+                    i++;
+                } while (i < 10);
+            } else {
+                return1.innerHTML = "OK, no haré el calculo";
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <label>Inserta un número</label><br>
+    <input type="text" value="" id="caja1">
+    <input type="button" id="botonCalcular" value="calcular" onclick=calcular()>
+    <p id="solucion"></p>
+</body>
+
+</html>

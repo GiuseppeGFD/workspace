@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>categoria</title>
+    <Script>
+        function calcular() {
+            var confirmacion = confirm("¿Estas seguro que deseas mostrar la categoria?");
+            var dato = parseInt(document.getElementById("textoinput").value);
+            var resultado = document.getElementById("resultado");
+
+            switch (confirmacion) {
+                case (dato > 18 || dato < 5): resultado.innerText = "Sin categoria"; break;
+                case (dato >= 16): resultado.innerText = "Juvenil"; break;
+                case (dato >= 14): resultado.innerText = "cadete"; break;
+                case (dato >= 12): resultado.innerText = "Infantil"; break;
+                case (dato >= 10): resultado.innerText = "Alevín"; break;
+                case (dato >= 8): resultado.innerText = "benjamin"; break;
+                case (dato >= 5): resultado.innerText = "pre-benjamin"; break;
+                default: resultado.innerText = "Error con el calculo";
+            }
+
+        }
+    </Script>
+
+</head>
+
+<body>
+    <h1>Mostrar categoria</h1>
+    <label>Introduce la edad:</label><br>
+    <input type="text" value="" id="textoinput">
+    <input type="button" onclick=calcular() value="Mostrar">
+    <p id="resultado"></p>
+</body>
+
+</html>

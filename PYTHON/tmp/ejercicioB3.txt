@@ -1,0 +1,14 @@
+Bloque 3. Problemas secuenciales
+Aplica los conocimientos anteriores para resolver problemas que requieren varios cálculos relacionados.
+
+Ejercicio 1. Comisión por ventas
+Un trabajador tiene un salario base y recibe una comisión del 10 % sobre el importe total de tres ventas. Solicita el salario base y las tres ventas. Calcula el total vendido, la comisión y el salario final.
+
+Ejercicio 2. Presupuesto hospitalario
+Un hospital distribuye su presupuesto entre tres departamentos: Ginecología 40 %, Traumatología 30 % y Pediatría 30 %. Solicita el presupuesto total y calcula la cantidad correspondiente a cada departamento. Comprueba que la suma coincide con el presupuesto inicial.
+
+Ejercicio 3. Nota final de una asignatura
+La calificación final se obtiene con un 55 % de la media de tres parciales, un 30 % del examen final y un 15 % del proyecto final. Solicita las cinco calificaciones y calcula la nota final.
+
+Ejercicio 4. Coste de un viaje
+Solicita la distancia en kilómetros, el consumo en litros por cada 100 km, el precio del litro y el número de personas. Calcula los litros necesarios, el coste total y el coste por persona.

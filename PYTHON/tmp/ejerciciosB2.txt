@@ -1,0 +1,30 @@
+Ejercicio 1. Cálculo de la hipotenusa
+Solicita los dos catetos de un triángulo rectángulo y calcula la hipotenusa mediante el teorema de Pitágoras.
+
+h = √(a² + b²)
+
+Utiliza sqrt() del módulo math.
+
+Importante: en Python la potencia se representa con **. No utilices ^.
+
+Ejercicio 2. Área y volumen de un cilindro
+Solicita el radio y la altura de un cilindro y calcula el área de la base, el área lateral, el área total y el volumen.
+
+Ab = πr²
+
+Al = 2πrh
+
+At = 2πr² + 2πrh
+
+V = πr²h
+
+Puedes utilizar math.pi.
+
+Ejercicio 3. Última cifra
+Solicita un número entero y muestra su última cifra. Utiliza el operador %.
+
+Ejercicio 4. Conversión de tiempo
+Solicita una cantidad de segundos y conviértela en horas, minutos y segundos. Utiliza // y %.
+
+Ejercicio 5. Valor absoluto y redondeo
+Solicita un número decimal y muestra su valor absoluto y su valor redondeado a dos decimales. Utiliza abs() y round().

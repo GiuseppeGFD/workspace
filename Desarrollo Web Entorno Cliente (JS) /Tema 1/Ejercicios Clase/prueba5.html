@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="miDiv"></div>
+
+    <script>
+        var numero1 = 67; // numero entero
+        var numero2 = 69.69; // numero con decimales
+        var texto1 = "me corro en la cara de la gente"; // cadena de texto
+        var soyGay = true;  // valor booleano
+        var cuandoMeCorri = new Date(); // una fecha
+        var noSeQueSoy; // valor no definido
+        var resultado = '';
+
+        resultado = "la varieable \'numero1\' que contiene: " + numero1 + " es del tipo: " +typeof(numero1) + "<br>";
+        resultado += "la varieable \'numero2\' que contiene: " + numero2 + " es del tipo: " +typeof numero2 + "<br>";
+        resultado += "la varieable \'texto1\' que contiene: " + texto1 + " es del tipo: " +typeof(texto1) + "<br>";
+        resultado += "la varieable \'soyGay\' que contiene: " + soyGay + " es del tipo: " +typeof(soyGay) + "<br>";
+        resultado += "la varieable \'cuandoMeCorri\' que contiene: " + cuandoMeCorri + " es del tipo: " +typeof(cuandoMeCorri) + "<br>";
+        resultado += "la varieable \'noSeQueSoy\' que contiene: " + noSeQueSoy + " es del tipo: " +typeof(noSeQueSoy) + "<br>";
+        document.getElementById("miDiv").innerHTML = resultado;
+</script>
+</body>
+</html>

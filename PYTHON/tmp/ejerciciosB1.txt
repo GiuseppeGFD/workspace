@@ -1,0 +1,52 @@
+Bloque 1. Python para programadores Java
+Adapta a Python los conocimientos de programación que ya conoces de Java y familiarízate con la sintaxis básica del lenguaje.
+
+Ejercicio 1. Operaciones con dos números
+Solicita dos números al usuario y calcula la suma, la resta, la multiplicación y la división.
+
+Primer número: 12
+Segundo número: 4
+
+Suma: 16
+Resta: 8
+Multiplicación: 48
+División: 3.00
+Recuerda: los datos introducidos mediante input() son cadenas de texto. Convierte los valores al tipo adecuado.
+
+Ejercicio 2. Área y perímetro de un rectángulo
+Solicita la base y la altura de un rectángulo y calcula el área y el perímetro.
+
+Área = base × altura     Perímetro = 2 × (base + altura)
+
+Ejercicio 3. Media de cuatro calificaciones
+Solicita cuatro calificaciones, todas con el mismo peso, y calcula la nota media.
+
+Muestra la nota media con 2 decimales. Para ello, utiliza una f-string: f"{numero:.2f}".
+
+La letra f al inicio indica a Python que vas a introducir una variable dentro del texto utilizando llaves {}.
+
+Dentro de las llaves, los dos puntos : seguidos de .2f indican que se deben mostrar exactamente dos números después del punto decimal.
+
+El 2 indica que quieres exactamente dos decimales.
+La f viene de float, que es el tipo utilizado para representar números con decimales.
+Ejercicio 4. Ficha de un producto
+Solicita el nombre de un producto, su precio unitario y el número de unidades. Calcula el importe total y muestra una ficha de la compra utilizando una f-string estructurada.
+
+Introduce el nombre del producto: Café con leche
+Introduce el precio unitario: 1.20
+Introduce el número de unidades: 4
+
+========================================
+           FICHA DE COMPRA
+========================================
+Producto:     Café con leche
+Unidades:     4
+Precio/U:     1.20 €
+----------------------------------------
+TOTAL:        4.80 €
+========================================
+Ejercicio 5. Conversión de temperatura
+Solicita una temperatura en grados Celsius y conviértela a Fahrenheit.
+
+F = C × 9 / 5 + 32
+
