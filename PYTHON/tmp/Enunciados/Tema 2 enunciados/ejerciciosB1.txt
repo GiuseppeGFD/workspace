@@ -1,0 +1,192 @@
+Bloque 1 - Estructuras de selección
+ 
+En estos ejercicios practicarás las estructuras de selección de Python: if, elif, else, condiciones compuestas, condiciones anidadas y match. Los ejercicios están ordenados progresivamente, desde situaciones sencillas hasta problemas que requieren combinar varias condiciones.
+
+Recomendaciones para todos los ejercicios
+Lee detenidamente el enunciado antes de comenzar a programar.
+Identifica qué datos necesitas pedir al usuario.
+Piensa primero qué condiciones debe comprobar el programa.
+Utiliza nombres de variables claros y descriptivos.
+Cuida especialmente la indentación del código.
+Prueba el programa con diferentes valores de entrada.
+No utilices estructuras que todavía no se hayan trabajado en clase.
+Importante sobre la entrada de datos: en estos ejercicios se supone que el usuario introduce datos del tipo solicitado. Por tanto, no es necesario controlar todavía qué ocurre si el usuario introduce texto cuando se espera un número. El control de estos errores mediante try y except se trabajará posteriormente.
+Bloque 1. Condiciones básicas
+En este primer bloque trabajarás las estructuras if y else, así como condiciones sencillas y comparaciones.
+
+1. Múltiplo de 5
+Escribe un programa que solicite al usuario un número entero e indique si dicho número es múltiplo de 5 o no.
+
+2. Intervalo 10–20
+Escribe un programa que solicite un número entero e indique si se encuentra dentro del intervalo comprendido entre 10 y 20, ambos incluidos.
+
+Debes utilizar una comparación encadenada.
+
+3. Velocidad dentro del límite
+Solicita al usuario una velocidad en kilómetros por hora. Si la velocidad es menor o igual que 120 km/h, muestra que está dentro del límite. En caso contrario, indica que supera el límite.
+
+4. Cuadrado o rectángulo
+Solicita al usuario la longitud y la anchura de una figura rectangular. Indica si se trata de un cuadrado o de un rectángulo.
+
+Bloque 2. Clasificación y múltiples condiciones
+En este bloque comenzarás a utilizar varias alternativas mediante if, elif y else.
+
+5. Día laborable
+Solicita al usuario un número entre 1 y 7 que represente un día de la semana. Indica si se trata de un día laborable o de un día de fin de semana. Si el número no está entre 1 y 7, muestra un mensaje indicando que el día no es válido.
+
+6. Mismo signo
+Solicita dos números enteros e indica si tienen el mismo signo o distinto signo.
+
+Si alguno de los dos números es cero, indica que al menos uno de los números es cero.
+
+7. Momento del día
+Solicita al usuario una hora comprendida entre 0 y 23 e indica en qué momento del día se encuentra:
+
+De 0 a 5: madrugada.
+De 6 a 11: mañana.
+De 12 a 19: tarde.
+De 20 a 23: noche.
+Si la hora no está dentro de ese intervalo, indica que no es válida.
+
+8. Clasificación de temperatura
+Solicita al usuario una temperatura e indica su clasificación:
+
+Menor de 0: muy fría.
+De 0 a 14: fría.
+De 15 a 25: agradable.
+De 26 a 35: calurosa.
+Mayor de 35: muy calurosa.
+9. Categoría de puntuación
+Solicita una puntuación entre 0 y 100 e indica la categoría correspondiente:
+
+Menor de 50: Bronce.
+De 50 a 74: Plata.
+De 75 a 89: Oro.
+De 90 a 100: Platino.
+Si la puntuación no está entre 0 y 100, indica que no es válida.
+
+10. Planta del edificio
+Solicita al usuario un número de planta entre -1 y 5 e indica a qué planta corresponde:
+
+-1: Garaje.
+0: Planta baja.
+1: Primera planta.
+2: Segunda planta.
+3: Tercera planta.
+4: Cuarta planta.
+5: Quinta planta.
+Si el número introducido no corresponde a ninguna de estas plantas, indica que no es válido.
+
+11. Días del mes
+Solicita al usuario un número de mes entre 1 y 12 e indica cuántos días tiene ese mes.
+
+Para este ejercicio considera que febrero tiene 28 días y no tengas en cuenta los años bisiestos.
+
+Bloque 3. Condiciones complejas y anidadas
+Estos ejercicios requieren analizar varias condiciones y, en algunos casos, utilizar condiciones dentro de otras condiciones.
+
+12. Números ordenados
+Solicita tres números enteros e indica si están en orden creciente, en orden decreciente o si no siguen ningún orden.
+
+Considera que números iguales consecutivos también mantienen el orden. Por ejemplo, 2, 2, 5 está en orden creciente.
+
+13. Triángulo válido
+Solicita al usuario los tres ángulos de una figura e indica si pueden formar un triángulo válido.
+
+Para que sea válido, los tres ángulos deben ser positivos y su suma debe ser exactamente 180 grados.
+
+14. Acceso a una atracción
+Una atracción permite el acceso a personas que tengan al menos 12 años y midan al menos 140 centímetros.
+
+Solicita la edad y la altura del usuario e indica si puede acceder. Si no puede acceder, indica si el motivo es la edad, la altura o ambas condiciones.
+
+Debes utilizar condicionales anidados.
+
+15. Precio de envío
+Una empresa de transporte establece las siguientes tarifas:
+
+Si el paquete pesa 10 kg o menos, el precio del envío es de 5 €.
+Si pesa más de 10 kg y la distancia es de 100 km o menos, el precio es de 10 €.
+Si pesa más de 10 kg y la distancia supera los 100 km, el precio es de 20 €.
+Pide el peso del paquete. Si supera los 10 kg, solicita también la distancia y determina el precio correspondiente.
+
+Debes utilizar condicionales anidados.
+
+Bloque 4. La estructura match
+En estos ejercicios practicarás la estructura match mediante casos concretos.
+
+16. Menú de una aplicación con match
+Una aplicación dispone del siguiente menú:
+
+1: Crear usuario.
+2: Consultar usuario.
+3: Modificar usuario.
+4: Eliminar usuario.
+Solicita al usuario una opción y utiliza match para mostrar la operación seleccionada. Si introduce cualquier otro número, muestra “Opción no válida”.
+
+17. Tipo de transporte con match
+Solicita al usuario un número del 1 al 5 y utiliza match para mostrar el medio de transporte correspondiente:
+
+1: Coche.
+2: Moto.
+3: Autobús.
+4: Tren.
+5: Bicicleta.
+Si introduce otro número, muestra “Opción no válida”.
+
+Bloque 5. Depuración y pruebas
+En los últimos ejercicios trabajarás la detección de errores y la comprobación del comportamiento de los programas.
+
+18. Error de sintaxis con temperatura
+El siguiente programa pretende indicar si una temperatura es positiva, negativa o igual a cero, pero contiene un error de sintaxis.
+
+temperatura = int(input("Introduce la temperatura: "))
+
+if temperatura > 0
+    print("Temperatura positiva")
+elif temperatura < 0:
+    print("Temperatura negativa")
+else:
+    print("Temperatura igual a cero")
+Identifica el error, corrígelo y comprueba que el programa funciona correctamente.
+
+19. Error lógico en clasificación de puntuación
+El siguiente programa pretende clasificar una puntuación según estas categorías:
+
+Menor de 50: Bronce.
+De 50 a 74: Plata.
+De 75 a 89: Oro.
+De 90 a 100: Platino.
+Sin embargo, el programa contiene un error lógico:
+
+puntuacion = int(input("Introduce la puntuación: "))
+
+if puntuacion >= 50:
+    print("Plata")
+elif puntuacion >= 75:
+    print("Oro")
+elif puntuacion >= 90:
+    print("Platino")
+else:
+    print("Bronce")
+Analiza el orden de las condiciones, identifica el problema y corrige el programa para que clasifique correctamente todas las puntuaciones.
+
+20. Casos de prueba para las categorías de temperatura
+Un programa clasifica una temperatura según estas categorías:
+
+Menor de 0: muy fría.
+De 0 a 14: fría.
+De 15 a 25: agradable.
+De 26 a 35: calurosa.
+Mayor de 35: muy calurosa.
+Diseña una serie de casos de prueba que permita comprobar que todas las categorías funcionan correctamente.
+
+Debes prestar especial atención a los valores situados en los límites de cada intervalo.
+
+Para cada caso indica:
+
+La entrada utilizada.
+El resultado esperado.
+El resultado obtenido al ejecutar el programa.
+Si la prueba es correcta o no.
+Objetivo del bloque: resolver progresivamente problemas que utilicen estructuras de selección, comprobar diferentes caminos de ejecución y aprender a detectar y corregir errores de sintaxis y de lógica.
