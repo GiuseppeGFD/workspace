@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function pum() {
+        var mostrar = document.getElementById("miDiv");
+        for (i = 1; i <= 100; i++) {
+            if (i == 7 || i % 7 == 0 || i % 10 == 7) {
+                mostrar.innerHTML += "pum<br>";
+            } else {
+                mostrar.innerHTML += i + ",";
+            }
+        }
+    }
+</script>
+
+<body onload=pum()>
+    <div id="miDiv"></div>
+</body>
+
+</html>

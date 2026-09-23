@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filtrado ej 12</title>
+
+    <script>
+        function ej12() {
+            var resultado = document.getElementById("miDiv");
+
+            for (i = 1; i < 300; i++) {
+                if (i % 4 == 0) {
+                    resultado.innerHTML += "<span style='color: green'>" + i + "</span> ";
+                }
+                else if (i % 9 == 0) {
+                    resultado.innerHTML += "<span style='color: red; font-size: 10px;'>" + i + "</span> ";
+                }
+                else {
+                    resultado.innerHTML += i + " ";
+                }
+
+                if (i % 10 == 0) {
+                    resultado.innerHTML += "<br>";
+                }
+            }
+        }
+    </script>
+</head>
+
+<body onload="ej12()">
+    <div id="miDiv"></div>
+</body>
+
+</html>

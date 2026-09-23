@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ej01</title>
+    <script>
+        var temporizador = null;
+        function tiempo() {
+            var datos = document.getElementById("miDiv");
+            var fecha = new Date();
+            datos.innerHTML = fecha.toLocaleDateString();
+            datos.innerHTML += " " + fecha.getHours();
+            datos.innerHTML += ":" + fecha.getMinutes();
+            datos.innerHTML += ":" + fecha.getSeconds();
+        }
+
+        function iniciar() {
+            clearInterval(temporizador);
+            tiempo();
+            temporizador = setInterval(tiempo, 1000);
+        }
+
+        function parar() {
+            clearInterval(temporizador);
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" onclick="iniciar()" value="Iniciar">
+    <input type="button" onclick="parar()" value="Parar">
+    <div id="miDiv"></div>
+</body>
+
+</html>
