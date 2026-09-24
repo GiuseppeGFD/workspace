@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 Date</title>
+
+    <script>
+        function calcular() {
+            var anio = parseInt(document.getElementById("año").value);
+            var mes = parseInt(document.getElementById("mes").value);
+            var dia = parseInt(document.getElementById("dia").value);
+            var hora = parseInt(document.getElementById("hora").value);
+            var minutos = parseInt(document.getElementById("minutos").value);
+            var segundos = parseInt(document.getElementById("segundos").value);
+
+            var diaSemana;
+            var mesTexto;
+
+            var mifecha = new Date(anio, mes - 1, dia, hora, minutos, segundos);
+            var respuesta = document.getElementById("miDiv");
+
+            switch (mifecha.getDay()) {
+                case 0: diaSemana = "Domingo"; break;
+                case 1: diaSemana = "Lunes"; break;
+                case 2: diaSemana = "Martes"; break;
+                case 3: diaSemana = "Miércoles"; break;
+                case 4: diaSemana = "Jueves"; break;
+                case 5: diaSemana = "Viernes"; break;
+                case 6: diaSemana = "Sábado"; break;
+                default: diaSemana = "ErrorDatoGetDay";
+            }
+
+            switch (mifecha.getMonth()) {
+                case 0: mesTexto = "Enero"; break;
+                case 1: mesTexto = "Febrero"; break;
+                case 2: mesTexto = "Marzo"; break;
+                case 3: mesTexto = "Abril"; break;
+                case 4: mesTexto = "Mayo"; break;
+                case 5: mesTexto = "Junio"; break;
+                case 6: mesTexto = "Julio"; break;
+                case 7: mesTexto = "Agosto"; break;
+                case 8: mesTexto = "Septiembre"; break;
+                case 9: mesTexto = "Octubre"; break;
+                case 10: mesTexto = "Noviembre"; break;
+                case 11: mesTexto = "Diciembre"; break;
+                default: mesTexto = "ErrorDatoGetMonth";
+            }
+
+            respuesta.innerHTML = "En San Fernando de Henares, " + diaSemana + " a " + mifecha.getDate() + " de " + mesTexto + " de " + mifecha.getFullYear() + " a las " + mifecha.getHours() + " horas y " + mifecha.getMinutes() + " minutos con " + mifecha.getSeconds() + " segundos";
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <label>Introduce el <i><b>año</b></i> [no se]</label>
+    <input type="text" id="año"><br>
+
+    <label>Introduce el <i><b>mes</b></i> [1-12]</label>
+    <input type="text" id="mes"><br>
+
+
+    <label>Introduce el <i><b>dia</b></i> [1-31]</label>
+    <input type="text" id="dia"><br>
+
+
+    <label>Introduce el <i><b>hora</b></i> [0-23]</label>
+    <input type="text" id="hora"><br>
+
+    <label>Introduce el <i><b>minutos</b></i> [0-59]</label>
+    <input type="text" id="minutos"><br>
+
+    <label>Introduce el <i><b>segundos</b></i> [0-59]</label>
+    <input type="text" id="segundos"><br>
+
+    <input type="button" value="Muestra" onclick=calcular()>
+    <div id="miDiv"></div>
+</body>
+
+</html>
