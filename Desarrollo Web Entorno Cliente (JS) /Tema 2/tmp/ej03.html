@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar la fecha actual</title>
+
+</head>
+
+
+
+<body>
+    <div id="miDiv"></div>
+
+    <script>
+        var resultado = document.getElementById("miDiv");
+        var fecha = new Date();
+        resultado.innerHTML += "La fecha de hoy es " + fecha.toDateString(); 
+    </script>
+
+</body>
+
+</html>

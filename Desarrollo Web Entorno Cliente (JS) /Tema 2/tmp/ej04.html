@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sumar 85 dias a variable fecha hoy</title>
+</head>
+
+<body>
+    <div id="miDiv"></div>
+
+    <script>
+        var resultado = document.getElementById("miDiv");
+        var fecha = new Date();
+        fecha.setDate(fecha.getDate + 85);
+        resultado.innerHTML += "La fecha de hoy es " + fecha.toDateString(); 
+    </script>
+</body>
+
+</html>
