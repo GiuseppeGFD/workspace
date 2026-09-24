@@ -1,0 +1,213 @@
+Sistema de venta de entradas de un parque de atracciones
+ 
+En esta práctica desarrollarás un programa para gestionar la venta de entradas de un parque de atracciones. El programa deberá utilizar diferentes estructuras de selección para determinar el precio de las entradas según las condiciones de la compra.
+
+La práctica integra los contenidos trabajados en el capítulo: condiciones simples y compuestas, estructuras if, elif y else, condiciones anidadas y, de forma opcional, match.
+
+Antes de comenzar a programar, analiza cuidadosamente las condiciones del problema y determina qué decisiones debe tomar el programa.
+
+  
+Analiza → programa → prueba → comprueba
+Identifica los datos de entrada y qué información proporciona el usuario.
+Identifica los resultados que debe mostrar el programa.
+Determina las variables que necesitarás durante el cálculo.
+Analiza las reglas del problema y determina las condiciones que debe comprobar el programa.
+Decide el orden de las operaciones necesarias para obtener el resultado.
+Escribe el programa en Python utilizando únicamente las estructuras permitidas.
+Prueba el programa con diferentes datos.
+Comprueba especialmente los casos en los que cambia alguna de las condiciones.
+Comprueba los resultados y la claridad de la salida.
+1. Contexto del problema
+Un parque de atracciones necesita un pequeño programa para gestionar la venta de entradas en taquilla.
+
+Un cliente puede comprar en una misma operación diferentes tipos de entrada. El programa deberá solicitar los datos de la visita y las cantidades de cada tipo de entrada, calcular el precio correspondiente y mostrar el importe total de la compra.
+
+El objetivo es desarrollar un programa completo utilizando las estructuras de selección estudiadas.
+
+2. Datos de la compra
+El programa deberá solicitar los siguientes datos:
+
+Fecha de la visita: día, mes y año.
+Número de entradas infantiles.
+Número de entradas adultas.
+Número de entradas senior.
+Número de entradas VIP.
+Suposición sobre los datos: se considera que el usuario introduce valores válidos según las opciones indicadas en el enunciado. No es necesario controlar los errores de entrada mediante try y except.
+3. Obtener el día de la semana
+En lugar de pedir directamente el día de la semana, el programa deberá obtenerlo a partir de la fecha introducida.
+
+Ayuda: trabajar con fechas 
+No es necesario que conozcas previamente el funcionamiento completo de datetime. En esta práctica solo necesitas utilizar date para crear una fecha y weekday() para obtener el día de la semana.
+
+Como ya has utilizado módulos como math, puedes importar datetime de la siguiente forma:
+
+import datetime
+Después puedes crear una fecha y obtener el día de la semana:
+
+fecha = datetime.date(año, mes, dia)
+
+dia_semana = fecha.weekday()
+El método weekday() devuelve un número entre 0 y 6:
+
+Valor	Día
+0	Lunes
+1	Martes
+2	Miércoles
+3	Jueves
+4	Viernes
+5	Sábado
+6	Domingo
+Importante: el uso básico de datetime se proporciona como ayuda. Lo que se pretende evaluar en esta práctica son las estructuras de selección y la correcta aplicación de las reglas del problema.
+
+4. Determinar la temporada
+La temporada se determinará automáticamente a partir del mes de la visita. El usuario no tendrá que introducirla.
+
+Temporada alta: junio, julio, agosto y septiembre.
+Temporada baja: octubre, noviembre, diciembre, enero, febrero, marzo, abril y mayo.
+Durante la temporada alta, el precio de cada entrada aumenta un 20 %.
+
+Durante la temporada baja, no se aplica ningún incremento.
+
+5. Precios de las entradas
+El parque dispone de cuatro tipos de entrada, cada uno con un precio base:
+
+Tipo de entrada	Precio base
+Infantil	15 €
+Adulto	30 €
+Senior	18 €
+VIP	55 €
+Estos precios son la base para calcular el importe final de cada entrada. Sobre ellos se aplicarán, cuando corresponda, las modificaciones indicadas en los apartados siguientes.
+
+6. Modificación según el día de la semana
+El precio de cada entrada se modificará según el día de la visita:
+
+Miércoles: se descuentan 3 € por entrada.
+Sábado o domingo: se añaden 5 € por entrada.
+Resto de días: no se aplica ninguna modificación.
+La modificación correspondiente al día deberá tenerse en cuenta al calcular el precio final de cada entrada.
+
+7. Cálculo de la compra
+El programa deberá calcular el importe correspondiente a cada tipo de entrada que tenga una cantidad superior a cero.
+
+Un cliente puede comprar diferentes tipos de entrada en una misma operación. Por ejemplo:
+
+Entradas infantiles: 2
+Entradas adultas:    3
+Entradas senior:     1
+Entradas VIP:        0
+En este caso, el programa deberá calcular los importes de las entradas infantiles, adultas y senior. No habrá ningún importe correspondiente a entradas VIP.
+
+Finalmente, deberá sumar los importes correspondientes para obtener el total de la compra.
+
+8. Resultado del programa
+El programa deberá mostrar un resumen claro de la compra. La salida debe permitir identificar la fecha, el día de la semana, la temporada, las modificaciones aplicadas cuando existan, los precios finales de las entradas y el total.
+
+Ejemplo 1. Sin modificación por día
+========================================
+       PARQUE DE ATRACCIONES
+========================================
+
+Fecha: 05/05/2026
+Día: Martes
+Temporada: Baja
+
+----------------------------------------
+Infantiles:  2 × 15,00 € = 30,00 €
+Adultas:     2 × 30,00 € = 60,00 €
+Senior:      1 × 18,00 € = 18,00 €
+VIP:         1 × 55,00 € = 55,00 €
+
+----------------------------------------
+TOTAL: 163,00 €
+========================================
+Ejemplo 2. Sábado y temporada alta
+========================================
+       PARQUE DE ATRACCIONES
+========================================
+
+Fecha: 18/07/2026
+Día: Sábado
+Temporada: Alta (+20 %)
+
+Suplemento sábado: +5,00 € / entrada
+
+----------------------------------------
+Infantiles:  2 × 24,00 € = 48,00 €
+Adultas:     2 × 42,00 € = 84,00 €
+Senior:      1 × 27,60 € = 27,60 €
+VIP:         1 × 72,00 € = 72,00 €
+
+----------------------------------------
+TOTAL: 231,60 €
+========================================
+Ejemplo 3. Miércoles y temporada alta
+========================================
+       PARQUE DE ATRACCIONES
+========================================
+
+Fecha: 15/07/2026
+Día: Miércoles
+Temporada: Alta (+20 %)
+
+Descuento miércoles: -3,00 € / entrada
+
+----------------------------------------
+Infantiles:  2 × 15,00 € = 30,00 €
+Adultas:     2 × 33,00 € = 66,00 €
+Senior:      1 × 18,60 € = 18,60 €
+VIP:         1 × 63,00 € = 63,00 €
+
+----------------------------------------
+TOTAL: 177,60 €
+========================================
+No es necesario que la salida sea exactamente igual a estos ejemplos, pero debe ser clara, ordenada y fácil de interpretar.
+
+9. Requisitos del código
+Utiliza variables con nombres claros y descriptivos.
+Utiliza correctamente if, elif y else.
+Utiliza condiciones simples y compuestas cuando sean necesarias.
+Utiliza condiciones anidadas cuando aporten claridad.
+Utiliza operadores aritméticos, relacionales y lógicos.
+Calcula el día de la semana a partir de la fecha.
+Determina automáticamente la temporada a partir del mes.
+Calcula correctamente el importe de cada tipo de entrada.
+Aplica correctamente las modificaciones correspondientes al día y a la temporada.
+Incluye comentarios que expliquen los principales bloques de decisión.
+Mantén el código organizado y fácil de leer.
+10. Restricciones
+En esta práctica no puedes utilizar:
+for
+while
+listas o arrays
+otras estructuras de datos que todavía no se hayan trabajado
+funciones propias (def)
+try
+except
+Sí puedes utilizar variables, input(), print(), operadores aritméticos, relacionales y lógicos, estructuras if, elif y else, así como match y el uso de datetime indicado en el apartado de ayuda.
+
+Recuerda: no es necesario utilizar match en todas las decisiones. Utilízalo cuando tengas que comparar valores concretos y utiliza if, elif y else cuando necesites comprobar condiciones o rangos.
+11. Pruebas
+Una vez terminado el programa, debes comprobar que funciona correctamente mediante diferentes casos de prueba. No se proporcionan los datos concretos que debes utilizar: eres tú quien debe diseñar las pruebas necesarias para comprobar cada situación.
+
+Para cada prueba, debes elegir los datos de entrada, indicar qué resultado esperas obtener, ejecutar el programa y comparar el resultado obtenido con el esperado.
+
+Prueba	Datos de entrada 	Resultado esperado	Resultado obtenido	¿Correcta?
+1	 	 	 	 
+2	 	 	 	 
+3	 	 	 	 
+4	 	 	 	 
+5	 	 	 	 
+6	 	 	 	 
+7	 	 	 	 
+8	 	 	 	 
+9	 	 	 	 
+10	 	 	 	 
+11	 	 	 	 
+Importante: debes diseñar tú mismo las pruebas. Elige diferentes fechas y cantidades que permitan comprobar todas las condiciones del programa. Los datos deben estar suficientemente justificados para demostrar que el programa funciona correctamente.
+Además de estas pruebas, puedes añadir otras que consideres necesarias para comprobar el funcionamiento de tu programa.
+
+12. Entrega
+Archivo Python (.py) con el programa funcionando.
+Código correctamente organizado y comentado.
+Tabla de pruebas cumplimentada.
+Objetivo de la práctica: desarrollar un programa completo utilizando estructuras de selección para gestionar una compra de diferentes tipos de entradas, aplicando distintas condiciones sobre una misma información y comprobando posteriormente el funcionamiento del programa mediante diferentes casos de prueba.
