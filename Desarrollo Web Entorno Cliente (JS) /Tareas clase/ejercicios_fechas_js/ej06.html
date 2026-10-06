@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio L</title>
+</head>
+<body>
+    <script>
+        // l. Crear la variable "fechaResto" que sea la resta de fecha85 - fecha187...
+        let fechaHoy = new Date();
+        
+        let fecha85 = new Date();
+        fecha85.setDate(fechaHoy.getDate() + 85);
+        fecha85.setFullYear(fecha85.getFullYear() + 2);
+
+        let fecha187 = new Date();
+        fecha187.setDate(fechaHoy.getDate() - 187);
+        fecha187.setHours(fecha187.getHours() - 24);
+
+        let fechaResto = fecha85 - fecha187;
+        document.write("l. Resta en milisegundos: " + fechaResto);
+    </script>
+</body>
+</html>

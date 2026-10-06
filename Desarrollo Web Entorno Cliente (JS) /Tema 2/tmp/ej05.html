@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Trigonométrica</title>
+</head>
+
+<body>
+
+    <h2>Tabla de Grados, Radianes, Seno y Coseno</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Grados</th>
+                <th>Radianes</th>
+                <th>Seno</th>
+                <th>Coseno</th>
+            </tr>
+        </thead>
+        <tbody id="cuerpoTabla">
+            <!-- JavaScript inyectará las filas aquí automáticamente -->
+        </tbody>
+    </table>
+
+    <script>
+        // Obtener la referencia del cuerpo de la tabla en el HTML
+        const cuerpoTabla = document.getElementById('cuerpoTabla');
+
+        // Bucle que va de 0 a 360, incrementando de 10 en 10
+        for (let grados = 0; grados <= 360; grados += 10) {
+
+            // Fórmula: Radianes = (PI * Grados) / 180
+            let radianes = (Math.PI * grados) / 180;
+
+            // Calcular Seno y Coseno (en JavaScript, las funciones matemáticas usan radianes)
+            let seno = Math.sin(radianes);
+            let coseno = Math.cos(radianes);
+
+            // Crear una nueva fila (<tr>)
+            let fila = document.createElement('tr');
+
+            // Insertar las celdas (<td>) formateando a 2 decimales con .toFixed(2)
+            fila.innerHTML = `
+                <td>${grados}</td>
+                <td>${radianes.toFixed(2)}</td>
+                <td>${seno.toFixed(2)}</td>
+                <td>${coseno.toFixed(2)}</td>
+            `;
+
+            // Añadir la fila recién creada a nuestra tabla
+            cuerpoTabla.appendChild(fila);
+        }
+    </script>
+
+</body>
+
+</html>

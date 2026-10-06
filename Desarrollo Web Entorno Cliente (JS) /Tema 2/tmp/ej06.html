@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar números aleatorios</title>
+    <script>
+        function generar() {
+            var muestreo = document.getElementById("mostrar");
+            const tamaño = parseInt(document.getElementById("cantidad").value);
+            const menor = parseInt(document.getElementById("menor").value);
+            const mayor = parseInt(document.getElementById("mayor").value);
+
+            if (isNaN(tamaño) || isNaN(menor) || isNaN(mayor)) {
+                muestreo.innerHTML = "<p style='color: red;'>Por favor, introduzca todos los valores numéricos.</p>";
+                return;
+            }
+
+            if (tamaño <= 0) {
+                muestreo.innerHTML = "<p style='color: red;'>La cantidad debe ser mayor que 0.</p>";
+                return;
+            }
+
+            if (menor > mayor) {
+                muestreo.innerHTML = "<p style='color: red;'>El número menor no puede ser mayor que el mayor.</p>";
+                return;
+            }
+
+            const rango = mayor - menor + 1;
+            //  no se pueden pedir más elementos que los que hay en el rango
+            if (tamaño > rango) {
+                muestreo.innerHTML = `<p style='color: red;'>No se pueden generar ${tamaño} números sin repetir entre ${menor} 
+                                      y ${mayor} (solo hay ${rango} valores posibles).</p>`;
+                return;
+
+            }
+
+            var arrayGenerado = new Set();
+            while (arrayGenerado.size < tamaño) {
+                arrayGenerado.add(Math.floor(Math.random() * rango) + menor);
+            }
+
+            var resultado = Array.from(arrayGenerado);
+            muestreo.innerHTML = `<h3>Números generados (${resultado.length}):</h3><p>${resultado.join()}</p>`;
+            muestreo.innerHTML += `<h3>Números Ordenados (${resultado.length}):</h3><p>${resultado.sort((a, b) => a - b)}</p>`;
+
+        }
+    </script>
+</head>
+
+<body style="background-color:  gray;">
+
+    <label for="cantidad">Introduzca el número de elementos a generar: </label>
+    <input type="text" id="cantidad" placeholder="número..."
+        style="background-color: beige;color: black; font-style: italic;"><br><br>
+
+
+    <label for="menor">Introduzca el número menor: </label>
+    <input type="text" id="menor" placeholder="número..."
+        style="background-color: beige;color: black; font-style: italic;"><br><br>
+
+
+    <label for="mayor">Introduzca el número mayor: </label>
+    <input type="text" id="mayor" placeholder="número..."
+        style="background-color: beige;color: black; font-style: italic;"><br><br>
+
+
+    <input type="button" onclick="generar()" value="Generar"
+        style="background-color: beige;color: black; font-style: italic;"><br><br>
+
+
+    <div id="mostrar"></div>
+</body>
+
+</html>

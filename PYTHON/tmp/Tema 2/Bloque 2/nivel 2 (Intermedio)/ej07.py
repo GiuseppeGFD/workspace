@@ -10,16 +10,15 @@ para calcular su suma.
 Importante: si el usuario introduce -1 como primer valor
 no se ha introducido ningún número y el programa deberá
 indicarlo en lugar de calcular una media."""
+
 contador = 0
 suma = 0
-while True:
-    numero = int(input("Introduce un valor: "))
+numero = int(input("Introduce un valor: "))
 
-    if (numero == -1):
-        break
-    else:
-        contador += 1
-        suma = (suma + numero)
+while numero != -1:
+    contador += 1
+    suma = (suma + numero)
+    numero = int(input("Introduce un valor: "))
 
 if (contador == 0):
     print("El usuario no ha introducido ningun valor")

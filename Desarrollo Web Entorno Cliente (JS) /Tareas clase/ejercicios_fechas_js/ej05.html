@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio K</title>
+</head>
+<body>
+    <script>
+        // k. Restar 24 horas a la variable "fecha187" y mostrarla.
+        let fechaHoy = new Date();
+        let fecha187 = new Date();
+        fecha187.setDate(fechaHoy.getDate() - 187);
+        
+        fecha187.setHours(fecha187.getHours() - 24);
+        document.write("k. " + fecha187);
+    </script>
+</body>
+</html>

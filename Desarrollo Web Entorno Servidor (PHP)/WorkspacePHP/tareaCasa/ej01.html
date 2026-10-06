@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio de Fechas</title>
+</head>
+
+<body>
+    <h2>Resultados del Ejercicio de Fechas</h2>
+
+    <script>
+        // g. Crear la variable "fechaHoy"
+        let fechaHoy = new Date();
+        document.write("g. Fecha de hoy: " + fechaHoy + "<br><br>");
+
+        // h. Crear la variable "fecha85" sumando 85 días a "fechaHoy"
+        let fecha85 = new Date(fechaHoy);
+        fecha85.setDate(fecha85.getDate() + 85);
+        document.write("h. Sumar 85 días a la fecha de hoy: " + fecha85 + "<br><br>");
+
+        // i. Crear la variable "fecha187" restando 187 días a "fechaHoy"
+        let fecha187 = new Date(fechaHoy);
+        fecha187.setDate(fecha187.getDate() - 187);
+        document.write("i. Restar 187 días a la fecha de hoy: " + fecha187 + "<br><br>");
+
+        // j. Sumar 2 años a la variable "fecha85"
+        fecha85.setFullYear(fecha85.getFullYear() + 2);
+        document.write("j. Sumar 2 años a la variable fecha85: " + fecha85 + "<br><br>");
+
+        // k. Restar 24 horas a la variable "fecha187"
+        fecha187.setHours(fecha187.getHours() - 24);
+        document.write("k. Restar 24 horas a la variable fecha187: " + fecha187 + "<br><br>");
+
+        // l. Crear "fechaResto" restando fecha85 - fecha187
+        let fechaResto = fecha85 - fecha187;
+        document.write("l. Resta de fecha85 menos fecha187 (resultado en milisegundos): " + fechaResto + "<br><br>");
+    </script>
+</body>
+
+</html>

@@ -10,3 +10,11 @@ No puedes almacenar todos los números para realizar
 la comparación posteriormente. Debes ir actualizando
 el máximo durante las iteraciones."""
 
+
+
+cantidad = int(input("¿Cuantos numeros quieres introducir?: "))
+
+
+for i in range(1,cantidad+1,1):
+    n = int(input("introduce un numero: "))
+    

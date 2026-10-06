@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calcular() {
+            var tabla = document.getElementById("tabla");
+            var html = "<table border=\"1\"><tr><th>Grados</th><th>Radianes</th><th>Seno</th><th>Coseno</th></tr>";
+
+            for (let grados = 0; grados <= 360; grados += 10) {
+                let radianes = grados * (Math.PI / 180);
+                let seno = Math.sin(radianes);
+                let coseno = Math.cos(radianes);
+
+                html += `<tr>
+                    <td>${grados}</td>
+                    <td>${radianes.toFixed(2)}</td>
+                    <td>${seno.toFixed(2)}</td>
+                    <td>${coseno.toFixed(2)}</td>
+                </tr>`;
+            }
+
+            html += "</table>";
+            tabla.innerHTML = html;
+        }
+    </script>
+
+</head>
+
+<body onload="calcular()">
+    <div id="tabla"></div>
+</body>
+
+</html>

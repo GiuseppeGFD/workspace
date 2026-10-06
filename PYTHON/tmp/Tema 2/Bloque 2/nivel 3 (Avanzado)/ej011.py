@@ -23,6 +23,3 @@ while valorUser != numero:
     else:
         print("¡¡¡¡FELICIDADES!!!!")
         print(f"tuviste {intentos} intentos para encontrar el numero secreto")
-
-
-    
