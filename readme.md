@@ -52,7 +52,6 @@ Si deseas explorar este entorno localmente o utilizar alguno de los scripts:
 
 **GiuseppeGFD**
 - GitHub: [@GiuseppeGFD](https://github.com/GiuseppeGFD)
-- *(Opcional: Añade tu LinkedIn o Portfolio aquí)*
+- Instagram: damnitsgiuseppe
 
 ---
-⭐️ *Si encuentras algo útil por aquí, ¡no dudes en dejar una estrella en el repositorio!*
