@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartel de Letras</title>
+    <script>
+        let miIntervalo;
+        let textoCartel = ""; // Aquí guardaremos el texto que va a dar vueltas
+
+        function girarDerecha() {
+            clearInterval(miIntervalo);
+            let tiempoInput = parseInt(document.getElementById("tiempo1").value);
+            let respuesta = document.getElementById("miDiv");
+
+            // Si está vacío, leemos la caja y le añadimos un espacio al final para que no se peguen las palabras
+            if (textoCartel === "") {
+                textoCartel = document.getElementById("texto1").value + "   ";
+            }
+
+            miIntervalo = setInterval(function () {
+                // Cogemos la última letra (slice -1) y le sumamos el resto del texto (slice 0, -1)
+                textoCartel = textoCartel.slice(-1) + textoCartel.slice(0, -1);
+                respuesta.innerHTML = textoCartel;
+            }, tiempoInput);
+        }
+
+        function girarIzquierda() {
+            clearInterval(miIntervalo);
+            let tiempoInput = parseInt(document.getElementById("tiempo1").value);
+            let respuesta = document.getElementById("miDiv");
+
+            if (textoCartel === "") {
+                textoCartel = document.getElementById("texto1").value + "   ";
+            }
+
+            miIntervalo = setInterval(function () {
+                // Cogemos todo menos la primera letra (slice 1) y le sumamos la primera letra al final (charAt 0)
+                textoCartel = textoCartel.slice(1) + textoCartel.charAt(0);
+                respuesta.innerHTML = textoCartel;
+            }, tiempoInput);
+        }
+
+        function modificarTiempo() {
+            // Detiene el cartel
+            clearInterval(miIntervalo);
+        }
+    </script>
+</head>
+
+<body>
+    <label>Texto</label>
+    <input type="text" placeholder="Ingresa un texto.." id="texto1"><br>
+
+    <label>Milisegundos (Ej: 150)</label>
+    <input type="text" placeholder="Ingresa tiempo.." id="tiempo1"><br>
+
+    <input type="button" onclick="girarDerecha()" value="Girar Derecha" id="BottonR">
+    <input type="button" onclick="girarIzquierda()" value="Girar Izquierda" id="BottonL">
+    <input type="button" onclick="modificarTiempo()" value="Detener" id="Timeset">
+
+    <!-- Usamos font-family: monospace para que parezca un cartel real -->
+    <div id="miDiv" style="font-family: monospace; font-size: 24px; margin-top: 20px;"></div>
+</body>
+
+</html>

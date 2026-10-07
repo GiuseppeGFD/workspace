@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Si algo es palíndromo</title>
+
+    <script>
+        function limpiarTexto(cadena) {
+            let texto = cadena.toLowerCase();
+
+            texto = texto.replace(/[áàäâ]/g, 'a');
+            texto = texto.replace(/[éèëê]/g, 'e');
+            texto = texto.replace(/[íìïî]/g, 'i');
+            texto = texto.replace(/[óòöô]/g, 'o');
+            texto = texto.replace(/[úùüû]/g, 'u');
+
+
+            texto = texto.replace(/[^a-z0-9ñ]/g, '');
+
+            return texto;
+        }
+
+        function verificar() {
+            var fraseOriginal = document.getElementById("texto-1").value;
+            var respuesta = document.getElementById("miDiv");
+            
+            var palabraInvertida = "";
+
+            var fraseLimpia = limpiarTexto(fraseOriginal);
+
+            for (var i = fraseLimpia.length - 1; i >= 0; i--) {
+                palabraInvertida = palabraInvertida + fraseLimpia.charAt(i);
+            }
+
+            if (fraseLimpia === palabraInvertida && fraseLimpia !== "") {
+                respuesta.innerHTML = "Es un palíndromo";
+            } else {
+                respuesta.innerHTML = "No es palíndromo";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Verificar si es Palíndromo</h2>
+    <input type="text" id="texto-1" placeholder="Ingresa una Palabra...">
+    <input type="button" value="Enviar" onclick="verificar()"><br>
+
+    <div id="miDiv"></div>
+</body>
+
+</html>
