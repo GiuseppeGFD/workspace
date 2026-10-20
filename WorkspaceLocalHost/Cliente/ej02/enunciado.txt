@@ -1,0 +1,11 @@
+Crear una aplicación que muestre:
+URL completa:
+Pathname:
+Protocolo:
+Puerto:
+Servidor:
+Host Name:
+Además implementar tres botones.
+Uno para recargar la página.
+Otro para redireccionar a otra página. (google)
+El último para reemplazar la página por otra. (nasa)

@@ -1,0 +1,236 @@
+Bloque 6 - Integración de estructuras de control
+En estos ejercicios se trabajará la integración de las estructuras de control estudiadas hasta el momento: if, elif, else, for, while, break, continue y manejo de excepciones. El objetivo no es practicar cada estructura de forma aislada, sino aprender a combinarlas para resolver problemas completos que requieran análisis, validación de datos, repetición, toma de decisiones y control de errores.
+
+Recomendaciones para todos los ejercicios
+Lee detenidamente el enunciado antes de comenzar a programar.
+Identifica primero qué datos necesitas, qué decisiones debe tomar el programa y cuándo debe finalizar.
+Utiliza únicamente las estructuras y conceptos de Python explicados y trabajados en clase hasta este momento.
+Controla las entradas que puedan provocar errores utilizando las técnicas de manejo de excepciones estudiadas.
+Prueba los programas con datos correctos, incorrectos y casos límite.
+Cuida la organización, la indentación y los mensajes mostrados al usuario.
+Antes de dar un ejercicio por terminado, comprueba que el programa funciona correctamente en diferentes situaciones.
+1. Sistema de validación de datos
+Diseña un programa que solicite al usuario una serie de datos personales y compruebe que todos ellos se encuentran dentro de los valores permitidos.
+
+El programa deberá solicitar:
+
+Edad: entre 18 y 100 años.
+Altura: entre 100 y 230 centímetros.
+Número de hijos: entre 0 y 20.
+Cada dato deberá solicitarse tantas veces como sea necesario hasta que el usuario introduzca un valor válido.
+
+El programa deberá diferenciar entre una entrada que no tenga el formato esperado y una entrada que tenga un formato correcto pero se encuentre fuera del intervalo permitido.
+
+Cuando todos los datos sean correctos, deberá mostrar un resumen de los valores introducidos.
+
+Prueba especialmente:
+
+Valores mínimos y máximos permitidos.
+Valores inmediatamente inferiores y superiores a los límites.
+Entradas que no sean numéricas.
+Varias entradas incorrectas consecutivas.
+2. Sistema de control de acceso
+Diseña un programa que simule el sistema de acceso mediante un código numérico.
+
+El código correcto será:
+
+7314
+El sistema deberá cumplir las siguientes condiciones:
+
+El usuario dispondrá de un máximo de 4 intentos.
+Si introduce correctamente el código, el acceso será concedido inmediatamente.
+Si introduce un código incorrecto, deberá indicarse que el acceso ha sido denegado.
+Después de 4 intentos incorrectos, el sistema deberá bloquear el acceso.
+Las entradas que no sean números deberán controlarse correctamente.
+Si el usuario introduce 0, se cancelará el proceso inmediatamente y no contará como intento incorrecto.
+Al finalizar, deberá indicarse el número de intentos incorrectos realizados.
+El programa deberá finalizar automáticamente cuando se conceda el acceso, cuando se bloquee el sistema o cuando el usuario decida cancelar la operación.
+
+Prueba diferentes situaciones:
+
+Código correcto en el primer intento.
+Código correcto después de varios errores.
+Cuatro códigos incorrectos.
+Entrada no numérica.
+Cancelación mediante 0.
+3. Análisis de resultados de un grupo
+Una profesora necesita analizar los resultados obtenidos por un grupo de estudiantes en una prueba.
+
+El programa deberá solicitar las calificaciones de 10 estudiantes.
+
+Para cada estudiante:
+
+La calificación estará comprendida entre 0 y 10.
+Si se introduce un valor fuera de ese intervalo, deberá volver a solicitarse.
+Si se introduce un valor que no sea numérico, deberá controlarse correctamente.
+Una calificación inferior a 5 se considerará suspenso.
+Una calificación entre 5 y 6,9 se considerará aprobado.
+Una calificación entre 7 y 8,9 se considerará notable.
+Una calificación igual o superior a 9 se considerará sobresaliente.
+Al finalizar, el programa deberá mostrar:
+
+Número de suspensos.
+Número de aprobados.
+Número de notables.
+Número de sobresalientes.
+Nota media del grupo.
+Nota más alta.
+Nota más baja.
+Número de estudiantes que han obtenido una nota igual o superior a 9.
+Prueba especialmente:
+
+Introducir una nota negativa.
+Introducir una nota superior a 10.
+Introducir una entrada no numérica.
+Introducir exactamente 5.
+Introducir exactamente 7.
+Introducir exactamente 9.
+Introducir 10.
+Comprobar el cálculo de la nota máxima y mínima.
+Comprobar el cálculo de la media.
+4. Gestión de ventas
+Diseña un pequeño programa para gestionar las ventas y devoluciones de una tienda. El programa deberá funcionar mediante un menú que se repita hasta que el usuario decida salir.
+
+====== GESTIÓN DE VENTAS ======
+
+1. Registrar venta
+2. Registrar devolución
+3. Mostrar estadísticas
+0. Salir
+El programa deberá permitir registrar ventas y devoluciones introduciendo su importe.
+
+Deberá cumplirse lo siguiente:
+
+Los importes deberán ser positivos.
+Las entradas no numéricas deberán controlarse.
+Una opción de menú incorrecta no deberá finalizar el programa.
+El menú deberá continuar mostrándose hasta seleccionar la opción 0.
+La selección de las opciones del menú deberá realizarse utilizando la estructura match.
+La opción de estadísticas deberá mostrar:
+
+Número de ventas realizadas.
+Importe total de las ventas.
+Número de devoluciones realizadas.
+Importe total de las devoluciones.
+Balance económico: ventas menos devoluciones.
+Número de ventas superiores a 100 €.
+El programa deberá mantener los datos necesarios mientras esté funcionando, sin utilizar listas ni funciones.
+
+Prueba diferentes situaciones:
+
+Intentar registrar una venta con importe negativo.
+Introducir texto en lugar de un número.
+Seleccionar una opción inexistente.
+Registrar varias ventas y devoluciones.
+Consultar estadísticas antes de registrar ninguna operación.
+Salir directamente del programa.
+5. Simulador de cajero automático
+Diseña un programa que simule el funcionamiento básico de un cajero automático. El saldo inicial de la cuenta será de 1000 €.
+
+====== CAJERO ======
+
+1. Consultar saldo
+2. Ingresar dinero
+3. Retirar dinero
+4. Mostrar estadísticas
+0. Salir
+El programa deberá permitir:
+
+Consultar el saldo actual.
+Ingresar dinero.
+Retirar dinero.
+Mostrar estadísticas de las operaciones realizadas.
+Salir del programa.
+Deberán cumplirse las siguientes condiciones:
+
+Los importes introducidos deberán ser positivos.
+Las entradas no numéricas deberán controlarse correctamente.
+No se podrá retirar una cantidad superior al saldo disponible.
+Un error en una operación no deberá finalizar el programa.
+El menú deberá repetirse hasta seleccionar la opción 0.
+La opción de estadísticas deberá mostrar:
+
+Número de ingresos realizados.
+Importe total ingresado.
+Número de retiradas realizadas.
+Importe total retirado.
+Saldo actual.
+Mayor cantidad retirada.
+Si todavía no se ha realizado ninguna operación de retirada, el programa deberá gestionar correctamente la situación al mostrar la mayor retirada.
+
+Prueba especialmente:
+
+Consultar el saldo nada más iniciar.
+Intentar retirar más dinero del disponible.
+Introducir cantidades negativas o cero.
+Introducir texto en lugar de un número.
+Realizar varias operaciones consecutivas.
+Consultar las estadísticas sin haber realizado operaciones.
+6. Analiza y diseña antes de programar
+En este ejercicio no se busca únicamente escribir código. Antes de programar deberás analizar el problema y diseñar la solución.
+
+Una empresa necesita registrar códigos correspondientes a incidencias producidas en sus servidores.
+
+El funcionamiento será el siguiente:
+
+El código 0 indica que se ha terminado la introducción de datos.
+Los valores negativos no son válidos.
+Los códigos entre 1 y 99 representan incidencias informativas.
+Los códigos entre 100 y 499 representan advertencias.
+Los códigos iguales o superiores a 500 representan incidencias críticas.
+Las entradas que no sean números enteros deberán controlarse y volver a solicitarse.
+Antes de escribir el código, responde a las siguientes preguntas:
+
+¿Qué variables necesitas?
+¿Qué información necesitas conservar durante la ejecución?
+¿Qué decisiones debe tomar el programa?
+¿Qué partes del programa deben repetirse?
+¿Cuál es la condición que indica que se ha terminado la introducción de datos?
+¿Qué entradas pueden provocar errores?
+¿Qué estructuras de control utilizarás y por qué?
+Una vez realizado el análisis, implementa el programa.
+
+El programa deberá mostrar al finalizar:
+
+Número total de incidencias registradas.
+Número de incidencias informativas.
+Número de advertencias.
+Número de incidencias críticas.
+Finalmente, realiza diferentes pruebas para comprobar que las clasificaciones y las condiciones de finalización funcionan correctamente.
+
+Importante
+En este ejercicio se valorará especialmente la capacidad para analizar el problema antes de programar y justificar las estructuras de control utilizadas. No se trata simplemente de conseguir que el programa funcione.
+
+7. Gestión de una estación de carga
+Una estación de carga para vehículos eléctricos necesita registrar la cantidad de energía suministrada en cada operación.
+
+El programa deberá solicitar sucesivas cantidades de energía expresadas en kWh. El valor 0 indicará que se ha terminado la introducción de datos.
+
+El programa deberá:
+
+Controlar las entradas que no sean numéricas.
+Ignorar las cantidades negativas, excepto el valor 0, que finalizará el programa.
+Contar el número de operaciones válidas.
+Calcular la cantidad total de energía suministrada.
+Calcular la media de energía suministrada por operación.
+Determinar la operación con mayor cantidad de energía suministrada.
+Determinar la operación con menor cantidad de energía suministrada.
+Contar cuántas operaciones han suministrado más de 40 kWh.
+Indicar si alguna operación ha superado los 100 kWh.
+Contar el número de entradas incorrectas realizadas por el usuario.
+Si se producen 5 entradas incorrectas, el sistema deberá bloquearse y finalizar.
+Al finalizar, el programa deberá mostrar un resumen completo de los datos obtenidos.
+
+También deberá gestionar correctamente el caso en el que no se haya registrado ninguna operación válida.
+
+Prueba especialmente:
+
+Finalizar directamente introduciendo 0.
+Introducir cantidades negativas.
+Introducir texto.
+Introducir exactamente 5 entradas incorrectas.
+Introducir una única operación válida.
+Introducir varias operaciones con valores diferentes.
+Introducir valores superiores a 40 y a 100 kWh.
+Comprobar los valores máximo y mínimo.
+Demuestra que eres capaz de analizar un problema, seleccionar las estructuras de control necesarias, combinarlas correctamente, validar los datos de entrada, controlar los errores, probar el programa y corregir los problemas que aparezcan, utilizando únicamente los contenidos de Python trabajados hasta este momento.

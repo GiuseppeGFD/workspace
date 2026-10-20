@@ -1,0 +1,222 @@
+Bloque 5 - Pruebas, depuración y documentación
+En estos ejercicios no aprenderás nuevas estructuras de control. Trabajarás sobre programas similares a los realizados en los capítulos anteriores para aprender a probar, detectar errores, depurar y documentar código Python.
+
+El objetivo no es únicamente conseguir que un programa se ejecute, sino comprobar que su comportamiento es correcto en diferentes situaciones y saber explicar y corregir los problemas que puedan aparecer.
+
+Recomendaciones para todos los ejercicios
+En estos ejercicios no se utilizarán listas ni funciones, ya que todavía no se han trabajado en clase.
+Antes de ejecutar un programa, intenta predecir qué debería ocurrir.
+Prueba valores normales y valores límite.
+Prueba también entradas incorrectas cuando el programa las permita.
+Distingue entre errores de sintaxis, errores de ejecución y errores lógicos.
+No modifiques el código al azar: intenta localizar primero el origen del problema.
+Después de corregir un error, vuelve a ejecutar las pruebas.
+Utiliza print() temporalmente cuando necesites comprobar valores.
+Elimina las instrucciones de depuración que ya no sean necesarias.
+Utiliza comentarios para explicar las partes relevantes del programa.
+Comprueba que el código mantiene una indentación correcta y es fácil de leer.
+1. Museo: descubre un error mediante casos de prueba
+Un museo establece los siguientes precios para sus entradas:
+
+Menores de 6 años: entrada gratuita.
+De 6 a 17 años: 5 €.
+De 18 a 64 años: 10 €.
+Personas de 65 años o más: 6 €.
+Se ha desarrollado el siguiente programa para calcular el precio de la entrada:
+
+edad = int(input("Introduce la edad: "))
+
+if edad < 6:
+    precio = 0
+elif edad <= 17:
+    precio = 5
+elif edad <= 65:
+    precio = 10
+else:
+    precio = 6
+
+print("Precio de la entrada:", precio, "€")
+El programa se ejecuta sin mostrar ningún error de sintaxis ni de ejecución, pero contiene un problema en su funcionamiento.
+
+Tareas:
+
+Diseña al menos 8 casos de prueba.
+Incluye valores normales y valores situados en los límites de los diferentes intervalos.
+Anota para cada prueba el resultado esperado y el resultado obtenido.
+Identifica la prueba que permite detectar el problema.
+Explica qué está ocurriendo y clasifica el tipo de error.
+Corrige el programa.
+Vuelve a ejecutar las pruebas necesarias para comprobar que la corrección funciona.
+2. Máquina expendedora: diagnostica y corrige el error
+Una máquina expendedora dispone de tres productos:
+
+Código A: 1,50 €.
+Código B: 2,00 €.
+Código C: 2,50 €.
+Si el código introducido no existe, debe mostrarse «Código no válido» y no debe continuar el proceso de cálculo del precio. Si el dinero disponible no es suficiente, debe indicarse cuánto dinero falta. Si es suficiente, se debe mostrar el producto servido y el cambio.
+
+codigo = input("Introduce el código del producto: ")
+dinero = float(input("Introduce el dinero disponible: "))
+
+match codigo:
+    case "A":
+        precio = 1.50
+    case "B":
+        precio = 2.00
+    case "C":
+        precio = 2.50
+    case _:
+        print("Código no válido")
+
+if dinero >= precio:
+    cambio = dinero - precio
+    print("Producto servido")
+    print("Cambio:", cambio, "€")
+else:
+    falta = precio - dinero
+    print("Dinero insuficiente")
+    print("Falta:", falta, "€")
+Tareas:
+
+Diseña diferentes casos de prueba para los códigos A, B y C.
+Incluye al menos una prueba con dinero suficiente y otra con dinero insuficiente.
+Prueba también un código que no exista, por ejemplo, D.
+Anota el resultado esperado y el resultado obtenido.
+Identifica en qué situación aparece el error.
+Indica qué tipo de error se produce y explica por qué.
+Corrige el programa utilizando únicamente los contenidos trabajados en clase.
+Vuelve a realizar las pruebas necesarias para comprobar la corrección.
+3. Equipaje: depura un proceso de validación
+Un sistema de control de equipaje debe procesar exactamente 5 equipajes válidos. Para cada equipaje se introduce su peso en kilogramos.
+
+Un peso negativo no es válido y debe solicitarse de nuevo.
+Si se introduce un valor que no es numérico, debe mostrarse un mensaje y volver a pedirlo.
+Los equipajes de hasta 23 kg están dentro del límite.
+Los equipajes de más de 23 kg tienen exceso de peso.
+Al finalizar deben mostrarse el número de equipajes dentro del límite, el número con exceso y el peso total de los 5 equipajes válidos.
+equipajes_validos = 0
+equipajes_exceso = 0
+peso_total = 0
+contador = 0
+
+while contador < 5:
+    try:
+        peso = float(input("Introduce el peso del equipaje: "))
+
+        contador += 1
+
+        if peso < 0:
+            print("Peso incorrecto")
+            continue
+
+        if peso <= 23:
+            equipajes_validos += 1
+        else:
+            equipajes_exceso += 1
+
+        peso_total += peso
+
+    except ValueError:
+        print("Debes introducir un número")
+
+print("Equipajes dentro del límite:", equipajes_validos)
+print("Equipajes con exceso:", equipajes_exceso)
+print("Peso total:", peso_total)
+El programa contiene un error relacionado con el control del número de equipajes procesados.
+
+Tareas:
+
+Explica qué debería ocurrir cuando se introduce un peso negativo.
+Diseña casos de prueba que incluyan pesos válidos, un peso negativo y un valor que no sea numérico.
+Ejecuta las pruebas y anota los resultados obtenidos.
+Utiliza temporalmente mensajes print() si los necesitas para comprobar el valor de contador.
+Localiza y explica el error.
+Corrige el programa.
+Comprueba que el sistema solicita realmente 5 equipajes válidos.
+Comprueba también que los valores no válidos no se incluyen en el peso total.
+4. Cajero automático: comprueba las condiciones
+Un cajero automático permite realizar una retirada de dinero siguiendo estas reglas:
+
+La cantidad a retirar debe ser mayor que 0 €.
+La cantidad no puede superar el saldo disponible.
+Si se cumplen ambas condiciones, se realiza la retirada.
+En caso contrario, se muestra que la operación no es válida.
+El saldo disponible es de 500 €.
+
+saldo = 500
+
+cantidad = float(input("¿Cuánto dinero quieres retirar? "))
+
+if cantidad >= 0 and cantidad <= saldo:
+    saldo = saldo - cantidad
+    print("Retirada realizada")
+    print("Nuevo saldo:", saldo)
+else:
+    print("Operación no válida")
+Tareas:
+
+Lee el enunciado y explica qué debería ocurrir en cada situación.
+Diseña al menos 7 casos de prueba.
+Incluye obligatoriamente una cantidad negativa, 0, una cantidad inferior al saldo, exactamente 500 €, una cantidad superior a 500 € y una cantidad decimal válida.
+Para cada prueba, indica la entrada, el resultado esperado, el resultado obtenido y si la prueba es correcta.
+Identifica qué prueba permite detectar el error.
+Explica por qué la condición utilizada en el programa no cumple el enunciado.
+Corrige el programa.
+Vuelve a ejecutar las pruebas necesarias para comprobar que funciona correctamente.
+5. Consumo eléctrico: prueba, depura y documenta
+Una empresa quiere analizar el consumo eléctrico registrado durante 7 mediciones válidas.
+
+Un consumo negativo no es válido y debe solicitarse de nuevo.
+Un consumo de hasta 20 kWh se considera bajo.
+Un consumo mayor de 20 kWh y hasta 50 kWh se considera normal.
+Un consumo mayor de 50 kWh se considera elevado.
+Si se introduce un valor que no es numérico, debe mostrarse un mensaje de error y volver a solicitarse la medición.
+Al finalizar las 7 mediciones válidas, deben mostrarse el número de consumos bajos, normales y elevados, el consumo total y el consumo medio.
+consumos_bajos = 0
+consumos_normales = 0
+consumos_elevados = 0
+total = 0
+contador = 0
+
+while contador < 7:
+    try:
+        consumo = float(input("Introduce el consumo en kWh: "))
+
+        contador += 1
+
+        if consumo < 0:
+            print("El consumo no puede ser negativo")
+            continue
+
+        if consumo < 20:
+            consumos_bajos += 1
+        elif consumo <= 50:
+            consumos_normales += 1
+        else:
+            consumos_elevados += 1
+
+        total += consumo
+
+    except ValueError:
+        print("Debes introducir un valor numérico")
+
+media = total / contador
+
+print("Consumos bajos:", consumos_bajos)
+print("Consumos normales:", consumos_normales)
+print("Consumos elevados:", consumos_elevados)
+print("Consumo total:", total)
+print("Consumo medio:", media)
+Tareas:
+
+Lee detenidamente el enunciado y determina qué debería hacer el programa.
+Diseña una batería de casos de prueba que permita comprobar todas las situaciones importantes.
+Incluye obligatoriamente los valores 0, 20, 21, 50 y 51, un valor negativo y un valor que no sea numérico.
+Ejecuta las pruebas y registra los resultados obtenidos.
+Identifica todos los errores que encuentres.
+Indica qué tipo de error es cada uno.
+Explica por qué se produce cada error.
+Corrige el programa.
+Vuelve a ejecutar las pruebas después de realizar las correcciones.
+Comprueba especialmente que el programa solicita 7 mediciones válidas, aunque el usuario introduzca datos incorrectos.
+Añade comentarios en el código corregido para explicar las partes que consideres más importantes.

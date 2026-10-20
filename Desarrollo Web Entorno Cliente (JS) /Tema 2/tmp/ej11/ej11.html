@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Principal</title>
+    <script>
+        function abrir() {
+            var distancia = 130;
+            for (var i = 1; i <= 10; i++) {
+                var posX = distancia + (i * 30);
+                var posY = distancia + (i * 50);
+
+                var opciones = "width=200,height=200,left=" + posX + ",top=" + posY;
+                var miWindow = window.open("", "ventana" + i, opciones);
+
+                if (miWindow) {
+                    miWindow.document.open();
+                    miWindow.document.write("<!DOCTYPE html><html><head>");
+                    miWindow.document.write("<title>Ventana " + i + "</title>");
+                    miWindow.document.write("</head><body><center>");
+                    miWindow.document.write("<h1>Ventana " + i + "</h1><br><br>");
+                    miWindow.document.write("<input type='button' value='Cerrar ventana " + i + "' onclick='window.close()'>");
+                    miWindow.document.write("<" + "script>");
+                    miWindow.document.write("setTimeout(function() { window.close(); }, 10000);");
+                    miWindow.document.write("<" + "/script>");
+                    miWindow.document.write("</center></body></html>");
+                    miWindow.document.close();
+
+                    try {
+                        miWindow.moveTo(posX, posY);
+                    } catch (e) { }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Página de abrir ventanas (10)</h1>
+    <input type="button" value="abrir" onclick="abrir()">
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <style>
+        thead,
+        tbody,
+        tr,
+        td {
+            border-style: 1px solid;
+            color: black;
+        }
+
+        back
+    </style>
+
+    <script>
+        var miVentana;
+
+        // Mejoramos esta función para que no abra una nueva si ya hay una abierta
+        function abrirVentana() {
+            if (!miVentana || miVentana.closed) {
+                miVentana = window.open("", "", "width=400,height=400");
+            }
+        }
+
+        function mover() {
+            abrirVentana();
+            var valorX = parseInt(document.getElementById("idX").value);
+            var valorY = parseInt(document.getElementById("idY").value);
+
+            for (var i = 0; i < 50; i++) {
+                miVentana.resizeBy(valorX / 50, valorY / 50);
+            }
+        }
+
+        function redimensionar() {
+            abrirVentana();
+            var valorX = parseInt(document.getElementById("idX").value);
+            var valorY = parseInt(document.getElementById("idY").value);
+            for (var i = 0; i < 50; i++) {
+                miVentana.resizeBy(valorX / 50, valorY / 50);
+            }
+        }
+
+        function moveryredimensionar() {
+            mover();
+            redimensionar();
+        }
+
+        function moverhasta() {
+            abrirVentana();
+            var valorX = parseInt(document.getElementById("idX").value);
+            var valorY = parseInt(document.getElementById("idY").value);
+            for (var i = 0; i < 50; i++) {
+                miVentana.resizeBy(valorX / 50, valorY / 50);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <h1>Interactúa con la página</h1>
+        <form>
+            <table>
+                <thead>
+                    <tr>
+                        <td><strong>Valor de X</strong></td>
+                        <td><strong>Valor de Y</strong></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" id="idX" placeholder="Valor de X..."></td>
+                        <td><input type="text" id="idY" placeholder="Valor de Y..."></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <input type="button" onclick="mover()" value="mover">
+            <input type="button" onclick="redimensionar()" value="redimensionar">
+            <input type="button" onclick="moveryredimensionar()" value="mover y redimensionar">
+            <input type="button" onclick="moverhasta()" value="redimensionar hasta (resizeTo)">
+        </form>
+    </center>
+</body>
+
+</html>

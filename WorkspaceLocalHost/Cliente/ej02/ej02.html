@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Location</title>
+    <script>
+        function cargar() {
+            var resultado = document.getElementById("miDiv");
+            resultado.innerHTML = document.write("Enlace: " + location.href + "<br>");
+            resultado.innerHTML = document.write("host: " + location.host + "<br>");
+            resultado.innerHTML = document.write("hostname: " + location.hostname + "<br>");
+            resultado.innerHTML = document.write("hash: " + location.hash + "<br>");
+            resultado.innerHTML = document.write("pathname: " + location.pathname + "<br>");
+            resultado.innerHTML = document.write("port: " + location.port + "<br>");
+            resultado.innerHTML = document.write("protocol: " + location.protocol + "<br>");
+            resultado.innerHTML = document.write("search: " + location.search + "<br>");
+        }
+        function recargar() {
+            location.reload();
+        }
+    </script>
+</head>
+
+<body onload=cargar()>
+    <div id="miDiv"></div>
+    <input type="button" name="recargar" value="recargar" onclick=recargar()>
+</body>
+
+</html>
