@@ -1,4 +1,4 @@
-# Workspace — Giuseppe Farhat
+# Workspace — Giuseppe Giovanni Farhat D'Elia
 
 Espacio centralizado de trabajo, laboratorio de pruebas y repositorio de desarrollo personal. Este repositorio alberga proyectos en curso, utilidades de automatización, arquitecturas de software y recursos técnicos desarrollados durante mi formación en Desarrollo de Aplicaciones Web (DAW).
 
