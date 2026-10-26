@@ -1,0 +1,1 @@
+# Sumar los números impares desde 1 hasta n. Recibe un entero no negativo n y devuelve la suma de todos los números impares comprendidos entre 1 y n, ambos incluidos. Por ejemplo, si recibe 7, devuelve 16, porque 1 + 3 + 5 + 7 = 16.

@@ -1,0 +1,1 @@
+# Calcular el resto de una división. Recibe dos números enteros no negativos, dividendo y divisor, y devuelve el resto sin utilizar los operadores /, // ni %. Resta el divisor tantas veces como sea posible, hasta obtener un valor inferior al divisor. Por ejemplo, al dividir 17 entre 5, el resto es 2. El divisor deberá ser mayor que cero.

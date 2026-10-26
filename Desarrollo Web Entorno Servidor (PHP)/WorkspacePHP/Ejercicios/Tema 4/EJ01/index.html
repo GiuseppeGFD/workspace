@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina principal</title>
+    <script> // copia y pega en el examen
+        function usarAJAX() {
+            var nombre = document.getElementById("nombre").value; // sacar valor y darselo a variable
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open('POST', 'p1.php', true); // cambiar el segundo parametro por el archivo php
+            xmlhttp.send();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    document.getElementById("miDiv").innerHTML = xmlhttp.responseText;
+                }
+            }
+            xmlhttp.open('GET', 'p1.php?nombre=' + nombre, true); // abrimos la cosa esta
+            xmlhttp.send();// enviar variable por la cosa esa de ajax
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Saludador</h1>
+    <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+    <div id="miDiv"></div>
+    <button type="button" onclick="usarAJAX()">Cambiar</button>
+</body>
+
+</html>

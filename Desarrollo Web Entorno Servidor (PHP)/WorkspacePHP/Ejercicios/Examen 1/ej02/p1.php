@@ -1,9 +1,9 @@
 <?php
 session_start();
-if (isset($_GET['verbos']) $_GET['verbo']) {
+if (isset($_GET['verbos']) && $_GET['verbo']) {
     $_SESSION['verbos'][] = $_GET['verbo'];
 
-} else{
+} else {
     $_SESSION['verbos'] = [];
 }
 if (isset($_GET['accion']) && $_GET['accion'] == 'conjugar') {

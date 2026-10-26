@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Tema 3</title>
+
+    <script>
+        var array = [];
+
+        // ======================= Comprobar Valor ================================
+        function comprobar(valor) { // comprueba si es un numero valido
+            var numero = parseInt(valor);
+            if (isNaN(numero)) {
+                return false;
+            }
+            return numero;
+        }
+        // ========================================================================
+
+        // ======================= DAR DE BAJA ====================================
+        function baja() { // Da de baja un número
+            var inputRecibido = document.getElementById('inputNumero').value;
+            var errores = document.getElementById('error');
+
+            errores.innerHTML = '';
+
+            if (comprobar(inputRecibido)) {
+                var numero = Number(inputRecibido);
+                var posicion = array.indexOf(numero);
+
+                if (posicion !== -1) {
+                    array.splice(posicion, 1);
+                    mostrarArray();
+                } else {
+                    errores.innerHTML = 'El número no se encuentra en el array';
+                }
+            } else {
+                errores.innerHTML = 'La cadena contiene caracteres no numéricos';
+            }
+        }
+        // ============================================================================
+
+        // ======================= Modificar Array ====================================
+        function modificacion() { // Da de baja un número
+            var inputRecibido = document.getElementById('inputNumero').value;
+            var errores = document.getElementById('error');
+
+            errores.innerHTML = '';
+
+            if (comprobar(inputRecibido)) {
+                var numero = Number(inputRecibido);
+                var posicion = array.indexOf(numero);
+
+                if (posicion !== -1) {
+                    array.splice(posicion, 1,);
+                    mostrarArray();
+                } else {
+                    errores.innerHTML = 'El número no se encuentra en el array';
+                }
+            } else {
+                errores.innerHTML = 'La cadena contiene caracteres no numéricos';
+            }
+        }
+        // ==========================================================================
+
+        // ======================= Dar de Alta un numero ============================
+        function alta() { // da de alta a un 
+            var entrega = document.getElementById('respuesta');
+            var inputRecibido = document.getElementById('inputNumero').value;
+            var errores = document.getElementById('error');
+
+            errores.innerHTML = '';
+            var numeroValido = comprobar(inputRecibido);
+
+            if (numeroValido !== false) {
+                array.push(numeroValido);
+                mostrarArray();
+            } else {
+                errores.innerHTML = 'Error al agregar';
+            }
+        }
+        // ==========================================================================
+
+
+        // ======================= Mostrar Array ====================================
+        function mostrarArray() {
+            var entrega = document.getElementById('respuesta');
+            entrega.innerHTML = '<br><label>Ascendente</label><br>';
+            entrega.innerHTML += array.sort();
+            entrega.innerHTML += '<br><label>Descendente</label><br>';
+            entrega.innerHTML += array.reverse();
+            document.getElementById('inputNumero').value = "";
+        }
+        // ==========================================================================
+
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background-color: beige;">
+    <div id="navegador">
+        <nav>
+            <ul
+                style="display: flex;justify-content: space-between;align-items: center;background-color: #333;color: #fff;padding: 1rem 2rem;list-style: none;text-decoration: none;border-radius: 10px;">
+                <li><input type="button" value="Primera"></li>
+                <li><input type="button" value="Anterior"></li>
+                <li><input type="button" value="Siguiente"></li>
+                <li><input type="button" value="Ultima"></li>
+                <li><input type="button" value="Alta" onclick="alta()"></li>
+                <li><input type="button" value="Baja" onclick="baja()"></li>
+                <li><input type="button" value="Modificar" onclick="modificacion()"></li>
+                <li><input type="button" value="Listado"></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="introducirDatos">
+        <label id="nombreInputNumero">Número: </label>
+        <input type="text" id="inputNumero" placeholder="introduce un número">
+        <div id="error">
+        </div>
+    </div>
+
+    <div id="respuesta"></div>
+
+</body>
+
+</html>

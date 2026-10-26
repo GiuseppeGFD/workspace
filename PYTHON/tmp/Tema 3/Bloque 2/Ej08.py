@@ -1,0 +1,1 @@
+# Contar cuántas veces aparece una cifra. Recibe un entero no negativo y una cifra entre 0 y 9, y devuelve cuántas veces aparece esa cifra en el número. Por ejemplo, si recibe 50525 y la cifra 5, devuelve 3. Considera que el número 0 contiene una cifra.

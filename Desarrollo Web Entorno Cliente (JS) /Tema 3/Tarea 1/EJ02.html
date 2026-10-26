@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+    <h2>Carrusel de imágenes</h2>
+    <p>escribe "img5" por ejemplo y ve a la ultima</p>
+    <input type="text" id="nuevaFoto" placeholder="Ej: [img1|img2|img3|img4|img5]">
+
+    <button onclick="añadirFoto()">Añadir</button>
+    <br><br>
+
+    <img id="imagen" src="./img/perros/perro1.png" width="300" height="300">
+    <br><br>
+
+    <button onclick="primera()">Primera</button>
+    <button onclick="anterior()">Anterior</button>
+    <button onclick="siguiente()">Siguiente</button>
+    <button onclick="ultima()">Última</button>
+
+    <script>
+        let fotos = [
+            "./img/perros/perro1.png",
+            "./img/perros/perro2.png",
+            "./img/perros/perro3.png",
+            "./img/perros/perro4.png",
+            "./img/perros/perro5.png"
+        ];
+        let posicion = 0;
+
+        function actualizarImagen() {
+            document.getElementById("imagen").src = fotos[posicion];
+        }
+
+        function añadirFoto() {
+            let ruta = document.getElementById("nuevaFoto").value;
+            if (ruta !== "") {
+                fotos.push("./img/nuevas/" + ruta + ".png");
+                document.getElementById("nuevaFoto").value = ""; // Limpiar caja
+            }
+        }
+
+        function siguiente() {
+            posicion++;
+            if (posicion >= fotos.length) posicion = 0;
+            actualizarImagen();
+        }
+
+        function anterior() {
+            posicion--;
+            if (posicion < 0) posicion = fotos.length - 1;
+            actualizarImagen();
+        }
+
+        function primera() {
+            posicion = 0;
+            actualizarImagen();
+        }
+
+        function ultima() {
+            posicion = fotos.length - 1;
+            actualizarImagen();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3</title>
+</head>
+
+<body>
+    <h2>Carrusel Automático</h2>
+    <input type="text" id="tiempo" placeholder="Segundos">
+    <button onclick="cambiarIntervalo()">Modificar Intervalo</button>
+    <br><br>
+
+    <img id="imagen" src="./img/gatos/gato1.png" width="300" height="300">
+
+    <script>
+        let fotos = [
+            "./img/gatos/gato1.png",
+            "./img/gatos/gato2.png",
+            "./img/gatos/gato3.png",
+            "./img/gatos/gato4.png",
+            "./img/gatos/gato5.png"
+        ];
+        let posicion = 0;
+        let temporizador;
+
+        function actualizarImagen() {
+            posicion++;
+            if (posicion >= fotos.length) posicion = 0;
+            document.getElementById("imagen").src = fotos[posicion];
+        }
+
+        function iniciarCarrusel(milisegundos) {
+            clearInterval(temporizador);
+            temporizador = setInterval(actualizarImagen, milisegundos);
+        }
+
+        function cambiarIntervalo() {
+            let valor = document.getElementById("tiempo").value;
+
+            if (isNaN(valor) || valor === "") {
+                alert("La cadena de caracteres contiene caracteres no numéricos");
+            } else {
+                let milisegundos = parseInt(valor) * 1000;
+                iniciarCarrusel(milisegundos);
+            }
+        }
+
+        iniciarCarrusel(1000);
+    </script>
+</body>
+
+</html>

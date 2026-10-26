@@ -1,0 +1,37 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: white;
+}
+
+body {
+    background: linear-gradient(to bottom left, #A18262, #E8C5C8);
+    /* Centra la tarjeta horizontal y verticalmente en la pantalla */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+select {
+    background-color: #804000;
+    color: #D69456;
+    border: none;
+    word-spacing: 2px;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+#seleccion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    padding: 30px;
+    border-radius: 20px;
+    background-color: #556B2F;
+    box-shadow: 0px 0px 100px #B7410E;
+}

@@ -1,16 +1,31 @@
-<?php
-// ES SOBRE FICHEROS PERO NO ENTRA TODAVIA, SO NO LO HAGO PERO DEJO EL ENUNCIADO
+<center>
+  <h1 style="color:brown;">Formulario Inicio de sesión</h1>
 
-/*### **Enunciado del Ejercicio 4**
+  <form action="p1.php" method="post">
+    <table border="1">
+      <caption>Ingresa los datos</caption>
+      <tr>
+        <td>nombre</td>
+        <td>mail</td>
+        <td>contraseña</td>
+      </tr>
+      <tr>
+        <td>
+          <input type="text" name="nombre" placeholder="Nombre...">
+        </td>
+        <td>
+          <input type="text" name="mail" placeholder="Email...">
+        </td>
+        <td>
+          <input type="password" name="contrasena" placeholder="Contraseña...">
+        </td>
+      </tr>
 
-&gt; **Crea una aplicación web para subir una foto de perfil:**
 
-1. Un formulario en `index.php` con `method="post"` y `enctype="multipart/form-data"` que solicite:
-  * Campo de texto **Nombre de usuario**.
-  * Campo de tipo archivo ``.
-2. Un script procesador (`subir.php`) que realice las siguientes comprobaciones:
-  * Verifica que el usuario introdujo su nombre.
-  * Comprueba que se subió un archivo sin errores (`$_FILES['foto']['error'] === UPLOAD_ERR_OK`).
-  * Mueve la imagen a una carpeta llamada `uploads/` (asume que existe).
-  * Muestra un mensaje de éxito con el nombre del usuario y la imagen subida desplegada en una etiqueta ``.*/
-?>
+    </table><br>
+    <input type="submit">
+    <?php if (isset($_REQUEST['error'])): ?>
+      <p style="color: red;"><?= $_REQUEST['error'] ?></p>
+    <?php endif; ?>
+  </form>
+</center>

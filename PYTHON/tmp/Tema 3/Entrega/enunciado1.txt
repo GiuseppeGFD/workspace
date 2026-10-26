@@ -1,0 +1,93 @@
+PRÁCTICA: DIAGNÓSTICO Y PRESUPUESTO DE REPARACIÓN INFORMÁTICA
+ 
+Desarrolla un programa en Python que simule el funcionamiento de un servicio técnico informático, permitiendo calcular presupuestos de reparación y comprobar si una reparación es viable según el presupuesto disponible del cliente.
+
+1. Tipos de reparación
+El servicio técnico ofrece las siguientes reparaciones, con los costes de las piezas indicados:
+
+Tipo de reparación	Coste de las piezas
+Sustitución de disco SSD	65 €
+Ampliación de memoria RAM	40 €
+Sustitución de fuente de alimentación	55 €
+Reparación de software	0 €
+El coste de la mano de obra será de 25 € por hora.
+
+2. Funcionamiento
+El programa permitirá realizar distintas operaciones mediante un menú. Al iniciar la ejecución, se mostrará el siguiente menú:
+
+SERVICIO TÉCNICO INFORMÁTICO
+1. Consultar tipos de reparación
+2. Evaluar una reparación
+3. Consultar condiciones del servicio
+0. Salir
+El menú se repetirá hasta que el usuario seleccione la opción 0.
+
+1. Consultar tipos de reparación
+Se mostrarán los tipos de reparación disponibles y el coste de las piezas correspondiente a cada uno.
+
+2. Evaluar una reparación
+El programa solicitará los siguientes datos:
+
+Tipo de reparación: el usuario seleccionará una de las reparaciones disponibles.
+Horas de trabajo: número de horas necesarias para realizar la reparación. Deberá ser un número mayor que 0 y menor o igual que 8. Se admitirán valores decimales.
+Presupuesto máximo: cantidad de dinero que el cliente está dispuesto a pagar. Deberá ser un número mayor que 0.
+A partir de estos datos, el programa calculará el presupuesto de la reparación, teniendo en cuenta el coste de las piezas y el de la mano de obra.
+
+El presupuesto deberá mostrar:
+
+Tipo de reparación.
+Coste de las piezas.
+Coste de la mano de obra.
+Coste total de la reparación.
+Presupuesto máximo disponible.
+Resultado de la evaluación de viabilidad.
+La reparación se considerará viable cuando el coste total sea menor o igual que el presupuesto disponible.
+
+Si el coste total supera el presupuesto, se indicará que la reparación no es viable y se mostrará cuánto dinero adicional necesitaría el cliente para poder realizarla.
+
+Todos los importes se mostrarán con dos decimales.
+
+3. Consultar condiciones del servicio
+Se mostrarán las condiciones económicas y los límites establecidos para realizar las reparaciones:
+
+Coste de la mano de obra: 25 € por hora.
+Duración máxima de una reparación: 8 horas.
+El presupuesto máximo del cliente debe ser mayor que 0.
+La reparación será viable si su coste total no supera el presupuesto disponible.
+0. Salir
+El programa finalizará mostrando un mensaje de despedida.
+
+Si el usuario introduce una opción de menú inexistente, se mostrará un mensaje de error y se permitirá volver al menú principal.
+
+3. Validación de datos y gestión de excepciones
+El programa deberá gestionar las entradas incorrectas para evitar que la aplicación termine inesperadamente.
+
+Se deberán tener en cuenta las siguientes situaciones:
+
+Si el usuario selecciona un tipo de reparación inexistente, se producirá una excepción.
+Si las horas de trabajo no pueden convertirse a un número o no están dentro del intervalo permitido, se producirá una excepción.
+Si el presupuesto máximo no es numérico o es menor o igual que cero, se producirá una excepción.
+Si se introduce una opción de menú inexistente, se mostrará un mensaje de error y se volverá al menú principal.
+Lanzamiento y gestión de excepciones: cuando una función detecte una situación incorrecta que impida realizar la operación solicitada, deberá lanzar una excepción. La función main() será responsable de capturar y gestionar las excepciones, mostrar un mensaje adecuado y permitir que el usuario continúe utilizando el programa.
+
+No se deberán utilizar las excepciones como sustituto de las estructuras condicionales para controlar situaciones normales del programa.
+4. Diseño e implementación
+Antes de comenzar a programar, analiza el problema y diseña una solución que permita cumplir todos los requisitos del enunciado.
+
+El programa deberá estar organizado en funciones que permitan separar las distintas responsabilidades de la aplicación y reutilizar el código cuando sea necesario. Deberás decidir qué funciones implementar, qué parámetros necesita cada una y qué valores deben devolver.
+
+No se utilizarán variables globales.
+Las funciones deberán comunicarse mediante parámetros y valores de retorno.
+Cuando una función detecte una situación incorrecta que impida realizar la operación solicitada, deberá lanzar una excepción.
+La función main() deberá capturar y gestionar las excepciones, mostrar un mensaje adecuado y permitir que el programa continúe funcionando.
+No se utilizarán listas, tuplas ni diccionarios.
+El programa deberá incluir una función main() que coordine el funcionamiento de la aplicación y gestione el menú principal.
+
+El código deberá estar organizado, utilizar nombres significativos y evitar la repetición innecesaria de instrucciones.
+
+5. Pruebas
+Recuerda realizar las pruebas necesarias para comprobar que funciona correctamente y que cumple todos los requisitos del enunciado. Comprueba tanto el funcionamiento de las distintas opciones del menú como los cálculos realizados, la validación de los datos introducidos y la gestión de las excepciones.
+
+Entrega: entrega únicamente el archivo con el código fuente del programa. Incluye los comentarios que consideres necesarios para facilitar su comprensión, procurando que sean claros, útiles y no excesivos. No es necesario adjuntar documentación adicional.
+
+Programación en Python (GS)

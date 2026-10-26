@@ -1,0 +1,221 @@
+/* === IMPORTANTE ===================================================
+   No modificar estos estilos, ya que son imprescindibles para
+   que la p�gina se vea correctamente.
+   ================================================================== */
+
+/*-- B�sico ----------------------------------------------------------*/
+ul,
+ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+* {
+  font-family: Arial;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.articulo h2 {
+  color: #CC6600;
+  font-size: 1.6em;
+  line-height: 1.2;
+  margin-bottom: 0.3em;
+}
+
+body {
+  padding: 35%, 35%;
+}
+
+#noticias .fecha {
+  display: block;
+  color: #999;
+}
+
+#noticias h3 {
+  color: #003366;
+}
+
+h1,
+h2,
+h3,
+p,
+form {
+  margin: 0;
+  padding: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+img {
+  border: none;
+}
+
+/*-- Layout ----------------------------------------------------------*/
+#contenedor {
+  width: 90%;
+  max-width: 900px;
+  width: expression(document.body.clientWidth > 901? "900px": "auto");
+  margin: 0 auto;
+}
+
+#cabecera {
+  clear: both;
+}
+
+#cabecera h1 {
+  background-image: url('6logo.gif');
+  background-position: center;
+  background-size: cover;
+}
+
+#cabecera h1 span {
+  visibility: hidden;
+}
+
+#menu {
+  clear: both;
+  border-bottom: 3px solid #004C99;
+  background-image: url('./6fondo_menu.gif');
+}
+
+#menu a {
+  color: white;
+  font-size: 1.3em;
+  margin-right: 1em;
+}
+
+#lateral {
+  float: left;
+  width: 20%;
+  font-size: 0.9em;
+}
+
+#contenido {
+  float: right;
+  width: 78%;
+}
+
+#contenido #principal {
+  float: left;
+  width: 74%;
+}
+
+#contenido #secundario {
+  float: right;
+  width: 20%;
+}
+
+#pie {
+  clear: both;
+}
+
+/*-- Cabecera --------------------------------------------------------*/
+#cabecera #logo {
+  float: left;
+}
+
+#cabecera #buscador {
+  float: right;
+}
+
+#cabecera {
+  padding: 1em;
+}
+
+/*-- Menu ------------------------------------------------------------*/
+#menu ul#menu_principal li {
+  display: inline;
+  float: left;
+}
+
+#menu {
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/*-- Secci�n Principal -----------------------------------------------*/
+#contenido #principal .articulo img {
+  width: 100px;
+  float: left;
+}
+
+#noticias,
+#publicidad,
+#principal,
+#secundario {
+  padding: 0.5em;
+
+}
+
+#secundario {
+  border: 1px solid #CC6600;
+}
+
+#secundario h2 {
+  background-color: #DB905C;
+  padding: 0.2em;
+}
+
+#noticias {
+  border: 1px solid #C5C5C5;
+}
+
+#noticias,
+#pie {
+  background-color: #F8F8F8;
+}
+
+#publicidad {
+  margin-top: 1em;
+  border: dotted #CC6600;
+  background-color: #FFF6CD;
+  color: #555;
+}
+
+#publicidad a {
+  color: #CC6600;
+}
+
+.articulo {
+  margin: 1em;
+}
+
+.articulo a {
+  color: #CC6600;
+}
+
+.articulo p {
+  margin-top: 0.3em;
+}
+
+#contenido #principal .articulo img {
+  width: 100px;
+  float: left;
+  margin: 1em;
+}
+
+/*-- Pie de p�gina ---------------------------------------------------*/
+#pie .enlaces {
+  float: left;
+}
+
+#pie .copyright {
+  float: right;
+}
+
+#pie {
+  margin-top: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 1px solid #C5C5C5;
+  border-bottom: 1px solid #C5C5C5;
+}
+
+/* === IMPORTANTE ===================================================
+   A partir de aqu�, se pueden a�adir todos los estilos propios que 
+   sean necesarios.
+   ================================================================== */

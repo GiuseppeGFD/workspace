@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliente html</title>
+    <script> // copia y pega en el examen
+        function usarAJAX() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open('GET', 'servidor.php', true); // cambiar el segundo parametro por el archivo php
+            xmlhttp.send();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    document.getElementById("miDiv").innerHTML = xmlhttp.responseText;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="miDiv">
+        <h2>Texto cambiante</h2>
+    </div>
+    <button type="button" onclick="usarAJAX()">Cambiar</button>
+</body>
+
+</html>

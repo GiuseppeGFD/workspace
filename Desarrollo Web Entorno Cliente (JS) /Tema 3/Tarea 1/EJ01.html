@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+    <h2>Carrusel de imágenes</h2>
+    <img id="imagen" src="./img/perros/perro1.png" width="300" height="300">
+    <br><br>
+    <button onclick="anterior()">Anterior</button>
+    <button onclick="siguiente()">Siguiente</button>
+
+    <script>
+        let fotos = [
+            "./img/perros/perro1.png",
+            "./img/perros/perro2.png",
+            "./img/perros/perro3.png",
+            "./img/perros/perro4.png",
+            "./img/perros/perro5.png"
+        ];
+        let posicion = 0;
+
+        function actualizarImagen() {
+            document.getElementById("imagen").src = fotos[posicion];
+        }
+
+        function siguiente() {
+            posicion++;
+            if (posicion >= fotos.length) posicion = 0;
+            actualizarImagen();
+        }
+
+        function anterior() {
+            posicion--;
+            if (posicion < 0) posicion = fotos.length - 1;
+            actualizarImagen();
+        }
+    </script>
+</body>
+
+</html>
