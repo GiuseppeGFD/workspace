@@ -1,0 +1,207 @@
+/* ==========================================================
+   ESTILOS HIPERPROFESIONALES PARA INDEX OF / (APACHE)
+   ========================================================== */
+
+:root {
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #38bdf8;
+    --accent-hover: #818cf8;
+    --hover-row: rgba(255, 255, 255, 0.05);
+    --shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-gradient: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 50%, #cbd5e1 100%);
+        --card-bg: rgba(255, 255, 255, 0.75);
+        --card-border: rgba(255, 255, 255, 0.6);
+        --text-main: #0f172a;
+        --text-muted: #64748b;
+        --accent: #2563eb;
+        --accent-hover: #4f46e5;
+        --hover-row: rgba(0, 0, 0, 0.03);
+        --shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08);
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    color: var(--text-main);
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Animación de entrada de la página */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Título de la carpeta */
+h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 960px;
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Contenedor principal de la tabla */
+table {
+    width: 100%;
+    max-width: 960px;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Encabezados de la tabla */
+th {
+    text-align: left;
+    padding: 16px 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--card-border);
+    background: rgba(0, 0, 0, 0.04);
+}
+
+/* Celdas y filas */
+td {
+    padding: 14px 20px;
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--card-border);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background: var(--hover-row);
+}
+
+/* Estilos de enlaces e iconos */
+a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+    transform: translateX(3px);
+}
+
+/* Generar iconos con pseudo-elementos según tipo de archivo/carpeta */
+a::before {
+    content: "📄";
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+a[href$="/"]::before {
+    content: "📁";
+}
+
+a[href^="?"]::before {
+    content: "🔻";
+}
+
+a[href$=".png"]::before,
+a[href$=".jpg"]::before,
+a[href$=".jpeg"]::before,
+a[href$=".svg"]::before,
+a[href$=".gif"]::before {
+    content: "🖼️";
+}
+
+a[href$=".php"]::before,
+a[href$=".html"]::before,
+a[href$=".js"]::before,
+a[href$=".css"]::before {
+    content: "⚡";
+}
+
+a[href$=".json"]::before,
+a[href$=".sql"]::before,
+a[href$=".xml"]::before {
+    content: "🗄️";
+}
+
+a[href$=".zip"]::before,
+a[href$=".tar"]::before,
+a[href$=".gz"]::before {
+    content: "📦";
+}
+
+/* Columnas secundarias (Fecha y Tamaño) */
+.indexcollastmod,
+.indexcolsize {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+/* Ocultar elementos obsoletos de Apache */
+hr,
+img {
+    display: none !important;
+}
+
+/* Diseño Responsivo para Pantallas Pequeñas */
+@media (max-width: 640px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    th:nth-child(3),
+    td:nth-child(3) {
+        display: none;
+        /* Oculta la columna de fecha en móviles */
+    }
+
+    td {
+        padding: 12px 14px;
+        font-size: 0.875rem;
+    }
+}

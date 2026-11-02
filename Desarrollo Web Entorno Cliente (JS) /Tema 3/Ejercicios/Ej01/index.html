@@ -8,10 +8,12 @@
 
     <script>
         var array = [];
+        var indice = 0;
 
         // ======================= Comprobar Valor ================================
-        function comprobar(valor) { // comprueba si es un numero valido
-            var numero = parseInt(valor);
+        function comprobar(valor) {
+            if (valor.trim() === "") return false;
+            var numero = Number(valor);
             if (isNaN(numero)) {
                 return false;
             }
@@ -19,55 +21,38 @@
         }
         // ========================================================================
 
-        // ======================= DAR DE BAJA ====================================
-        function baja() { // Da de baja un número
-            var inputRecibido = document.getElementById('inputNumero').value;
-            var errores = document.getElementById('error');
-
-            errores.innerHTML = '';
-
-            if (comprobar(inputRecibido)) {
-                var numero = Number(inputRecibido);
-                var posicion = array.indexOf(numero);
-
-                if (posicion !== -1) {
-                    array.splice(posicion, 1);
-                    mostrarArray();
-                } else {
-                    errores.innerHTML = 'El número no se encuentra en el array';
-                }
-            } else {
-                errores.innerHTML = 'La cadena contiene caracteres no numéricos';
+        // ======================= NAVEGACIÓN =====================================
+        function primera() {
+            if (array.length > 0) {
+                indice = 0;
+                mostrarArray();
             }
         }
-        // ============================================================================
 
-        // ======================= Modificar Array ====================================
-        function modificacion() { // Da de baja un número
-            var inputRecibido = document.getElementById('inputNumero').value;
-            var errores = document.getElementById('error');
-
-            errores.innerHTML = '';
-
-            if (comprobar(inputRecibido)) {
-                var numero = Number(inputRecibido);
-                var posicion = array.indexOf(numero);
-
-                if (posicion !== -1) {
-                    array.splice(posicion, 1,);
-                    mostrarArray();
-                } else {
-                    errores.innerHTML = 'El número no se encuentra en el array';
-                }
-            } else {
-                errores.innerHTML = 'La cadena contiene caracteres no numéricos';
+        function anterior() {
+            if (indice > 0) {
+                indice--;
+                mostrarArray();
             }
         }
-        // ==========================================================================
 
-        // ======================= Dar de Alta un numero ============================
-        function alta() { // da de alta a un 
-            var entrega = document.getElementById('respuesta');
+        function siguiente() {
+            if (indice < array.length - 1) {
+                indice++;
+                mostrarArray();
+            }
+        }
+
+        function ultima() {
+            if (array.length > 0) {
+                indice = array.length - 1;
+                mostrarArray();
+            }
+        }
+        // ========================================================================
+
+        // ======================= DAR DE ALTA ====================================
+        function alta() {
             var inputRecibido = document.getElementById('inputNumero').value;
             var errores = document.getElementById('error');
 
@@ -76,56 +61,157 @@
 
             if (numeroValido !== false) {
                 array.push(numeroValido);
+                indice = array.length - 1;
                 mostrarArray();
             } else {
-                errores.innerHTML = 'Error al agregar';
+                errores.innerHTML = 'La cadena de caracteres contiene caracteres no numericos';
             }
         }
-        // ==========================================================================
+        // ========================================================================
 
+        // ======================= DAR DE BAJA ====================================
+        function baja() {
+            var errores = document.getElementById('error');
+            errores.innerHTML = '';
 
-        // ======================= Mostrar Array ====================================
+            if (array.length === 0) {
+                errores.innerHTML = 'El array está vacío';
+                return;
+            }
+
+            array.splice(indice, 1);
+            if (indice >= array.length && indice > 0) {
+                indice = array.length - 1;
+            }
+            mostrarArray();
+        }
+        // ========================================================================
+
+        // ======================= MODIFICAR ARRAY ================================
+        function modificacion() {
+            var inputRecibido = document.getElementById('inputNumero').value;
+            var errores = document.getElementById('error');
+            errores.innerHTML = '';
+
+            if (array.length === 0) {
+                errores.innerHTML = 'El array está vacío';
+                return;
+            }
+
+            var numeroValido = comprobar(inputRecibido);
+
+            if (numeroValido !== false) {
+                array[indice] = numeroValido;
+                mostrarArray();
+            } else {
+                errores.innerHTML = 'La cadena de caracteres contiene caracteres no numericos';
+            }
+        }
+        // ========================================================================
+
+        // ======================= MOSTRAR ARRAY ==================================
         function mostrarArray() {
             var entrega = document.getElementById('respuesta');
-            entrega.innerHTML = '<br><label>Ascendente</label><br>';
-            entrega.innerHTML += array.sort();
-            entrega.innerHTML += '<br><label>Descendente</label><br>';
-            entrega.innerHTML += array.reverse();
+
+            if (array.length === 0) {
+                entrega.innerHTML = '';
+                document.getElementById('inputNumero').value = "";
+                return;
+            }
+
+            var copiaAsc = [...array].sort((a, b) => a - b);
+            var copiaDesc = [...array].sort((a, b) => b - a);
+
+            var html = array.join(',') + ' indice: ' + indice + ' posición: ' + (indice + 1) + '<br>';
+            html += 'Ordenado Ascendente<br>' + copiaAsc.join(',') + '<br>';
+            html += 'Ordenado Descendente<br>' + copiaDesc.join(',') + '<br>';
+
+            entrega.innerHTML = html;
             document.getElementById('inputNumero').value = "";
         }
-        // ==========================================================================
+        // ========================================================================
 
+        // ======================= LISTADO POPUP ==================================
+        function abrirListado() {
+            var ventana = window.open('', 'ListadoWindow', 'width=400,height=400');
+            var doc = ventana.document;
+
+            var copiaAsc = [...array].sort((a, b) => a - b);
+            var copiaDesc = [...array].sort((a, b) => b - a);
+
+            doc.title = "Listado Array de numeros";
+
+            var titulo = doc.createElement("h3");
+            titulo.textContent = "Listado Array de numeros";
+            doc.body.appendChild(titulo);
+
+            var tabla = doc.createElement("table");
+            tabla.setAttribute("border", "1");
+
+            var filaEncabezado = doc.createElement("tr");
+            var th1 = doc.createElement("th"); th1.textContent = "Array";
+            var th2 = doc.createElement("th"); th2.textContent = "Ascendente";
+            var th3 = doc.createElement("th"); th3.textContent = "Descendente";
+
+            filaEncabezado.appendChild(th1);
+            filaEncabezado.appendChild(th2);
+            filaEncabezado.appendChild(th3);
+            tabla.appendChild(filaEncabezado);
+
+            for (var i = 0; i < array.length; i++) {
+                var fila = doc.createElement("tr");
+                var td1 = doc.createElement("td"); td1.textContent = array[i];
+                var td2 = doc.createElement("td"); td2.textContent = copiaAsc[i];
+                var td3 = doc.createElement("td"); td3.textContent = copiaDesc[i];
+
+                fila.appendChild(td1);
+                fila.appendChild(td2);
+                fila.appendChild(td3);
+                tabla.appendChild(fila);
+            }
+
+            doc.body.appendChild(tabla);
+
+            var salto = doc.createElement("br");
+            doc.body.appendChild(salto);
+
+            var botonCerrar = doc.createElement("button");
+            botonCerrar.textContent = "Cerrar ventana";
+            botonCerrar.onclick = function () {
+                ventana.close();
+            };
+            doc.body.appendChild(botonCerrar);
+        }
+        // ========================================================================
     </script>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="background-color: beige;">
-    <div id="navegador">
-        <nav>
-            <ul
-                style="display: flex;justify-content: space-between;align-items: center;background-color: #333;color: #fff;padding: 1rem 2rem;list-style: none;text-decoration: none;border-radius: 10px;">
-                <li><input type="button" value="Primera"></li>
-                <li><input type="button" value="Anterior"></li>
-                <li><input type="button" value="Siguiente"></li>
-                <li><input type="button" value="Ultima"></li>
-                <li><input type="button" value="Alta" onclick="alta()"></li>
-                <li><input type="button" value="Baja" onclick="baja()"></li>
-                <li><input type="button" value="Modificar" onclick="modificacion()"></li>
-                <li><input type="button" value="Listado"></li>
-            </ul>
-        </nav>
-    </div>
-
-    <div id="introducirDatos">
-        <label id="nombreInputNumero">Número: </label>
-        <input type="text" id="inputNumero" placeholder="introduce un número">
-        <div id="error">
+<body>
+    <div id="todo">
+        <div id="introducirDatos">
+            <label id="nombreInputNumero">Número: </label>
+            <input type="text" id="inputNumero" placeholder="introduce un número">
+            <div id="error"></div>
         </div>
+
+        <div id="navegador">
+            <nav>
+                <ul>
+                    <li><input type="button" value="Primera" onclick="primera()"></li>
+                    <li><input type="button" value="Anterior" onclick="anterior()"></li>
+                    <li><input type="button" value="Siguiente" onclick="siguiente()"></li>
+                    <li><input type="button" value="Última" onclick="ultima()"></li>
+                    <li><input type="submit" value="Alta" onclick="alta()" autofocus></li>
+                    <li><input type="button" value="Baja" onclick="baja()"></li>
+                    <li><input type="button" value="Modificar" onclick="modificacion()"></li>
+                    <li><input type="button" value="Listado" onclick="abrirListado()"></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="respuesta"></div>
     </div>
-
-    <div id="respuesta"></div>
-
 </body>
 
 </html>

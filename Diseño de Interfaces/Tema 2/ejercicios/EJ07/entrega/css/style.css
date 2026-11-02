@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: blanchedalmond;
+    margin: 0px;
+}
+
+#anterior,
+#siguiente {
+    display: block;
+    /* Para que respete el ancho y alto */
+    width: 200px;
+    /* 600px / 3 columnas */
+    height: 188px;
+    /* 564px / 3 filas */
+    margin-top: 50px;
+    background-image: url('../img/112116-arrows-kit.png');
+    filter: drop-shadow(4px 4px 9px blue);
+    /*descubri que se puede poner sombra a la imagen xd*/
+}
+
+#anterior {
+    float: left;
+    margin-left: 50px;
+    background-position: -400px -188px;
+}
+
+#anterior:hover {
+    background-position: -400px -376px;
+}
+
+
+#siguiente {
+    float: right;
+    margin-right: 50px;
+    background-position: 0px -376px;
+}
+
+#siguiente:hover {
+    background-position: -400px 0px;
+}

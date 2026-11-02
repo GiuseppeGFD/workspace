@@ -11,32 +11,6 @@ ul li {
   list-style: none;
 }
 
-* {
-  font-family: Arial;
-  font-size: 0.9em;
-  line-height: 1.4;
-}
-
-.articulo h2 {
-  color: #CC6600;
-  font-size: 1.6em;
-  line-height: 1.2;
-  margin-bottom: 0.3em;
-}
-
-body {
-  padding: 35%, 35%;
-}
-
-#noticias .fecha {
-  display: block;
-  color: #999;
-}
-
-#noticias h3 {
-  color: #003366;
-}
-
 h1,
 h2,
 h3,
@@ -44,6 +18,15 @@ p,
 form {
   margin: 0;
   padding: 0;
+}
+
+/*La fuente base de la página debe ser: color negro, tipo Arial, tamaño 0.9em, interlineado 1.4.
+*/
+body {
+  font-family: Arial;
+  color: black;
+  font-size: 0.9em;
+  height: 1.4;
 }
 
 .clear {
@@ -82,16 +65,20 @@ img {
   background-image: url('./6fondo_menu.gif');
 }
 
-#menu a {
-  color: white;
-  font-size: 1.3em;
-  margin-right: 1em;
-}
-
 #lateral {
   float: left;
   width: 20%;
   font-size: 0.9em;
+}
+
+#lateral .fecha {
+  display: block;
+  width: 100%;
+  color: #999;
+}
+
+#noticias h3 a {
+  color: #003366;
 }
 
 #contenido {
@@ -127,15 +114,23 @@ img {
 }
 
 /*-- Menu ------------------------------------------------------------*/
-#menu ul#menu_principal li {
-  display: inline;
-  float: left;
-}
 
 #menu {
   padding: 0.5em;
   margin-bottom: 0.5em;
 }
+
+#menu_principal li {
+  display: inline;
+  float: left;
+}
+
+#menu a {
+  color: white;
+  font-size: 1.3em;
+  margin-right: 1em;
+}
+
 
 /*-- Secci�n Principal -----------------------------------------------*/
 #contenido #principal .articulo img {
@@ -152,12 +147,29 @@ img {
 }
 
 #secundario {
-  border: 1px solid #CC6600;
+  border: 2px solid #CC6600;
+  height: 1.2;
 }
 
 #secundario h2 {
   background-color: #DB905C;
   padding: 0.2em;
+  font-size: 1.1em;
+  color: white;
+}
+
+#contenido #secundario p {
+  line-height: 1.4;
+  margin-top: 10px;
+}
+
+#contenido #secundario p a {
+  line-height: 2;
+}
+
+#lateral #publicidad p {
+  line-height: 1.4;
+  margin-top: 10px;
 }
 
 #noticias {
@@ -190,7 +202,16 @@ img {
 
 .articulo p {
   margin-top: 0.3em;
+  margin-bottom: 0.3em;
 }
+
+.articulo h2 {
+  color: #CC6600;
+  font-size: 1.6em;
+  height: 1.2;
+  margin-bottom: 0.3em;
+}
+
 
 #contenido #principal .articulo img {
   width: 100px;

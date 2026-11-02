@@ -1,0 +1,68 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+}
+
+body {
+    height: auto;
+    width: auto;
+    margin: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 4px black;
+}
+
+#contenedor {
+    padding: 30px;
+    background-color: white;
+    list-style: none;
+
+}
+
+#contenedor h2 {
+    padding: 30px;
+}
+
+#contenedor form ul li {
+    padding: 2%;
+    background-color: beige;
+    display: inline-flex;
+    width: 45%;
+    margin: 3px;
+    border: 1px solid black;
+}
+
+/*PROVICIONAL*/
+#contenedor form ul li span input,
+#contenedor form ul li span label,
+#contenedor form ul li label,
+#contenedor form ul li p {
+    box-shadow: 0px 0px 4px black;
+}
+
+#contenedor form ul li span label {
+    display: flex;
+    height: 2%;
+    width: 100%;
+}
+
+
+#contenedor form ul li:first-child {
+    background-color: beige;
+}
+
+#contenedor form ul li:nth-child(2) {
+    background-color: blue;
+}
+
+#contenedor form ul li:nth-child(3) {
+    background-color: gray;
+}
+
+#contenedor form ul li:nth-child(4) {
+    background-color: gold;
+}
+
+#contenedor form ul li:nth-child(5) {
+    background-color: purple;
+
+}

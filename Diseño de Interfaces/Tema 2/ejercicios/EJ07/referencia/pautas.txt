@@ -1,0 +1,3 @@
+Realizar un menú de navegación utilizando el posicionamiento float.
+En vez del texto (Anterior / Siguiente) utiliza una imagen que cambie 
+al posicionar el puntero del ratón encima (pseudo-clase :hover).

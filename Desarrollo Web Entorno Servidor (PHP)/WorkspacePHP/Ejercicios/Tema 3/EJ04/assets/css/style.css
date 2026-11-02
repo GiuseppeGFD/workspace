@@ -1,0 +1,12 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: beige;
+}
+
+label {
+    color: black;
+    font-weight: bold;
+}

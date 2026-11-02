@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V2</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        var arrayNumeros = [];
+        var posicion = 0;
+
+        //============gestionar botones=============
+        function gestionarBotones(opcion) {
+            const boton = document.getElementById('opcion');
+            if (boton) boton.disabled = true;
+        }
+
+        function aceptar() {
+            return confirm('¿Deseas guardar los cambios?');
+        }
+
+        function cancelar() {
+            document.getElementById('inputNumero').value = '';
+            document.getElementById('error').innerHTML = '';
+        }
+
+        //======================= Indice ===========================
+        function primera() {
+            var ResponderError = document.getElementById('error');
+            var respuesta = document.getElementById('indice');
+
+            try {
+                ResponderError.innerHTML = '';
+
+                if (arrayNumeros.length === 0) {
+                    respuesta.innerHTML = 'El array está vacío.';
+                } else {
+                    posicion = 0;
+                    mostrarIndice();
+                }
+            } catch (e) {
+                ResponderError.innerHTML = '<p style="color:red;">Error: ' + e.message + '</p>';
+            }
+        }
+
+        function ultima() {
+            var ResponderError = document.getElementById('error');
+            var respuesta = document.getElementById('indice');
+
+            try {
+                ResponderError.innerHTML = '';
+
+                if (arrayNumeros.length === 0) {
+                    respuesta.innerHTML = 'El array está vacío.';
+                } else {
+                    posicion = arrayNumeros.length - 1;
+                    mostrarIndice();
+                }
+            } catch (e) {
+                ResponderError.innerHTML = '<p style="color:red;">Error: ' + e.message + '</p>';
+            }
+        }
+
+        function mostrarIndice() {
+            var ResponderError = document.getElementById('error');
+            var respuesta = document.getElementById('indice');
+
+            try {
+                ResponderError.innerHTML = '';
+
+                if (arrayNumeros.length === 0) {
+                    respuesta.innerHTML = 'El array está vacío.';
+                } else {
+                    respuesta.innerHTML = '<h3>Índice:</h3>';
+                    respuesta.innerHTML += 'Contenido: ' + arrayNumeros[posicion] + ' | Posición: ' + (posicion + 1);
+                }
+            } catch (e) {
+                ResponderError.innerHTML = '<p style="color:red;">Error: ' + e.message + '</p>';
+            }
+        }
+
+        //=======================Navegación============================
+        function siguiente() {
+            var ResponderError = document.getElementById('error');
+            var respuesta = document.getElementById('indice');
+
+            try {
+                ResponderError.innerHTML = '';
+
+                if (arrayNumeros.length === 0) {
+                    respuesta.innerHTML = 'El array está vacío.';
+                } else {
+                    if (posicion < arrayNumeros.length - 1) {
+                        posicion++;
+                    }
+                    mostrarIndice();
+                }
+            } catch (e) {
+                ResponderError.innerHTML = '<p style="color:red;">Error: ' + e.message + '</p>';
+            }
+        }
+
+        function anterior() {
+            var ResponderError = document.getElementById('error');
+            var respuesta = document.getElementById('indice');
+
+            try {
+                ResponderError.innerHTML = '';
+
+                if (arrayNumeros.length === 0) {
+                    respuesta.innerHTML = 'El array está vacío.';
+                } else {
+                    if (posicion > 0) {
+                        posicion--;
+                    }
+                    mostrarIndice();
+                }
+            } catch (e) {
+                ResponderError.innerHTML = '<p style="color:red;">Error: ' + e.message + '</p>';
+            }
+        }
+
+        //===================Modificar contenido=========================
+        function modificacion() {
+            var ResponderError = document.getElementById('error');
+
+            try {
+                ResponderError.innerHTML = '';
+                if (arrayNumeros.length === 0) {
+                    ResponderError.innerHTML = '<p style="color:red;">El array está vacío.</p>';
+                    return;
+                }
+
+                var nuevoValor = recibirDatos();
+                if (aceptar()) {
+                    arrayNumeros[posicion] = nuevoValor;
+                    mostrarIndice();
+                }
+            } catch (e) {
+                ResponderError.innerHTML = '<p style="color:red;">Error: ' + e.message + '</p>';
+            }
+        }
+
+        //======================Listar contenidos=========================
+        function abrirListado() {
+            var ResponderError = document.getElementById('error');
+            var respuesta = document.getElementById('respuesta');
+
+            try {
+                ResponderError.innerHTML = '';
+                mostrarIndice();
+
+                var desordenado = arrayNumeros.join(', ');
+                // Usamos [...arrayNumeros] para no modificar el array original
+                var menorAMayor = [...arrayNumeros].sort((a, b) => a - b).join(', ');
+                var mayorAMenor = [...arrayNumeros].sort((a, b) => b - a).join(', ');
+
+                respuesta.innerHTML = '<h2>Ordenado por tamaños:</h2>';
+                respuesta.innerHTML += '<p><strong>Original:</strong> ' + desordenado + '</p>';
+                respuesta.innerHTML += '<p><strong>Menor a Mayor:</strong> ' + menorAMayor + '</p>';
+                respuesta.innerHTML += '<p><strong>Mayor a Menor:</strong> ' + mayorAMenor + '</p>';
+
+            } catch (e) {
+                ResponderError.innerHTML = '<p style="color:red;">Error: ' + e.message + '</p>';
+            }
+        }
+
+        //=======================recibir Datos==========================
+        function recibirDatos() {
+            var inputElem = document.getElementById('inputNumero');
+            var numero = parseInt(inputElem.value);
+
+            if (isNaN(numero)) {
+                throw new Error("Introduce un número válido.");
+            }
+
+            inputElem.value = '';
+            return numero;
+        }
+
+        //=======================Dar alta Datos===========================
+        function alta() {
+            var ResponderError = document.getElementById('error');
+
+            try {
+                ResponderError.innerHTML = '';
+                var num = recibirDatos();
+                if (aceptar()) {
+                    arrayNumeros.push(num);
+                    posicion = arrayNumeros.length - 1;
+                    mostrarIndice();
+                }
+            } catch (e) {
+                ResponderError.innerHTML = '<p style="color:red;">Error: ' + e.message + '</p>';
+            }
+        }
+
+        //=======================Dar baja Datos===========================
+        function baja() {
+            var ResponderError = document.getElementById('error');
+
+            try {
+                ResponderError.innerHTML = '';
+                if (arrayNumeros.length === 0) {
+                    ResponderError.innerHTML = '<p style="color:red;">El array está vacío.</p>';
+                    return;
+                }
+
+                if (aceptar()) {
+                    // Elimina el elemento de la posición actual
+                    arrayNumeros.splice(posicion, 1);
+                    if (posicion >= arrayNumeros.length && posicion > 0) {
+                        posicion--;
+                    }
+                    mostrarIndice();
+                }
+            } catch (e) {
+                ResponderError.innerHTML = '<p style="color:red;">Error: ' + e.message + '</p>';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="todo">
+        <div id="introducirDatos">
+            <label for="inputNumero">Número: </label>
+            <input type="text" id="inputNumero" placeholder="introduce un número">
+            <div id="error"></div>
+        </div>
+
+        <div id="navegador">
+            <nav>
+                <ul>
+                    <li><input type="button" value="Primera" onclick="primera()"></li>
+                    <li><input type="button" value="Anterior" onclick="anterior()"></li>
+                    <li><input type="button" value="Siguiente" onclick="siguiente()"></li>
+                    <li><input type="button" value="Última" onclick="ultima()"></li>
+                    <li><input type="button" value="Alta" onclick="alta()" autofocus></li>
+                    <li><input type="button" value="Baja" onclick="baja()"></li>
+                    <li><input type="button" value="Modificar" onclick="modificacion()"></li>
+                    <li><input type="button" value="Listado" onclick="abrirListado()"></li>
+                    <li><input type="button" value="Aceptar" onclick="aceptar()"></li>
+                    <li><input type="button" value="Cancelar" onclick="cancelar()"></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="indice"></div>
+        <div id="respuesta"></div>
+
+    </div>
+</body>
+
+</html>

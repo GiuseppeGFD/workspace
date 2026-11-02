@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f7f4;
+    /* Verde muy clarito y suave */
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* Ocupa toda la altura de la pantalla */
+}
+
+.cuerpo {
+    background-color: #ffffff;
+    /* Tarjeta blanca */
+    padding: 40px 60px;
+    border-radius: 16px;
+    /* Bordes redondeados pero sutiles */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    /* Sombra suave y elegante */
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #2c5e43;
+    /* Letra en verde oscuro */
+}
+
+table,
+td {
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: 2px;
+    margin: 5px;
+    background-color: lightblue;
+
+}

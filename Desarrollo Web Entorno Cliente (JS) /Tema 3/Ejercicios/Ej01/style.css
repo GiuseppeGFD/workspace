@@ -1,0 +1,99 @@
+/* Configuración básica y centrada */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    margin: 0;
+}
+
+/* Contenedor principal estilo tarjeta */
+#todo {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Zona de entrada de datos */
+#introducirDatos {
+    margin-bottom: 20px;
+}
+
+#nombreInputNumero {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+#inputNumero {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+#inputNumero:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Mensajes de error */
+#error {
+    color: #d9534f;
+    font-size: 13px;
+    margin-top: 8px;
+    min-height: 18px;
+}
+
+/* Navegador y botones */
+#navegador ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+#navegador li {
+    flex: 1 1 calc(25% - 8px);
+}
+
+#navegador input[type="button"] {
+    width: 100%;
+    padding: 8px;
+    background-color: #e9ecef;
+    color: #333;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.2s;
+}
+
+#navegador input[type="button"]:hover {
+    background-color: #dee2e6;
+}
+
+#navegador input[type="button"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Área de resultados */
+#respuesta {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+    word-break: break-all;
+}
