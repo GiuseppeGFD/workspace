@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tabla</title>
+</head>
+
+<body>
+    <div id="miDiv"></div>
+    <script>
+        var uno = 0;
+        var resultado = ""
+        resultado = "<table border=2><tr><th>Numeros</th><th>Suma</th></tr>"
+        var suma = 0;
+        for (var i = 0; i <= 10; i++) {
+            suma += i;
+            resultado += "<tr><td>" + i + "</td><td>" + suma + "</td></tr>";
+        }
+
+        resultado += "</table>"
+        document.getElementById("miDiv").innerHTML = resultado;
+    </script>
+</body>
+
+</html>

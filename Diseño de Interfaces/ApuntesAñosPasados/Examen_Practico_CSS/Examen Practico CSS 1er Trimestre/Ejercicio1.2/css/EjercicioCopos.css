@@ -1,0 +1,71 @@
+/*CSS BASE Grupo1*/
+body {
+    margin: 0px;
+        }
+#container{
+    background: url(../img/imagen.jpg) no-repeat;
+    width: 590px;
+    height: 400px;
+    position: relative;
+    }
+.snowflake {
+    color: #fff;
+    font-size: 2em;
+    position: absolute;
+    }
+.snowflake.f1 {
+    left: 40px;
+    }
+.snowflake.f2 {
+    font-size: 1.8em;
+    left: 120px;
+    }
+.snowflake.f3 {
+    left: 200px;
+    }
+.snowflake.f4 {
+    font-size: 1.5em;
+    left: 280px;
+    }
+/*CSS A HACER*/
+/*HACEMOS DESAPARECER LOS COPOS Y CREAMOS ANIMACIONES*/
+.snowflake{
+    top: -40px;
+    animation-name: bajar, vaiven, desaparecer;
+    animation-duration: 25s, 4s, 25s;
+    animation-direction: normal, alternate, normal;
+    animation-iteration-count: infinite, infinite, infinite;
+    animation-timing-function: ease-out, ease-out, linear;
+}
+
+.snowflake.f1{
+    animation-delay: 10s;
+}
+.snowflake.f2{
+    animation-delay: 8s;
+}
+.snowflake.f3{
+    animation-delay: 5s;
+}
+.snowflake.f4{
+    animation-delay: 12s;
+}
+
+/*ANIMACIONES @KEYFRAMES*/
+/*HACEMOS CAER LOS COPOS*/
+@keyframes bajar{
+    0% {top: -40px;}
+	100% {top:350px;}
+}
+/*HACEMOS QUE LOS COPOS SE MUEVAN DE UN LADO A OTRO*/
+@keyframes vaiven{
+    0% {padding-left: -50px;}
+	/*0% {transform: translateX(-50px);}*/
+	100% {padding-left: 100px;}
+	/*100% {transform:translateX(100px); }*/
+}
+/*HACEMOS QUE LOS COPOS VAYAN DESAPARECIENDO*/
+@keyframes desaparecer{
+    0% {opacity: 1;}
+	100% {opacity:0;}
+}

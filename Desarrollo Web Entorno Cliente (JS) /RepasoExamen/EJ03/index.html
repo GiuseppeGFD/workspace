@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla ABM</title>
+</head>
+
+<body>
+    <!-- RELLENAR: un bloque por campo. id = nombre del getter de la clase. El div de error se llama error_ + id -->
+    Marca: <input type="text" id="marca"><div id="error_marca"></div><br>
+    Modelo: <input type="text" id="modelo"><div id="error_modelo"></div><br>
+    Matrícula: <input type="text" id="matricula"><div id="error_matricula"></div><br>
+    Año de fabricación: <input type="text" id="anioFabricacion"><div id="error_anioFabricacion"></div><br>
+    Cilindrada: <input type="text" id="cilindrada"><div id="error_cilindrada"></div><br>
+    Precio: <input type="text" id="precio"><div id="error_precio"></div><br>
+    <div id="respuesta"></div>
+    <div id="contador"></div><br>
+
+    <!-- Parte 4: navegador -->
+    <input type="button" id="btnPrimero" value="|&lt;" onclick="primero()">
+    <input type="button" id="btnAnterior" value="&lt;" onclick="anterior()">
+    <input type="button" id="btnSiguiente" value="&gt;" onclick="siguiente()">
+    <input type="button" id="btnUltimo" value="&gt;|" onclick="ultimo()"><br><br>
+
+    <!-- Parte 4: operaciones (solo cambian el modo) -->
+    <input type="button" id="btnAlta" value="Alta" onclick="iniciarAlta()">
+    <input type="button" id="btnBaja" value="Baja" onclick="iniciarBaja()">
+    <input type="button" id="btnModificar" value="Modificar" onclick="iniciarModificar()">
+    <input type="button" id="btnAceptar" value="Aceptar" onclick="aceptar()" hidden>
+    <input type="button" id="btnCancelar" value="Cancelar" onclick="cancelar()" hidden><br><br>
+
+    <!-- Parte 3: listados y baja por clave -->
+    <input type="button" id="btnListado" value="Listado" onclick="listado()">
+    <input type="button" id="btnClasicas" value="Listar clásicas" onclick="listarClasicas()"><br><br>
+    Matrícula a eliminar: <input type="text" id="matriculaBaja" placeholder="1234BCD">
+    <input type="button" id="btnBajaMat" value="Baja por matrícula" onclick="bajaPorMatricula()">
+
+    <script src="Clase.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

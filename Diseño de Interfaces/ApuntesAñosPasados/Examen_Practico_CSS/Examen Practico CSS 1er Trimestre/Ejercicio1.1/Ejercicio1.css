@@ -1,0 +1,42 @@
+body{
+    background:url("../Ejercicio1.1/img/fondo.jpg");
+}
+
+.bird{
+    position: absolute;
+    width: 400px;
+    height: 109px;
+    background-image: url("../Ejercicio1.1/img/birds1.png");
+    animation: volar 1s steps(6) infinite, desplazar 10s linear infinite, vaiven 1s alternate linear infinite;
+}
+.bird:hover{
+    animation-play-state: paused;
+}
+.bird.uno{top: 20px; left: -50px; animation-delay: alternate}
+.bird.dos{top: 80px; left: -90px; animation-delay: 1s;}
+.bird.tres{top: 120px; left: -150px; animation-delay: 1.2s;}
+.bird.cuatro{top: 210px; left: -70px; animation-delay: 1.7s;}
+@keyframes volar{
+    0%{
+        background-position: 0px;
+    }
+    100%{
+        background-position: 300px;
+    }
+}
+@keyframes desplazar{
+    0%{
+        transform: translateX(0px);
+    }
+    100%{
+        transform: translateX(2000px)
+    }
+}
+@keyframes vaiven{
+    0%{
+        transform: translateY(-25px);
+    }
+    100%{
+        transform: translateY(+25px);
+    }
+}

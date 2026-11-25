@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Caja esquiva</title>
+    <script>
+        function mueve(elemento) {
+            var numY = parseInt(Math.random() * 500);
+            var numX = parseint(Math.random() * 500);
+
+            elemento.style.top = numY + "px";
+            elemento.style.left = numX + "px";
+
+            document.getElementById(elemento)
+        }
+
+        window.onload = function () {
+            document.getElementById('caja').onmouseover = function () { mueve(this); }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" id="caja" value="clickeame">
+</body>
+
+</html>

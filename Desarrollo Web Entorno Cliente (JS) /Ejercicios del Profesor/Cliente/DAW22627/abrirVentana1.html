@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Apertura y cierre de ventanas</title>
+</head>
+
+<body>
+	<center>
+		<br>
+		<h1>Apertura de m&uacute;ltiples ventanas(10)</h1>
+		<br><br>
+		<input type="button" value="Abre m&uacute;ltiples ventanas" onclick="abreVentanas()">
+	</center>
+	<script>
+		miWindow = "";
+		function abreVentanas() {
+			var distancia = 130;
+			for (i = 0; i < 10; i++) {
+				miWindow = window.open("", "ventana" + i, "width=200, height=200");
+				miWindow.document.open();
+				miWindow.document.write("<html>");
+				miWindow.document.write("<head>");
+				miWindow.document.write("<title>Ventana " + (i + 1) + "</title>");
+				miWindow.document.write("</head>");
+				miWindow.document.write("<body>");
+				miWindow.document.write("<center>");
+				miWindow.document.write("Ventana " + (i + 1));
+				miWindow.document.write("<br><br>");
+				miWindow.document.write("<input type='button' value='Cerrar ventana " + (i + 1) + "' onclick='window.close();'");
+				miWindow.document.write("</center>");
+				miWindow.document.write("</body>");
+				miWindow.document.write("<script>");
+				miWindow.document.write("setTimeout('window.close()',10000)");
+				miWindow.document.write("<\/script\>");
+				miWindow.document.write("</html>");
+				miWindow.document.close();
+				miWindow.moveTo((distancia + i * 30), distancia + i * 50)
+			}
+		}
+	</script>
+</body>
+
+</html>

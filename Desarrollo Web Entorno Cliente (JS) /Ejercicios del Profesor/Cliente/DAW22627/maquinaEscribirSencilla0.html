@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Máquina de Escribir Simple</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #f0e6d2;
+            font-family: monospace;
+            font-size: 1.5rem;
+            padding: 50px;
+        }
+		/* Efecto de cursor parpadeante */
+        .cursor {
+            display: inline-block;
+            background-color: #f0e6d2;
+            width: 10px;
+            height: 1.6rem;
+            margin-left: 2px;
+            animation: parpadeo 0.8s infinite;
+            vertical-align: middle;
+        }
+		@keyframes parpadeo {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }		
+		.contenedor {
+            max-width: 600px;
+            font-size: 1.5rem;
+            line-height: 1.6;
+            background-color : blue;
+			color : salmon;
+            white-space: pre-wrap; /* Mantiene los saltos de línea del texto */
+        }
+		#miError {
+		    color : red;
+		}
+		
+    </style>
+</head>
+<body>
+
+    Introduzca el texto a mostrar: <!-- <input type="text" id="maquina"/></br>--><br>
+	<div id="miDiv"><textarea rows=23 cols=34></textarea>	<input type="button" value="Mostrar efecto"/></div>
+	<div id="miDiv2">introduzca valor del temporizador: <input type="text" id="miTemporizador">	<input type="button" value="Cambiar temporizador"/></div>
+    <div id="miError"></div>	
+    <!-- Aquí se mostrará el texto -->
+    <div class="contenedor" id="pantalla"><span id="maquina-efecto"></span><span class="cursor"></span></div>    
+</body>
+</html>

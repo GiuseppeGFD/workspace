@@ -1,0 +1,5 @@
+Realizar una página que contenga una galería de imágenes similar a la mostrada en el ejemplo.
+
+
+ejemplo
+Al pasar el ratón por encima de cualquiera de las imágenes deberá mostrarse en primer plano, rotar hasta situarse recta y ampliarse (el doble del tamaño puede ser suficiente). Utiliza transiciones para que el efecto sea progresivo.

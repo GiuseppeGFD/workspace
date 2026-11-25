@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="miDiv"></div>
+    <script>
+        var texto = "";
+        var colores = new Array('rojo', 'verde', 'azul');
+        texto = "Array inicial = " + colores + " la aplicación del join es " + colores.join('+');
+        // var colores = new Array
+        // ('rojo','verde','naranja');
+        var aux = colores.pop()
+        texto += "<br>aplicar pop() a el array " + aux + " el array colores = " + colores;
+        var tamanio = colores.push('amarillo');
+        texto += "<br>Aplicar push() al array y var su copntenido " + colores + " y el número de elementos " + tamanio
+        texto += "<br>Aplicar reverse() al array " + colores.reverse();
+        colores.splice(1, 2, 'naranja', 'rosa', 'violeta');
+        texto += "<br>Aplicamos splice para eliminar dos elementos del array y añadir los que pasamos por parametro " + colores;
+        colores.splice(2, 0, 'amarillo');
+        texto += "<br>Aplicamos splice para aladir elementos al array " + colores;
+        var iterable = [10, 20, 30];
+        var resul = 0;
+        for (var value of iterable) {
+            resul += value;
+        }// 10 // 20 // 30   
+
+        texto += "<br>El resultado de aplicar el método for ... of al array iterable = [10, 20, 30] es: " + resul;
+
+
+
+
+        document.getElementById("miDiv").innerHTML = texto;
+    </script>
+    <br>
+    <img src="imagenes/cuatro.jpg" height="200" width="200"></img>
+</body>
+
+</html>

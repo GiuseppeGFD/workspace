@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Animales</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <!--Inputs-->
+        Indice: <div id="indice"></div>
+        Nombre: <input type="text" id="nombre" placeholder="Nombre.."><br>
+        Especie: <input type="text" id="especie" placeholder="Especie.."><br>
+        Año de nacimiento: <input type="text" id="anioNacimiento" placeholder="Año de nacimiento.."><br>
+        Peso: <input type="text" id="peso" placeholder="Peso.."><br>
+        Chip: <input type="text" id="chip" placeholder="Chip.."><br>
+        <div id="error"></div>
+
+        <!--Botones Navegacion-->
+
+        <input type="button" onclick="primero()" value="primero" id="btnPrimero">
+        <input type="button" onclick="anterior()" value="anterior" id="btnAnterior">
+        <input type="button" onclick="siguiente()" value="siguiente" id="btnSiguiente">
+        <input type="button" onclick="ultimo()" value="ultimo" id="btnUltimo"><br>
+
+        <!--Botones Accion-->
+        <input type="button" onclick="alta()" value="alta" id="btnAlta">
+        <input type="button" onclick="baja()" value="baja" id="btnBaja">
+        <input type="button" onclick="modificar()" value="modificar" id="btnModificar">
+        <input type="button" onclick="listado()" value="listado" id="btnListado"><br>
+        <input type="button" onclick="aceptar()" value="aceptar" id="btnAceptar">
+        <input type="button" onclick="cancelar()" value="cancelar" id="btnCancelar">
+
+
+        <!--Respuesta por pantalla-->
+        <div id="respuesta"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

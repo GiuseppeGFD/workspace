@@ -1,0 +1,544 @@
+2. DIGITALIZACIÓN: CONCEPTO Y EVOLUCIÓN
+2.1. ¿Qué es la digitalización?
+La digitalización consiste en incorporar tecnologías digitales al tratamiento de la información y al funcionamiento de las organizaciones.
+
+Permite convertir información, gestionar procesos, conectar sistemas, automatizar tareas y utilizar datos para mejorar las decisiones.
+
+Una empresa no está necesariamente transformada digitalmente por el simple hecho de utilizar ordenadores, correo electrónico o una página web.
+
+La clave está en cómo aprovecha la tecnología para mejorar su actividad.
+
+2.2. Cuatro conceptos que debes diferenciar
+A. Digitalización de información
+Consiste en convertir información analógica en formato digital.
+
+Ejemplos:
+
+Escanear una factura en papel.
+
+Convertir un formulario físico en un PDF.
+
+Guardar documentos en un repositorio digital.
+
+Introducir datos de un cuaderno en una base de datos.
+
+Idea clave: cambia el formato de la información.
+
+B. Digitalización de procesos
+Consiste en utilizar sistemas digitales para gestionar actividades de la empresa.
+
+Ejemplos:
+
+Registrar pedidos mediante una aplicación.
+
+Gestionar inventario desde una base de datos.
+
+Consultar el estado de una incidencia desde una plataforma.
+
+Compartir información entre departamentos.
+
+Idea clave: cambia la forma de ejecutar o gestionar un proceso.
+
+C. Automatización
+Consiste en conseguir que una tarea se ejecute automáticamente o con una intervención humana reducida.
+
+Ejemplos:
+
+Enviar automáticamente un correo de confirmación.
+
+Actualizar el inventario después de una venta.
+
+Generar una factura a partir de un pedido.
+
+Activar una alarma cuando un sensor detecta una temperatura excesiva.
+
+Idea clave: la tecnología ejecuta tareas que antes requerían intervención manual.
+
+D. Transformación digital
+Es un cambio más profundo en la organización, los procesos, los servicios, la toma de decisiones o el modelo de negocio mediante el aprovechamiento de las tecnologías digitales.
+
+Ejemplo:
+
+Una tienda integra sus ventas, inventario, compras, logística y atención al cliente. Además, analiza los datos para mejorar sus compras y anticipar la demanda.
+
+Idea clave: cambia la forma en que la empresa trabaja y genera valor.
+
+Comparación para memorizar
+Concepto	Qué cambia	Ejemplo
+Digitalización de información	El formato de la información	Escanear una factura
+Digitalización de procesos	La gestión de una actividad	Registrar pedidos en una aplicación
+Automatización	La ejecución de tareas	Enviar confirmaciones automáticamente
+Transformación digital	La forma de trabajar de la empresa	Integrar ventas, almacén y logística
+Pregunta típica de examen: ¿Una empresa que tiene una página web está necesariamente transformada digitalmente?
+
+Respuesta: No. Tener una página web es utilizar una herramienta digital, pero la empresa puede continuar trabajando con procesos manuales, información duplicada y departamentos desconectados.
+
+Saltar a actividad
+
+3. EMPRESA, DEPARTAMENTOS Y PROCESOS
+3.1. ¿Qué es un proceso empresarial?
+Un proceso empresarial es un conjunto de actividades relacionadas que transforma unas entradas en un resultado.
+
+Ejemplo: proceso de gestión de un pedido.
+
+El cliente realiza un pedido.
+
+Ventas registra la operación.
+
+Almacén comprueba las existencias.
+
+Logística prepara el envío.
+
+Administración gestiona la facturación.
+
+Atención al cliente resuelve posibles incidencias.
+
+Los procesos pueden involucrar a varios departamentos.
+
+Por eso es importante que la información esté coordinada.
+
+3.2. Departamentos habituales
+Departamento	Función principal
+Ventas	Gestionar pedidos y oportunidades comerciales
+Marketing	Gestionar campañas y comunicación comercial
+Atención al cliente	Resolver consultas e incidencias
+Logística	Gestionar almacén y entregas
+Compras	Gestionar proveedores y adquisiciones
+Administración	Gestionar facturación y documentación
+Recursos humanos	Gestionar personal, turnos y formación
+Producción	Organizar y controlar la fabricación
+Sistemas informáticos	Mantener aplicaciones, equipos y servicios
+Los departamentos utilizan información y herramientas digitales. Muchos forman parte del entorno IT de una empresa.
+
+3.3. Sistemas empresariales que debes conocer
+ERP — Enterprise Resource Planning
+Sistema de planificación de recursos empresariales.
+
+Integra diferentes procesos de gestión, como:
+
+Compras.
+
+Ventas.
+
+Inventario.
+
+Producción.
+
+Administración.
+
+Ejemplo: un sistema que permite consultar pedidos y existencias desde una plataforma común.
+
+CRM — Customer Relationship Management
+Sistema de gestión de relaciones con clientes.
+
+Permite:
+
+Registrar clientes.
+
+Gestionar oportunidades comerciales.
+
+Consultar comunicaciones.
+
+Organizar actividades de seguimiento.
+
+Ejemplo: una empresa utiliza un CRM para conocer el historial de comunicaciones con cada cliente.
+
+SCM — Supply Chain Management
+Sistema de gestión de la cadena de suministro.
+
+Permite coordinar:
+
+Proveedores.
+
+Compras.
+
+Abastecimiento.
+
+Inventario.
+
+Distribución.
+
+MES — Manufacturing Execution System
+Sistema de ejecución de fabricación.
+
+Permite supervisar y gestionar operaciones de producción.
+
+Ejemplo: consultar qué máquinas están trabajando y cuántas unidades se han fabricado.
+
+BI — Business Intelligence
+Inteligencia de negocio.
+
+Permite analizar datos y crear:
+
+Informes.
+
+Indicadores.
+
+Gráficos.
+
+Cuadros de mando.
+
+Ejemplo: analizar las ventas mensuales para identificar los productos más rentables.
+
+CMS — Content Management System
+Sistema de gestión de contenidos.
+
+Permite crear, organizar y publicar contenidos digitales.
+
+Ejemplo: WordPress utilizado para gestionar una página web.
+
+Tabla de memorización
+Sigla	Significado	Función principal
+ERP	Enterprise Resource Planning	Integrar la gestión empresarial
+CRM	Customer Relationship Management	Gestionar relaciones con clientes
+SCM	Supply Chain Management	Gestionar la cadena de suministro
+MES	Manufacturing Execution System	Gestionar operaciones de fabricación
+BI	Business Intelligence	Analizar datos y apoyar decisiones
+CMS	Content Management System	Gestionar contenidos
+Truco: ERP = empresa; CRM = clientes; SCM = suministro; MES = fabricación; BI = análisis; CMS = contenidos.
+
+4. ENTORNOS IT Y OT
+Este es uno de los apartados más importantes de la unidad.
+
+4.1. ¿Qué es IT?
+IT significa Information Technology, es decir, tecnología de la información.
+
+Incluye sistemas que permiten gestionar, procesar, almacenar y comunicar información.
+
+Ejemplos:
+
+Ordenadores.
+
+Servidores.
+
+Bases de datos.
+
+Aplicaciones web.
+
+Redes corporativas.
+
+ERP.
+
+CRM.
+
+Correo electrónico.
+
+Sistemas de gestión de usuarios.
+
+Plataformas cloud.
+
+Idea clave: IT se centra principalmente en la información y los servicios digitales.
+
+4.2. ¿Qué es OT?
+OT significa Operational Technology, es decir, tecnología de operación.
+
+Incluye sistemas que supervisan o controlan procesos físicos, máquinas e instalaciones.
+
+Ejemplos:
+
+Sensores industriales.
+
+PLC.
+
+Sistemas SCADA.
+
+Robots industriales.
+
+Actuadores.
+
+Controladores de máquinas.
+
+Sistemas de control de temperatura.
+
+Sistemas de automatización de edificios.
+
+Idea clave: OT se relaciona directamente con el mundo físico y los procesos operativos.
+
+4.3. Diferencias entre IT y OT
+Característica	IT	OT
+Objetivo	Gestionar información	Supervisar o controlar procesos físicos
+Ejemplos	ERP, CRM, servidores	PLC, sensores, SCADA
+Entorno	Oficinas y servicios digitales	Plantas industriales e instalaciones
+Información	Datos empresariales	Datos de máquinas y procesos
+Prioridad	Seguridad, integridad y disponibilidad de información	Seguridad física, continuidad y disponibilidad operativa
+Cambios	Se planifican según el riesgo	Pueden requerir pruebas y ventanas de mantenimiento
+4.4. Similitudes entre IT y OT
+Ambos entornos:
+
+Utilizan tecnología.
+
+Necesitan seguridad.
+
+Requieren mantenimiento.
+
+Intercambian información.
+
+Necesitan disponibilidad.
+
+Pueden sufrir fallos o ataques.
+
+Necesitan procedimientos de recuperación.
+
+No debes responder que IT y OT no tienen nada que ver. Son diferentes, pero cada vez están más conectados.
+
+4.5. Ejemplos para distinguirlos
+Elemento	Entorno
+Base de datos de clientes	IT
+Aplicación de facturación	IT
+Servidor web	IT
+Sistema CRM	IT
+Sensor de temperatura industrial	OT
+PLC que controla una cinta	OT
+Robot de fabricación	OT
+Sistema SCADA	OT
+Aplicación web que consulta datos de máquinas	IT, conectada con OT
+Pasarela que comunica sensores con servidores	Integración IT/OT
+Atención: algunos componentes pueden depender de la arquitectura. Lo importante es justificar su función.
+
+5. TECNOLOGÍAS DIGITALES EN EL NEGOCIO Y EN PLANTA
+La empresa puede utilizar tecnologías diferentes según el área en la que necesite mejorar.
+
+5.1. Tecnologías habituales en el negocio
+Se utilizan principalmente para gestionar información y procesos empresariales.
+
+Ejemplos:
+
+ERP.
+
+CRM.
+
+BI.
+
+CMS.
+
+Aplicaciones web.
+
+Plataformas cloud.
+
+Herramientas de análisis de datos.
+
+Automatización de procesos administrativos.
+
+5.2. Tecnologías habituales en planta
+Se utilizan para supervisar, controlar o mejorar procesos físicos.
+
+Ejemplos:
+
+Sensores.
+
+Actuadores.
+
+PLC.
+
+Robots industriales.
+
+Sistemas SCADA.
+
+IoT industrial.
+
+Sistemas MES.
+
+Sistemas de visión artificial.
+
+Gemelos digitales.
+
+5.3. Tecnologías habilitadoras digitales que debes reconocer
+Aunque se desarrollan con mayor profundidad en otras unidades, conviene conocer sus aplicaciones:
+
+Tecnología	Aplicación empresarial
+Cloud computing	Alojar aplicaciones y almacenar información
+IoT	Conectar dispositivos y recopilar datos
+Inteligencia artificial	Analizar información, clasificar o realizar predicciones
+Big Data	Procesar grandes volúmenes de datos
+Robótica	Automatizar operaciones físicas
+Fabricación aditiva	Crear piezas mediante impresión 3D
+Blockchain	Mantener registros distribuidos verificables
+Realidad aumentada	Superponer información digital al entorno físico
+Gemelo digital	Representar digitalmente un activo o proceso físico
+Analítica de datos	Obtener información útil para tomar decisiones
+Importante: no todas las tecnologías son necesarias para todas las empresas. La selección debe responder a un problema real.
+
+Saltar a actividad
+
+6. CONEXIÓN ENTRE IT Y OT
+6.1. ¿Por qué conectar ambos entornos?
+La conexión entre IT y OT permite utilizar información de los procesos físicos en los sistemas de gestión empresarial.
+
+Ejemplo:
+
+Una fábrica tiene sensores que miden la temperatura y vibración de sus máquinas.
+
+Los datos se envían a una plataforma que permite:
+
+Consultar el estado de las máquinas.
+
+Detectar anomalías.
+
+Planificar mantenimiento.
+
+Analizar paradas.
+
+Relacionar incidencias con la producción.
+
+La dirección puede consultar indicadores desde un sistema de gestión empresarial.
+
+6.2. Ejemplo completo
+Una fábrica de alimentos tiene:
+
+OT:
+
+Sensores de temperatura.
+
+PLC.
+
+Máquinas de producción.
+
+Sistema SCADA.
+
+Integración:
+
+Pasarela industrial.
+
+Plataforma IoT.
+
+Servicios que reciben y validan los datos.
+
+IT:
+
+Base de datos.
+
+Aplicación web.
+
+ERP.
+
+Herramientas BI.
+
+El sistema permite que los datos de producción lleguen a los responsables de gestión.
+
+6.3. Ventajas de la integración IT/OT
+Mejor control de los procesos.
+
+Mayor trazabilidad.
+
+Detección temprana de incidencias.
+
+Mejor planificación del mantenimiento.
+
+Reducción de errores manuales.
+
+Información más actualizada.
+
+Mejor toma de decisiones.
+
+Optimización de recursos.
+
+Posibilidad de automatizar tareas.
+
+Mejora de la eficiencia operativa.
+
+6.4. Riesgos de la integración
+Conectar sistemas también puede generar riesgos:
+
+Accesos no autorizados.
+
+Propagación de incidentes entre redes.
+
+Interrupción de la producción.
+
+Exposición de información.
+
+Errores de configuración.
+
+Dependencia de la conectividad.
+
+Medidas preventivas:
+
+Segmentar las redes.
+
+Limitar los accesos.
+
+Utilizar autenticación.
+
+Aplicar permisos mínimos.
+
+Registrar eventos.
+
+Mantener los sistemas actualizados.
+
+Probar los cambios.
+
+Disponer de copias de seguridad y planes de recuperación.
+
+7. DIGITALIZACIÓN DE EXTREMO A EXTREMO
+7.1. ¿Qué significa?
+Digitalizar una empresa de extremo a extremo significa conectar y mejorar las diferentes etapas de sus procesos, desde el origen de la actividad hasta el resultado final.
+
+No se trata de digitalizar únicamente una máquina o un departamento.
+
+Se busca que la información fluya entre las diferentes áreas y que los procesos estén coordinados.
+
+7.2. Ejemplo: fábrica de muebles
+Una fábrica recibe un pedido de un cliente.
+
+Ventas: registra el pedido en el CRM o ERP.
+
+Planificación: consulta la capacidad de producción.
+
+Compras: comprueba la disponibilidad de materiales.
+
+Almacén: registra las existencias.
+
+Producción: utiliza sistemas de control y supervisión.
+
+Calidad: registra las comprobaciones.
+
+Logística: organiza la entrega.
+
+Administración: gestiona la factura.
+
+Dirección: consulta indicadores mediante BI.
+
+Si los sistemas están integrados, la información puede compartirse de manera controlada y se reduce la necesidad de introducir los mismos datos varias veces.
+
+7.3. Ventajas
+Mejor coordinación entre departamentos.
+
+Menos duplicidad de información.
+
+Mayor trazabilidad.
+
+Reducción de errores.
+
+Mejor control de inventario.
+
+Mayor visibilidad de la producción.
+
+Mejor planificación.
+
+Decisiones basadas en datos.
+
+Mejor atención al cliente.
+
+Posibilidad de optimizar costes.
+
+7.4. ¿Cómo medir los resultados?
+Se pueden utilizar indicadores KPI.
+
+Ejemplos:
+
+Tiempo medio de preparación de pedidos.
+
+Porcentaje de entregas a tiempo.
+
+Número de errores de inventario.
+
+Tiempo medio de resolución de incidencias.
+
+Porcentaje de máquinas disponibles.
+
+Coste por unidad producida.
+
+Número de paradas no planificadas.
+
+Un KPI debe ser medible y estar relacionado con el objetivo que se quiere mejorar.
+

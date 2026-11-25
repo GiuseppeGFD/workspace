@@ -1,0 +1,107 @@
+<!DOCTYPE>
+<html>
+<head>
+  <meta charset="UTF-8">
+<title>Detección de palíndromos</title>
+ 
+<script>
+function palindromo(cadena) {
+  var resultado = "La cadena <font color=blue> \""+cadena+"\"</font> ";
+  var acentuadasPuntuacion="áéíóú,.:;?¿!¡";
+  var sinAcentuarSinPuntuacion="aeiou        ";  
+  // Pasar a minusculas la cadena
+  var cadenaOriginal = cadena.toLowerCase(); 
+  var letrasEspacios = cadenaOriginal;  
+  var letrasEspacios2 = "";
+  var cadenaSinEspacios = "";
+  /////////////////////////////////////////////////////////////////////
+  /////// Eliminamos vocales acentuadas y algunos signos de puntuación.
+  /////////////////////////////////////////////////////////////////////
+  for(var i = 0; i<= letrasEspacios.length-1; i++) {
+    // Si de la cadena introducida por el usuario se encuentra algún
+    // caracter no permitido	
+    if(acentuadasPuntuacion.indexOf(letrasEspacios.charAt(i)) != -1) {
+	 // Se concatena el caracter en blanco o la vocal sin acentuar 
+	 letrasEspacios2 += sinAcentuarSinPuntuacion[acentuadasPuntuacion.indexOf(letrasEspacios.charAt(i))];	
+    }
+   else
+    {
+	// Si es un caracter permitido se concatena en la cadena
+	   letrasEspacios2+=letrasEspacios.charAt(i);	
+	}	
+  }
+  /////////////////////////////////////////////////
+  // Eliminar los espacios en blanco            ///
+  // Si encuentra un espacio en blanco          ///  
+  // no lo concatena en la cadenaSinEspacios    ///
+  /////////////////////////////////////////////////  
+  for(var i = 0; i<= letrasEspacios2.length-1; i++) {
+    if(letrasEspacios2.charAt(i) != " ") {
+      cadenaSinEspacios += letrasEspacios2.charAt(i);
+    }
+  }  
+ // cadenaSinEspacios=letrasEspacios2.replaceAll(" ", "");
+ 
+  // Esta asignación se podría suprimir
+  var letras = cadenaSinEspacios;
+  // Llamamos a la función que nos devuelve la cadena dada la vuelta
+  var letrasReves = invertirCadena(letras);
+  var lasLetras = invertirCadena2(letras);
+  
+  if(letras==letrasReves) {
+  // Si las dos cadenas son iguales la cadena original es palíndromo
+    resultado += " es un palíndromo";
+  }
+  else {
+  // SI no son iguales la cadena original no es palíndromo
+    resultado += " <font color=red>NO</font> es un palíndromo";
+  } 
+  return resultado;
+}
+
+function invertirCadena(cad) {
+    // Paso 1. Crear una cadena vacía que almacenará la nueva cadena creada
+    var nuevaCadena = ""; 
+    // Paso 2. Crear el bucle FOR
+    /* El punto de partida del bucle será (cad.length - 1) que corresponde al último caracter 
+	de la cadena Mientras i sea mayor que o igual a 0, el bucle se ejecutará Decrementamos i
+	después de cada iteración */
+    for (var i = cad.length - 1; i >= 0; i--) { 
+        nuevaCadena += cad.charAt(i); // o nuevaCadena = nuevaCadena + cad[i];
+    }
+    // Paso 3. Devolver la cadena invertida
+    return nuevaCadena; 
+}
+
+function invertirCadena2(cad) {
+    // convierto la cadena en un array de elmentos que contiene 
+	// cada posición una letra.
+	// invierto el orden en el array (reverse());
+	// Uno todos los elementos del array en una cadena (join("")
+    //var nuevaCadena = cad.split("").reverse().join("");
+    var nuevaCadena = cad.split("");
+	var laCadena = nuevaCadena.reverse();	
+	nuevaCadena = laCadena.join("");
+    return nuevaCadena; 
+}
+
+
+ function limpia(){
+	  document.getElementById("miDiv").innerHTML="";
+	  document.getElementById("miFrase").value="";	 
+	}
+function evaluaPalindromo(){	
+    var miTexto=document.getElementById("miFrase").value
+    document.getElementById("miDiv").innerHTML=palindromo(miTexto);
+}
+</script>
+</head>
+ 
+<body>
+    Introduzca una frase:<input type="text" id="miFrase" ></br>
+	
+	<input type="button" onclick="limpia()" value="Limpiar"/>
+    <input type="button" onclick="evaluaPalindromo()" value="Calcular Palíndromo"/>
+    <DIV id="miDiv"></DIV>
+</body>
+</html>

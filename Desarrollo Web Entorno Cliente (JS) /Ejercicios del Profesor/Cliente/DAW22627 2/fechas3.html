@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div id="miDiv"></div>
+<script>
+    	const options = {
+			weekday: 'long',
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric',
+	 	};
+		const options2 = {
+			weekday: 'short',
+			year: 'numeric',
+			month: 'short',
+			day: 'numeric',
+	 	}; 
+		
+		resultado="";
+		var fechaHoy = new Date();
+		resultado = "Fecha de hoy mostrado con toLocaleString() <br>"
+		 /*resultado += fechaHoy.toLocaleString('ar-EG')+ "<br>";  
+		 resultado += fechaHoy.toLocaleString('ar-EG', options)+ "<br>"; */
+		 resultado += fechaHoy.toLocaleString('es-ES',options)+ "<br>";
+		 resultado += fechaHoy.toLocaleString('de-DE',options)+ "<br>";
+		 resultado += fechaHoy.toLocaleString('en-US',options)+ "<br>";
+		 resultado += fechaHoy.toLocaleString('en-UK',options)+ "<br>";
+		 resultado += fechaHoy.toLocaleString('it-IT',options)+ "<br>";
+		 resultado += fechaHoy.toLocaleString('es-ES',options2)+ "<br>";
+		 resultado += fechaHoy.toLocaleString('de-DE',options2)+ "<br>";
+		 resultado += fechaHoy.toLocaleString('en-US',options2)+ "<br>";
+		 resultado += fechaHoy.toLocaleString('en-UK',options2)+ "<br>";
+		 resultado += fechaHoy.toLocaleString('it-IT',options2)+ "<br>";
+		 var fecha85 = new Date(fechaHoy);
+		 fecha85.setDate(fecha85.getDate()+85);
+		 resultado += "Fecha mas 85 dias mostrado con toLocaleDateString() <br>"
+         //resultado +=  fecha85.toLocaleDateString('es-ES',options); 
+		 resultado +=  fecha85.toLocaleDateString();  
+		 document.getElementById("miDiv").innerHTML=resultado; 
+</script>    
+</body>
+</html>

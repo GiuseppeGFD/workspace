@@ -1,0 +1,32 @@
+<head>
+    <script type="text/javascript">
+        var xmlhttp;
+
+        function accionAJAX() {
+            document.getElementById("idDiv").innerHTML = xmlhttp.responseText; // Sustitución quirúrgica
+            //alert(xmlhttp.responseText);
+        }
+
+        function usarAJAX() {
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.open('GET', 'ajax.php', true);
+            xmlhttp.send();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    accionAJAX();
+                }
+            }
+            document.getElementById("idDiv").innerHTML = '<h3>Procesando</h3>';
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Texto fijo</h2>
+    <div id="idDiv">
+        <h2>Texto cambiante</h2>
+    </div>
+    <button type="button" onclick="usarAJAX()">
+        Cambiar
+    </button>
+</body>

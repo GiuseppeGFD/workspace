@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="miDiv"></div>
+
+    <script>
+        var texto = "cadena = 'uno dos tres cuatro' aplicandole el método cadena.indexOf('dos') = ";
+        cadena = "uno dos tres cuatro";
+        posicionDeDos = cadena.indexOf("dos");
+        posicionDeDos = cadena.indexOf("o", 3);
+        // posicionDeDos = 4
+        texto += " posicionDeDos = " + posicionDeDos;
+        document.getElementById("miDiv").innerHTML = texto;
+        /* for (var i = 0; i <= cadena.length - 1; i++) {
+             texto += "<br>indice " + i + " caracter " + cadena.charAt(i);
+         }*/
+        document.getElementById("miDiv").innerHTML = texto;
+        var cadenita = cadena.slice(4, 9);
+        texto += "<br> cadena.slice(4,7) = " + cadenita;
+
+        var trozos = cadena.split(" ");
+        texto += "<br>Aplicar split con espacio en blanco a la cadena " + trozos;
+        texto += "<br> mostrar trozos[3]" + trozos[6];
+        var trozos2 = cadena.split(" ", 2);
+        texto += "<br>Aplicar split con espacio en blanco a la cadena y que devuelva 2 elementos " + trozos2;
+        texto += "<br> mostrar trozos[3]" + trozos2[1];
+        var trozos3 = trozos[3].split("a");
+        texto += "<br>Aplicar split 'a' a la cadena trozos[3] " + trozos3;
+        texto += "<br> mostrar trozos[3]" + trozos3;
+        document.getElementById("miDiv").innerHTML = texto;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+* {
+    font-family: 'Gill Sans', sans-serif;
+    color: white;
+}
+
+body {
+    background-image: url('image.png');
+    background-size: cover;
+    margin: 0px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#contenedor h2:first-child {
+    border-bottom: 1px solid white;
+}
+
+#contenedor ul li {
+    list-style: none;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    margin-top: 15px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 5px white;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+#contenedor ul li:hover {
+    transform: scale(1.1) translateX(50px);
+    box-shadow: inset 0px 0px 15px white;
+}
+
+
+#contenedor ul li::before {
+    scale: 1 1;
+    transition: 0.2s;
+}

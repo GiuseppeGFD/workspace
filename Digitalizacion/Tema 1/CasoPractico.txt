@@ -1,0 +1,36 @@
+8. CÓMO ANALIZAR UN CASO PRÁCTICO EN EL EXAMEN
+Es posible que aparezca una empresa ficticia y tengas que analizar su situación.
+
+Sigue este método:
+
+Paso 1. Identifica el problema
+Ejemplo: la empresa registra manualmente el inventario y comete errores.
+
+Paso 2. Identifica el proceso afectado
+Ejemplo: ventas, almacén y compras.
+
+Paso 3. Identifica los sistemas implicados
+Ejemplo: aplicación de ventas, base de datos de inventario y ERP.
+
+Paso 4. Identifica IT y OT
+Ejemplo:
+
+IT: aplicación de inventario y ERP.
+
+OT: sensores o máquinas conectadas, si intervienen.
+
+Paso 5. Propón una tecnología
+Ejemplo: integrar el sistema de ventas con el inventario.
+
+Paso 6. Explica los beneficios
+Ejemplo: reducir errores y disponer de información actualizada.
+
+Paso 7. Identifica riesgos
+Ejemplo: accesos no autorizados, errores de integración o interrupción del servicio.
+
+Paso 8. Define un indicador
+Ejemplo: número de errores de inventario por mes.
+
+Consejo: en las preguntas de desarrollo no te limites a decir qué tecnología utilizarías. Explica qué problema resuelve y por qué es adecuada.
+
+Saltar a actividad

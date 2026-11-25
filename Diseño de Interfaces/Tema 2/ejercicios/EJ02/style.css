@@ -1,0 +1,91 @@
+#titulo {
+    color: teal;
+}
+
+strong {
+    color: red;
+}
+
+span.destacado {
+    color: orange;
+}
+
+#subtitulo {
+    color: blue;
+}
+
+a {
+    color: red;
+}
+
+a em {
+    color: blue;
+}
+
+span.especial {
+    color: purple;
+}
+
+table,
+th,
+tr,
+td {
+    /*para que se fundan o separen las lineas de la tabla con separate o collapse*/
+    border-collapse: collapse;
+    /*borde solido de 1px*/
+    border: 1px solid;
+    /*el tamaño de los cuadros*/
+    padding: 10px;
+    /*sino se cambia el color del borde ns porque*/
+    border-color: black;
+}
+
+/*para el titulo de la tabla*/
+caption {
+    color: blue;
+}
+
+/*para los titulos de columna 1 y 2*/
+thead th.especial {
+    color: orange;
+}
+
+/*para el titulo fila 1*/
+tbody th.especial {
+    color: orange;
+}
+
+/*Para los titulos de la parte de abajo*/
+tfoot tr th {
+    color: red;
+}
+
+/*Para el titulo fila 2*/
+tbody tr th {
+    color: red;
+}
+
+/*para los contenidos*/
+tbody tr td {
+    color: green;
+}
+
+tbody tr td em {
+    color: green;
+}
+
+tbody tr td strong {
+    color: orange;
+}
+
+#adicional {
+    color: olive;
+}
+
+#adicional a {
+    color: green;
+}
+
+#especial {
+    color: magenta;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Carrusell de imagenes</title>
+</head>
+
+<body bgcolor="white">
+    <h1 align="center"> Carrusel de imágenes
+        <p><img src="imagenes/uno.jpg" id="myPicture" width="262" height="262"></p>
+        <p>
+            <!-- <input type="button" value="<&lt;&lt; Anterior" onclick="chgSlide(-1);">
+            <input type="button" value=">&gt;&gt; Siguiente" onclick="chgSlide(1);">-->
+            <input type="button" value="<&lt;&lt; Anterior" onclick="anterior();">
+            <input type="button" value=">&gt;&gt; Siguiente" onclick="siguiente();">
+</body>
+<script>
+
+    myPix = new Array("imagenes/uno.jpg", "imagenes/dos.jpg", "imagenes/tres.jpg", "imagenes/cuatro.jpg")
+    thisPic = 0;
+    imgCt = myPix.length - 1;
+    var imagen = document.getElementById("myPicture")
+    function chgSlide(direccion) {
+        thisPic = thisPic + direccion
+        if (thisPic > imgCt) {
+            thisPic = 0;
+        }
+        if (thisPic < 0) {
+            thisPic = imgCt;
+        }
+        imagen.src = myPix[thisPic];
+    }
+
+    function siguiente() {
+        thisPic++
+        if (thisPic > imgCt) {
+            thisPic = 0;
+        }
+        imagen.src = myPix[thisPic];
+    }
+    function anterior() {
+        thisPic--
+        if (thisPic < 0) {
+            thisPic = imgCt;
+        }
+        imagen.src = myPix[thisPic];
+    }
+</script>
+
+</html>

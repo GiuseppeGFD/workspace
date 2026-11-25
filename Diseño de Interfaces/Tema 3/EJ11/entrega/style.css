@@ -1,0 +1,72 @@
+body {
+    background-color: burlywood;
+    margin: 0;
+    min-height: 100vh;
+    box-shadow: inset 0 0 30px black
+}
+
+#imagen1,
+#imagen2,
+#imagen3,
+#imagen4 {
+    position: relative;
+    display: flex;
+    width: 150px;
+    height: 200px;
+    padding: 10px;
+    background-color: aliceblue;
+    box-shadow: 0px 0px 20px black;
+}
+
+#contenido1,
+#contenido2,
+#contenido3,
+#contenido4 {
+    background-color: darkslategray;
+    width: 100%;
+    height: 80%;
+}
+
+#imagen1 {
+    transform: translateX(500px) translateY(220px) rotate(5deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+#imagen2 {
+    transform: translateX(600px) translateY(50px) rotate(-5deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+#imagen3 {
+    transform: translateX(430px) translateY(-120px) rotate(3deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+#imagen4 {
+    transform: translateX(530px) translateY(-250px) rotate(-10deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+#imagen1:hover {
+    transform: translateX(500px) translateY(80px) rotate(360deg) scale(1.2);
+    transition: transform 0.5s ease-in-out;
+    z-index: 10;
+}
+
+#imagen2:hover {
+    transform: translateX(700px) translateY(50px) rotate(360deg) scale(1.2);
+    transition: transform 0.5s ease-in-out;
+    z-index: 10;
+}
+
+#imagen3:hover {
+    transform: translateX(330px) translateY(-100px) rotate(360deg) scale(1.2);
+    transition: transform 0.5s ease-in-out;
+    z-index: 10;
+}
+
+#imagen4:hover {
+    transform: translateX(530px) translateY(-200px) rotate(360deg) scale(1.2);
+    transition: transform 0.5s ease-in-out;
+    z-index: 10;
+}

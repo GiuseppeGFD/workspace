@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Carrusell de imagenes</title>
+    <meta charset="UTF-8" />
+    <script>
+        // myPix = new Array("imagenes/uno.jpg","imagenes/dos.jpg", "imagenes/tres.jpg", "imagenes/cuatro.jpg")
+        myPix = ["imagenes/uno.jpg", "imagenes/dos.jpg", "imagenes/tres.jpg", "imagenes/cuatro.jpg"]
+        thisPic = 0;
+        imgCt = myPix.length - 1;
+        function chgSlide(direccion) {
+            thisPic = thisPic + direccion
+            if (thisPic > imgCt) {
+                thisPic = 0;
+            }
+            if (thisPic < 0) {
+                thisPic = imgCt;
+            }
+            document.getElementById("myPicture").src = myPix[thisPic];
+        }
+        function irA(direccion) {
+            if (direccion == 1) { thisPic = 0 }
+            if (direccion == 0) { thisPic = imgCt }
+            document.getElementById("myPicture").src = myPix[thisPic];
+        }
+        function aniadir() {
+            myPix[myPix.length] = "imagenes/" + document.getElementById("miImagen").value + ".jpg";
+            imgCt = myPix.length - 1;
+            irA(0);
+        }
+
+    </script>
+</head>
+
+<body bgcolor="white">
+    <h1 align="center"> </br></br>
+        <p><input type="text" id="miImagen" />&nbsp;&nbsp;
+            <input type="button" id="miBoton" value="Añadir" onClick="aniadir();" />
+        <p><img src="imagenes/uno.jpg" id="myPicture" width="262" height="262"></p>
+        <p> <input type="button" onclick="irA(1)" value="Primera" />
+            <input type="button" onclick="chgSlide(-1)" value="&lt;&lt; Anterior" />
+            <input type="button" onclick="chgSlide(1)" value="&gt;&gt; Siguiente" />
+            <input type="button" onclick="irA(0)" value="última" />
+</body>
+
+</html>

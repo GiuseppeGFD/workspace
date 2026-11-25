@@ -1,0 +1,92 @@
+.view .mask {
+   background-color: rgba(115, 146, 184, 0.7);
+   width: 300px;
+   padding: 60px;
+   height: 300px;
+   opacity: 1;
+}
+
+.view h2 {
+   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+   background: transparent;
+   margin: 20px 40px 0px 40px;
+}
+
+/* TRANSICIONES */
+/*Escribir código desde aquí*/
+
+
+.view .mask,
+.view-second .mask {
+   opacity: 0 !important;
+   transform: translate(265px, 145px) rotate(45deg) !important;
+   transition: all 0.3s ease-in-out !important;
+   transition-delay: 0s !important;
+}
+
+.view h2,
+.view-second h2,
+.view .content h2 {
+   opacity: 0 !important;
+   transform: translate(200px, -200px) !important;
+   transition: all 0.3s ease-in-out !important;
+   transition-delay: 0s !important;
+}
+
+.view a.info,
+.view-second a.info,
+.view .content a.info {
+   opacity: 0 !important;
+   transform: translate(0px, 100px) !important;
+   transition: all 0.3s ease-in-out !important;
+   transition-delay: 0s !important;
+}
+
+.view p,
+.view-second p,
+.view .content p {
+   opacity: 0 !important;
+   transform: translate(-200px, 200px) !important;
+   transition: all 0.3s ease-in-out !important;
+   transition-delay: 0s !important;
+}
+
+
+.view:hover .mask,
+.view-second:hover .mask {
+   opacity: 1 !important;
+   transform: translate(-80px, -125px) rotate(45deg) !important;
+   transition-delay: 0s !important;
+}
+
+.view:hover h2,
+.view-second:hover h2,
+.view:hover .content h2 {
+   opacity: 1 !important;
+   transform: translate(0px, 0px) !important;
+   transition-delay: 0.2s !important;
+}
+
+.view:hover a.info,
+.view-second:hover a.info,
+.view:hover .content a.info {
+   opacity: 1 !important;
+   transform: translate(0px, 0px) !important;
+   transition-delay: 0.4s !important;
+}
+
+.view:hover p,
+.view-second:hover p,
+.view:hover .content p {
+   opacity: 1 !important;
+   transform: translate(0px, 0px) !important;
+   transition-delay: 0.6s !important;
+}
+
+.view:hover p,
+.view-second:hover p,
+.view:hover .content p {
+   opacity: 1 !important;
+   transform: translate(0px, 0px) !important;
+   transition-delay: 0.6s !important;
+}

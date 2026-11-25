@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Senos y Cosenos</title>
+    <script>
+        function muestra() {
+            var texto = "<table border=1><tr><th>Grados</th><th>Radianes</th><th>Seno</th><th>Coseno</th></tr>";
+            var radianes = 0;
+            for (var grados = 0; grados <= 360; grados += 10) {
+                radianes = (Math.PI * grados) / 180;
+                seno = Math.sin(radianes);
+                coseno = Math.cos(radianes);
+                texto += "<tr><td>" + grados + "</td><td>" + radianes.toFixed(2) + "</td><td>" + seno.toFixed(2) + "</td><td>" + coseno.toFixed(2) + "</td></tr>"
+            }
+            texto += "</table>";
+            document.getElementById("miDiv").innerHTML = texto
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="mostar" onclick="muestra()" />
+    <div id="miDiv"></div>
+</body>
+
+</html>

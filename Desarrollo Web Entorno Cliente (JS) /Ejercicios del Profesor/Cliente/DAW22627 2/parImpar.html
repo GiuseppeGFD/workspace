@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function comprueba() {
+            var numero = parseInt(document.getElementById("miNumero").value);
+            var texto = "El número " + numero + " es ";
+            if (numero % 2 == 0) {
+                texto += "par";
+            }
+            else {
+                texto += "impar";
+            }
+            document.getElementById("miDiv").innerHTML = texto;
+        }
+    </script>
+</head>
+
+<body>
+    Introduza número:
+    <input type="text" id="miNumero" /><br>
+    <input type="button" value="Aceptar" onclick="comprueba()" />
+    <div id="miDiv"></div>
+</body>
+
+</html>

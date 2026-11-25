@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>while 1</title>
+	<script>
+		function mostrar() {
+			var resultado = "";
+			var i = 0;
+			var j = parseInt(document.getElementById("misCabeceras").value);
+			/***************************
+			Vamos a comprobar que se introducen valores numéricos 
+			y que estén comprendidos entre 1 y 6			
+			***************************/
+			if ((j < 1) || (j > 6)) {
+				resultado = "Debe introducir números comprendidos entre 1 y 6";
+				document.getElementById("misCabeceras").value = "";
+				document.getElementById("misCabeceras").focus();
+			}
+			else {
+				while (i < j) {
+					i++;  /// i+=1; i=i+1;
+					resultado += "<H" + i + ">Encabezado de nivel " + i + " </H" + i + ">"
+				}
+				i = j;
+				do {
+					resultado += "<H" + i + ">Encabezado de nivel " + i + " </H" + i + ">";
+					i--;  /// j-=1;				
+				} while (i >= 1)
+			}
+			document.getElementById("miDiv").innerHTML = resultado;
+		}
+
+	</script>
+</head>
+
+<body><!-- onload="mostrar();">-->
+	<form>
+		Número de cabeceras que quiere mostrar:
+		<input type="text" id="misCabeceras" />
+		<input type="button" value="Mostrar" onclick="mostrar();" />
+		<div id="miDiv"></div>
+	</form>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function muestra() {
+            resultado = "";
+            var diaMes = parseInt(document.getElementById("miDia").value);
+            var mes2 = parseInt(document.getElementById("miMes").value);
+            var anio = parseInt(document.getElementById("miAnio").value);
+            var hora = parseInt(document.getElementById("miHora").value);
+            var minutos = parseInt(document.getElementById("miMinuto").value);
+            var segundos = parseInt(document.getElementById("miSegundo").value);
+            var miFecha = new Date(anio, mes2 - 1, diaMes, hora, minutos, segundos);
+            var diaSemana = miFecha.getDay();
+            var dSem = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+            var mes = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+            var dsem = "";
+            switch (diaSemana) {
+                case 0:
+                    dsem = "Domingo";
+                    break;
+                case 1:
+                    dsem = "Lunes";
+                    break;
+                case 2:
+                    dsem = "Martes";
+                    break;
+                case 3:
+                    dsem = "Miércoles";
+                    break;
+                case 4:
+                    dsem = "Jueves";
+                    break;
+                case 5:
+                    dsem = "Viernes";
+                    break;
+                case 6:
+                    dsem = "Sábado";
+                    break;
+            }
+
+            var elDia = miFecha.getDate();
+            var laHora = miFecha.getHours();
+            var losMinutos = miFecha.getMinutes();
+            var losSegundos = miFecha.getSeconds();
+            if (elDia < 10) elDia = "0" + elDia;
+            if (laHora < 10) laHora = "0" + laHora;
+            if (losMinutos < 10) losMinutos = "0" + losMinutos;
+            if (losSegundos < 10) losSegundos = "0" + losSegundos;
+
+            resultado += "<br><br> En San Fernando de Henares, " + dSem[diaSemana] + " a " + elDia;
+            resultado += " de " + mes[miFecha.getMonth()] + " de " + miFecha.getFullYear() + " a las " + laHora;
+            resultado += " horas y " + losMinutos + " minutos con " + losSegundos + " segundos";
+            document.getElementById("miDiv").innerHTML = resultado;
+            var miFecha2
+            miFecha2.setTime(123);
+            document.getElementById("miDiv").innerHTML += "<br><br>" + miFecha2;
+        }
+    </script>
+</head>
+
+<body>
+    Año: <input type="text" id="miAnio" /><br>
+    Mes: <input type="text" id="miMes" /><br>
+    Día: <input type="text" id="miDia" /><br>
+    Hora: <input type="text" id="miHora" /><br>
+    Minutos: <input type="text" id="miMinuto" /><br>
+    Segundos: <input type="text" id="miSegundo" /><br>
+    <input type="button" value="Muestra" onclick="muestra()" /><br>
+    <div id="miDiv"></div>
+</body>
+
+</html>

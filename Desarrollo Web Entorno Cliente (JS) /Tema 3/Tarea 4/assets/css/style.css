@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 520px;
+    margin: 20px auto;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+    margin-bottom: 8px;
+}
+
+input[type="text"] {
+    width: 300px;
+}
+
+input[type="text"]:read-only {
+    background: #eee;
+}
+
+input[type="button"] {
+    margin: 4px 2px;
+}
+
+input[type="button"]:disabled {
+    opacity: 0.4;
+}
+
+#mensaje,
+#info {
+    margin: 10px 0;
+    min-height: 1.2em;
+}

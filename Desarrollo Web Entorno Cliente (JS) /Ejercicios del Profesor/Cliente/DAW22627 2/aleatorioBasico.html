@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function genera() {
+            var min = 6;
+            var max = 15;
+            var aleatorio = 0;
+            aleatorio = Math.floor(Math.random() * ((max + 1) - min) + min);
+            document.getElementById("miDiv").innerHTML += "El número genetrado es el " + aleatorio + "<br>";
+        }
+    </script>
+</head>
+
+<body>
+    Generar números aleatorios entre 6 y 15:<br>
+    <input type="button" onclick="genera()" value="Generar número" />
+    <div id="miDiv"></div>
+</body>
+
+</html>

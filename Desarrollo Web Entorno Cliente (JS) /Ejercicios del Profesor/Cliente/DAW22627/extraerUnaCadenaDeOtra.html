@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Extractor de Texto</title>
+	<style>
+		body {
+			font-family: sans-serif;
+			margin: 30px;
+			background-color: #f4f4f9;
+			color: #333;
+		}
+
+		.container {
+			max-width: 500px;
+			background: white;
+			padding: 20px;
+			border-radius: 8px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
+
+		.grupo {
+			margin-bottom: 15px;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 5px;
+			font-weight: bold;
+		}
+
+		input[type="text"] {
+			width: 100%;
+			padding: 8px;
+			box-sizing: border-box;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+		}
+
+		.rango {
+			display: flex;
+			gap: 10px;
+		}
+
+		button {
+			width: 100%;
+			padding: 10px;
+			background-color: #007bff;
+			color: white;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 16px;
+		}
+
+		button:hover {
+			background-color: #0056b3;
+		}
+
+		.resultado {
+			margin-top: 20px;
+			padding: 15px;
+			background: #e9ecef;
+			border-left: 5px solid #007bff;
+			font-weight: bold;
+			word-break: break-all;
+		}
+
+		#textoResultado {
+			color: blue;
+		}
+
+		#miError {
+			color: red;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<h2>Extractor de Subcadenas</h2>
+
+		<div class="grupo">
+			<label for="textoOriginal">Introduce el texto:</label>
+			<input type="text" id="textoOriginal" placeholder="Escribe o pega tu texto aquí...">
+		</div>
+
+		<div class="grupo rango">
+			<div>
+				<label for="posInicio">Posición Inicio:</label>
+				<input type="text" id="posInicio">
+			</div>
+			<div>
+				<label for="posFin">Posición Fin:</label>
+				<input type="text" id="posFin">
+			</div>
+		</div>
+
+		<button onclick="extraerTexto()">Extraer Cadena</button>
+		<div id="miError"></div>
+		<div class="resultado" id="resultadoContenedor">
+			Resultado: <span id="textoResultado"></span>
+		</div>
+	</div>
+
+	<script>
+		function extraerTexto() {
+			// 1. Obtener los valores de los inputs
+			const texto = document.getElementById('textoOriginal').value;
+			let textoError = document.getElementById("miError")
+			textoError.innerHTML = ""
+			let inicio = document.getElementById('posInicio').value.trim();
+			let fin = document.getElementById('posFin').value.trim();
+			if (comprobarTexto(texto)) {
+				textoError.innerHTML = "Se han introducido caracteres no permitidos en la cadena de caracteres.";
+			}
+			else if (texto.length <= 1 || texto.length > 25) {
+				textoError.innerHTML = "Se ha dejado la caja de textos en blanco o se han introducido mas de 25 caracteres.";
+			}
+			else if (inicio.length < 1) {
+				textoError.innerHTML = "Se ha dejado la caja de textos de inicio en blanco.";
+			}
+			else if (fin.length < 1) {
+				textoError.innerHTML = "Se ha dejado la caja de textos de fin en blanco.";
+			}
+			else if (comprobarNumero(inicio)) {
+				textoError.innerHTML = "Se ha introducido algún caracter no numérico en la posición de Inicio.";
+			}
+			else if (comprobarNumero(fin)) {
+				textoError.innerHTML += "Se ha introducido algún caracter no numérico en la posición de Fin.";
+			}
+			else if ((parseInt(inicio) <= 1) || (parseInt(fin) > texto.length)) {
+				textoError.innerHTML += "Se ha introducido un número menor de 1 o mayor del tamaño de la cadena de caracteres."
+			}
+			else {
+
+				// 2. Extraer la subcadena usando substring(inicio, fin)
+				let textoExtraido = texto.substring(parseInt(inicio) - 1, parseInt(fin));
+
+				// 3. Mostrar el resultado en la pantalla
+				document.getElementById('textoResultado').innerHTML = textoExtraido;
+
+				mostrarResultado();
+
+			}
+		}
+		function mostrarResultado() {
+			var miTexto = ""
+			miTexto = 'Texto introducido: ' + document.getElementById('textoOriginal').value.trim() + '<br>';
+			miTexto += 'Posición de Inicio: ' + document.getElementById('posInicio').value.trim() + '<br>';
+			miTexto += 'Posición de Fin: ' + document.getElementById('posFin').value.trim() + '<br>';
+			miTexto += 'Texto Extraido: ' + document.getElementById('textoResultado').innerHTML + '<br>';
+			miWindow = window.open("", "", "width=200,height=200");
+			miWindow.document.open();
+			miWindow.document.write("<html>");
+			miWindow.document.write("<head>");
+			miWindow.document.write("<title></title>");
+			miWindow.document.write("</head>");
+			miWindow.document.write("<body>");
+			miWindow.document.write("<div id='miDiv'>" + miTexto + "</div><br>");
+			miWindow.document.write("<input type='button' value='Cerrar ventana' onclick='window.close();'/>");
+			miWindow.document.write("</body>");
+			miWindow.document.write("<script>");
+			//miWindow.document.write("setTimeout('window.close()',10000)");
+			miWindow.document.write("<\/script>");
+			miWindow.document.write("</html>");
+			miWindow.document.close();
+		}
+		function comprobarNumero(variable) {
+			var numeros = "0123456789";
+			var miNumero = variable;
+			var esLetra = false;
+			for (var i = 0; i <= miNumero.length; i++) {
+				if (numeros.indexOf(miNumero.charAt(i)) == -1) {
+					esLetra = true;
+				}
+			}
+			return esLetra;
+		}
+		function comprobarTexto(variable) {
+			var numeros = "abcdefghijklmnñopqrstuvwxyzç ";
+			var miTexto = variable.toLowerCase();
+			var hayError = false;
+			for (var i = 0; i <= miTexto.length; i++) {
+				if (numeros.indexOf(miTexto.charAt(i)) == -1) {
+					hayError = true;
+				}
+			}
+			return hayError;
+		}
+
+	</script>
+
+</body>
+
+</html>

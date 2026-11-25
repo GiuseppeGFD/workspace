@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="Abrir Ventana Metodo Statico array completo" onclick="abrirVentanaMetodoStatico()" />
+    <input type="button" value="Abrir Ventana Metodo Statico de objetos" onclick="abrirVentanaMetodoStatico2()" />
+    <div id="miDiv"></div>
+    <script>
+        var texto = "";
+        class Car {
+            constructor(brand, color) {
+                this._carname = brand;
+                this._color = color;
+            }
+            set carname(valor) {
+                this._carname = valor;
+            }
+            set color(valor) {
+                this._color = valor;
+            }
+            get carname() {
+                return this._carname;
+            }
+            get color() {
+                return this._color;
+            }
+            present() {
+                return "Yo tengo un " + this.carname + " de color " + this.color;
+            }
+            present2(x) {
+                return x + ", Yo tengo un " + this.carname;
+            }
+            static hola(x, j) {
+                return "Hola de nuevo " + x.present2(j);
+            }
+            static mostrarCoches(miArray) {
+                var ventanaNueva = window.open("", "", "width=700, height=300");
+                ventanaNueva.document.open();
+                ventanaNueva.document.write("<center><table border=\"1\"><tr><th>Nombre</th><th>Color</th></tr></center>");
+                for (var coche of miArray) {
+                    ventanaNueva.document.write("<tr><td>" + coche.carname + "</td><td>" + coche.color + "</td></tr>");
+                }
+                ventanaNueva.document.write("</table>");
+                ventanaNueva.document.write("<br>");
+                ventanaNueva.document.write("<input type='button' value ='Cerrar' onclick='window.close()'/>");
+                ventanaNueva.document.close();
+                ventanaNueva.focus();
+            }
+            static mostrarCoches2(...miArray) {
+                var ventanaNueva = window.open("", "", "width=700, height=300");
+                ventanaNueva.document.open();
+                ventanaNueva.document.write("<center><table border=\"1\"><tr><th>Nombre</th><th>Color</th></tr></center>");
+                for (var i in miArray) {
+                    ventanaNueva.document.write("<tr><td>" + miArray[i].carname + "</td><td>" + miArray[i].color + "</td></tr>");
+                }
+                ventanaNueva.document.write("</table>");
+                ventanaNueva.document.write("<br>");
+                ventanaNueva.document.write("<input type='button' value ='Cerrar' onclick='window.close()'/>");
+                ventanaNueva.document.close();
+                ventanaNueva.focus();
+            }
+        }
+        mycar = new Car("Ford", "Blanco");
+        tuCoche = new Car("Toyota", "Amarillo");
+        elCoche = new Car("Tractor", "Verde");
+        texto = "Tengo un coche de la marca " + mycar.carname;
+        texto += "<br>" + mycar.present();
+        texto += "<br>" + tuCoche.present();
+        texto += "<br>" + tuCoche.present2("Que tal ");
+        texto += "<br>" + Car.hola(mycar, "Pepe");
+        mycar.carname = "Seat";
+        texto += "<br>" + mycar.present();
+        document.getElementById("miDiv").innerHTML = texto;
+        var misCoches = [];
+        misCoches[0] = new Car("Ford", "azul");
+        misCoches[1] = new Car("Toyota", "verde");
+        misCoches[2] = new Car("Suzuki", "marrón");
+        function abrirVentanaMetodoStatico() {
+            Car.mostrarCoches(misCoches);
+        }
+        function abrirVentanaMetodoStatico2() {
+            Car.mostrarCoches2(mycar, elCoche, tuCoche);
+        }
+
+    </script>
+</body>
+
+</html>

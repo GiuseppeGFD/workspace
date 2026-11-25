@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="mostrar()">
+    <div id="miDiv"></div>
+    <script>
+        function mostrar() {
+            var texto = "";
+            var contador = 0;
+            while (contador < 6) {
+                contador++;
+                texto += "<h" + contador + ">Cabecera de nivel " + contador + "<\h" + contador + ">";
+            }
+            do {
+                texto += "<h" + contador + ">Cabecera de nivel " + contador + "<\h" + contador + ">";
+                contador--;
+            } while (contador > 0)
+            document.getElementById("miDiv").innerHTML = texto;
+        }
+    </script>
+</body>
+
+</html>

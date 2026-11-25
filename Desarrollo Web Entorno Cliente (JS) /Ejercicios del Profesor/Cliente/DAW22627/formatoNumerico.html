@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="miDiv"></div>
+    <script>
+        var pi = 356.141592;
+        var texto = "Numero es igual a 356.141592 ";
+        texto += "<br> Número con toFixed = " + pi.toFixed(2) + "<br>";
+        texto += "<br> Número con toPrecision = " + pi.toPrecision(2) + "<br>";
+        texto += "<br> Número con to Exponential =" + pi.toExponential(2) + "<br>";
+        document.getElementById("miDiv").innerHTML = texto;
+    </script>
+</body>
+
+</html>

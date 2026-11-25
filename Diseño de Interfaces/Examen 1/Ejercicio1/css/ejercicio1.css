@@ -1,0 +1,74 @@
+/* CSS Ejercicio 1 */
+body {
+    background-image: url('../img/mountain-landscape.jpg');
+    background-size: cover;
+
+}
+
+.nubes {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+#nube1,
+#nube2,
+#nube3 {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 120px;
+    height: 70px;
+    background-color: aliceblue;
+    opacity: 50%;
+    border-radius: 30px;
+    animation: desplazar 10s infinite, balancear 2s infinite ease-in-out alternate;
+}
+
+#nube1 {
+    translate: 120px 300px;
+}
+
+#nube2 {
+    translate: 120px 200px;
+    animation-delay: 0.5s;
+}
+
+#nube3 {
+    translate: 120px 300px;
+    animation-delay: 0.2s;
+}
+
+#nube1:hover {
+    animation-play-state: paused;
+}
+
+#nube2:hover {
+    animation-play-state: paused;
+}
+
+#nube3:hover {
+    animation-play-state: paused;
+
+}
+
+
+@keyframes desplazar {
+    0% {
+        transform: translateX(-120px);
+    }
+
+    100% {
+        transform: translateX(100vw);
+    }
+}
+
+@keyframes balancear {
+    0% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(20px);
+    }
+}

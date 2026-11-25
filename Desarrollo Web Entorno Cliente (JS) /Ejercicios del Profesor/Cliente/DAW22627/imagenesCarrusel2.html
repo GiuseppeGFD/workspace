@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Carrusell de imagenes</title>
+	<script>
+		myPix = new Array("imagenes/uno.jpg", "imagenes/dos.jpg", "imagenes/tres.jpg", "imagenes/cuatro.jpg")
+		thisPic = 0;
+		imgCt = myPix.length;
+		function chgSlide() {
+			thisPic = thisPic + 1; // thisPic++
+			if (thisPic == imgCt) {
+				thisPic = 0;
+			}
+			document.getElementById("myPicture").src = myPix[thisPic];
+		}
+		function modificarIntervalo() {
+			var numeros = "0123456789";
+			var esLetra = false;
+			var miNumero = document.getElementById("miIntervalo").value;
+			document.getElementById("miDivErr").innerHTML = ""
+			if (miNumero.trim().length > 0) {
+				for (i = 0; i < miNumero.length; i++) {
+					/* si no es un número correcto*/
+					if (numeros.indexOf(miNumero.charAt(i)) == -1) {
+						esLetra = true;
+					}
+				}
+				if (esLetra == true) {
+					document.getElementById("miDivErr").innerHTML = "<font color='red'>La cadena de caracteres contiene caracteres no numericos<font>"
+				}
+				else {
+					clearInterval(variable)
+					variable = window.setInterval("chgSlide();", miNumero * 1000)
+				}
+			}
+			else {
+				document.getElementById("miDivErr").innerHTML = "<font color='red'>La cadena de caracteres no puede estar vac&iacute;a<font>"
+			}
+		}
+	</script>
+	<noscript>
+		<p><em>Si lees este mensaje es que el navegador no ejecuta guiones JavaScript</em></p>
+	</noscript>
+</head>
+
+<body bgcolor="white">
+	<h1 align="center">
+		<input type="text" id="miIntervalo">
+		<input type="button" onclick="modificarIntervalo()" value="Modificar Intervalo">
+		<br><br>
+		<p><img src="imagenes/uno.jpg" id="myPicture" width="262" height="262"></p>
+		<div id="miDivErr"></div>
+</body>
+<script>
+	var variable = window.setInterval("chgSlide();", 1000)
+</script>
+
+</html>

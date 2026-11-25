@@ -1,5 +1,4 @@
-# Imprimir de 1 a n. Recibe un entero n e imprime los números desde 1 hasta n.
-
+# Imprimir de n a 1. Recibe un entero n e imprime los números desde n hasta 1.
 
 #=========================== FUNCION RECURSIVIDAD =======================
 

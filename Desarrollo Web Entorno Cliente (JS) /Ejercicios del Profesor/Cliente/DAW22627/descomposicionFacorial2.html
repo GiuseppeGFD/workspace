@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<HTML>
+
+<HEAD>
+	<meta charset="UTF-8">
+	<SCRIPT>
+
+		function mostrar() {
+			document.getElementById("parrafo1").innerHTML = "".fontcolor("black");
+			numero = document.getElementById("numero").value;
+			var numeros = "0123456789";
+			if (numero.trim().length > 0) {
+				var esLetra = false;
+				for (i = 0; i < numero.length; i++) {
+					/* si no es un número es erroneo*/
+					if (numeros.indexOf(numero.charAt(i)) == -1) {
+						esLetra = true;
+					}
+				}
+			}
+			if (esLetra) {
+				// No se permiten caracteres no numericos
+				document.getElementById("parrafo1").innerHTML = "<font color='red'>La cadena de caracteres contiene caracteres no numericos<font>"
+				return;
+			}
+			var descomposicion = numero + ' = ';
+			var dividendo = numero;
+			var divisor = 2;
+			//157896527 = 17 x 131 x 70901 
+			while (divisor <= numero) {
+				if (dividendo % divisor != 0) {
+					divisor++;
+				}
+				else {
+					descomposicion += divisor;
+					dividendo /= divisor;
+					if (dividendo != '1') {
+						descomposicion += ' x ';
+					}
+				}
+				console.log("divisor=" + divisor + " - dividendo=" + dividendo + " - numero=" + numero);
+			}
+			document.getElementById("parrafo1").innerHTML = "<font color='blue'>La descomposicion en factores del numero introducido por el usuario es</br> <b>" + descomposicion + "</b></font>";
+
+		}
+
+	</SCRIPT>
+</HEAD>
+
+<BODY>
+	<form>
+		Introduzca un número para descomponerlo en factores: <INPUT type=text id="numero" />
+		<input type="button" value="Mostrar" onClick="mostrar();">
+		<div ID="parrafo1"></div>
+	</form>
+</BODY>
+
+</HTML>

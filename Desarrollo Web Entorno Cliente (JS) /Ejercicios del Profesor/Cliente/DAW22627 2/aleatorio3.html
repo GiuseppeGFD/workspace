@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function generar() {
+            var elem = parseInt(document.getElementById("elementos").value);
+            var min = parseInt(document.getElementById("primero").value);
+            var max = parseInt(document.getElementById("ultimo").value);
+            var resultado = "";
+            var numeros = [];
+            if (elem > 0 && min > 0 && max > 0) {
+                if (min > max) { // Si el mínimo es mayor que el máximo, 
+                    // se invierte el contenido de las variables.
+                    var aux = min;
+                    min = max;
+                    max = aux;
+                }
+                if (elem > max - min + 1) {
+                    var res = "<font color=red>El número de elementos a generar es inferior";
+                    res += "a la diferencia entre</font> <font color =blue>mayor</font>";
+                    res += " y el <font color= blue>menor</font>";
+                    document.getElementById("miDiv").innerHTML = res;
+                }
+                else {
+                    do {
+                        var existe = false; // vamos a suponer que no va a haber números duplicados
+                        var res = Math.floor(Math.random() * ((max + 1) - min) + min);
+                        /*for (var i = 0; i <= numeros.length - 1; i++) {
+                            if (numeros[i] == res) {
+                                existe = true;
+                            }
+                        }*/
+                        if (numeros.includes(res)) { existe = true };
+                        if (!existe || numeros.length == 0) { // si no exciste o si es el primer elemnto
+                            numeros[numeros.length] = res
+                        }
+                    } while (numeros.length < elem);
+
+                    document.getElementById("miDiv").innerHTML = "<font color= blue>Array generado</font><br>" + numeros;
+                    // método de ordenación de la burbuja.
+                    /*for (var i = 1; i < numeros.length; i++) {
+                        for (var j = 0; j < (numeros.length - 1); j++) {
+                            if (numeros[j] > numeros[j + 1]) {
+                                var k = numeros[j + 1];
+                                numeros[j + 1] = numeros[j];
+                                numeros[j] = k;
+                            }
+                        }
+                    }*/
+
+                    numeros.sort(comparar);
+                    document.getElementById("miDiv").innerHTML += "<br><font color=blue>Array ordenado ascendentemente</font> <br>" + numeros;
+                    numeros.sort(comparar2);
+                    document.getElementById("miDiv").innerHTML += "<br><font color=blue>Array ordenado descendentemente</font> <br>" + numeros;
+
+                }
+            }
+            else {
+                var res = "<font color=red>Debe introducir números en todas las cajas de texto";
+                res += "</font><br><font color = red>o los valores numéricos deben ser mayor que 0";
+                res += "</font>";
+                document.getElementById("miDiv").innerHTML = res;
+
+            }
+
+        }
+        function comparar(a, b) {
+            return a - b;
+        }
+        function comparar2(a, b) {
+            return b - a;
+        }
+        function comparar3(b, a) {
+            return a - b;
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+Introduzca el número de elementos a generar: <input type="text" id="elementos" /> <br>
+Introduzca el número menor: <input type="text" id="primero" /><br>
+Introduzca el número mayor: <input type="text" id="ultimo" /><br>
+<input type="button" value="Generar" onclick="generar()" /><br>
+<div id="miDiv"></div>
+
+</html>

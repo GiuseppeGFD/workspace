@@ -1,0 +1,76 @@
+<html>
+
+<head>
+	<script>
+	</script>
+	<SCRIPT>
+		Ventana;
+		function moverHasta() {
+			if ((typeof (Ventana) == 'undefined') || (Ventana.closed)) {
+				crea();
+			}
+			Ventana.moveTo(document.getElementById("x").value, document.getElementById("y").value);
+			Ventana.window.focus();
+			setTimeout('Ventana.close()', 2000);
+		}
+		function mueveYRedimensiona() {
+			Ventana.window.moveBy(5, 5);
+			Ventana.window.resizeBy(10, 10);
+			i++;
+			Ventana.blur();
+			if (i < 20)
+				setTimeout('mueveYRedimensiona()', 100);
+			else
+				Ventana.close();
+		}
+
+		function Mover() {
+			Ventana.moveBy(5, 5);
+			i++;
+			Ventana.blur();
+			if (i < 20)
+				setTimeout('Mover()', 100);
+			else
+				Ventana.close();
+		}
+		function redimensiona() {
+			Ventana.resizeBy(10, 10);
+			i++;
+			Ventana.blur();
+			if (i < 20)
+				setTimeout('redimensiona()', 100);
+			else
+				Ventana.close();
+		}
+	</SCRIPT>
+	<script>
+		function crea() {
+			var dimensiones = "left=100,top=100,width=100,height=100";
+			i = 0;
+			Ventana = window.open("", "", dimensiones);
+			Ventana.document.write("Ventanas en movimiento");
+		}
+		function crea2() {
+			var dimensiones = "left=100,top=100,width=100,height=100";
+			i = 0;
+			Ventana = window.open("", "", dimensiones);
+			Ventana.document.write("Ventanas en movimiento<br>");
+			Ventana.document.write("Ventanas en movimiento<br>");
+			Ventana.document.write(opener.document.forms[0].name);
+		}
+	</script>
+</head>
+
+<body>
+
+	<form name="Formunario">
+		<input type="button" value="mover" onclick="crea();Mover();">&nbsp;&nbsp;&nbsp;
+		<input type="button" value="redimensionar" onclick="crea();redimensiona();">&nbsp;&nbsp;&nbsp;
+		<input type="button" value="mover y redimensionar" onclick="crea();mueveYRedimensiona();">&nbsp;&nbsp;&nbsp;
+		<input type="button" value="mover hasta" onclick="moverHasta();">&nbsp;&nbsp;&nbsp;
+		Valor X: <input type="text" value="" id="x">&nbsp;&nbsp;&nbsp;
+		Valor Y: <input type="text" value="" id="y">
+		<form>
+</body>
+
+</html>

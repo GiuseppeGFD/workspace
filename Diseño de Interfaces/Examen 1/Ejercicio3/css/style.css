@@ -1,0 +1,41 @@
+body {
+    margin: 0px;
+}
+
+.content {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#cuadro {
+    background-image: url('../img/borde.png');
+    background-size: cover;
+    height: 800px;
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#imagen {
+    background-image: url('../img/imagen4.jpg');
+    background-size: cover;
+    height: 550px;
+    width: 550px;
+}
+
+#button {
+    /*318 159 */
+    background-image: url('../img/button.jpg');
+    height: 159px;
+    width: 168px;
+    border-radius: 50%;
+}
+
+#button:hover {
+    background-position: 159px;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Máquina de Escribir Simple</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #f0e6d2;
+            font-family: monospace;
+            font-size: 1.5rem;
+            padding: 50px;
+        }
+		/* Efecto de cursor parpadeante */
+        .cursor {
+            display: inline-block;
+            background-color: #f0e6d2;
+            width: 10px;
+            height: 1.6rem;
+            margin-left: 2px;
+            animation: parpadeo 0.8s infinite;
+            vertical-align: middle;
+        }
+		@keyframes parpadeo {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+		
+		.contenedor {
+            max-width: 600px;
+            font-size: 1.5rem;
+            line-height: 1.6;
+            background-color : blue;
+			color : salmon;
+            white-space: pre-wrap; /* Mantiene los saltos de línea del texto */
+        }
+		#miError {
+		    color : red;
+		}
+		
+    </style>
+</head>
+<body>
+
+    Introduzca el texto a mostrar: <!-- <input type="text" id="maquina"/></br>--><br>
+	<div id="miDiv"><textarea rows=23 cols=34 id="maquina"></textarea>	<input type="button" value="Mostrar efecto" onclick="mostrar()"></div>
+	<div id="miDiv2">
+	introduzca valor del temporizador: <input type="text" id="miTemporizador">	<input type="button" onclick="cambiaTemporizar()" value="Cambiar temporizador"/>
+	</div>
+    <div id="miError"></div>	
+    <!-- Aquí se mostrará el texto -->
+    <div class="contenedor" id="pantalla"><span id="maquina-efecto"></span><span class="cursor"></span></div>
+
+    <script>
+        
+        var temporizador=""; 
+        const elemento = document.getElementById("maquina-efecto");
+		let texto = "";
+		let posicion = 0; // Lleva la cuenta de qué letra toca escribir
+        let velocidad = 180; // El retardo en milisegundos (más alto = más lento)
+        function mostrar(){
+	        texto = ""; 
+            posicion=0;			
+            elemento.innerHTML ="";
+        
+            
+	        texto = document.getElementById("maquina").value;
+            temporizador = setInterval("tecladoMaquinaEscribir()", velocidad);
+		}
+        function tecladoMaquinaEscribir(){
+		
+		   	elemento.innerHTML += texto.charAt(posicion);
+	            
+            // Pasamos a la siguiente letra
+            posicion++;
+
+            // Si ya escribimos todo el texto, detenemos el temporizador
+            if (posicion >= texto.length) {
+                clearInterval(temporizador);
+            }		
+		}    
+        function cambiaTemporizar(){
+			var error = document.getElementById("miError");
+			error.innerHTML = "";
+			var numeros ="0123456789";
+			var miNumero = document.getElementById("miTemporizador").value.trim();
+			var esLetra=false;
+			for(var i=0; i<=miNumero.length; i++){
+				if (numeros.indexOf(miNumero.charAt(i)) == -1){
+				   esLetra=true;
+				}
+			}
+			if (esLetra){
+				error.innerHTML ="Se ha introducido algún caracter no numérico";
+				return;
+			}		
+			
+			clearInterval(temporizador);
+			texto = ""; 
+			texto = document.getElementById("maquina").value;
+            posicion=0;			
+            elemento.innerHTML ="";
+			velocidad = parseInt(miNumero);
+			temporizador = setInterval("tecladoMaquinaEscribir()", velocidad);		
+		}		
+    </script>
+
+</body>
+</html>

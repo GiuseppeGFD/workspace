@@ -1,0 +1,136 @@
+PRÁCTICA: CÁLCULO DEL MÁXIMO COMÚN DIVISOR (MCD)
+ 
+Desarrolla un programa en Python que permita calcular el máximo común divisor (MCD) de dos números enteros positivos mediante diferentes algoritmos, utilizando funciones, bucles y recursividad.
+
+1. ¿Qué es el máximo común divisor?
+El máximo común divisor de dos números enteros positivos es el mayor número entero que divide a ambos sin dejar resto.
+
+Por ejemplo, el MCD de 24 y 36 es 12, ya que 12 es el mayor número que divide exactamente a ambos.
+
+2. Funciones de cálculo del MCD
+Implementa cuatro funciones independientes para calcular el MCD de dos números, siguiendo los algoritmos descritos a continuación.
+
+1. Función iterativa: método normal
+Implementa una función que calcule el MCD utilizando un bucle. Para ello, comienza comprobando si el menor de los dos números divide exactamente a ambos.
+
+Si no es así, continúa probando con los números enteros inmediatamente inferiores, de uno en uno, hasta encontrar el mayor divisor común. El primer divisor común encontrado será el MCD.
+
+Ejemplo: MCD de 24 y 36
+Comenzamos por el menor de los dos números, que es 24, y comprobamos si divide exactamente a ambos.
+
+24 no es divisor común.
+23 no es divisor común.
+22 no es divisor común.
+...
+13 no es divisor común.
+12 sí es divisor común.
+Como 12 divide exactamente a 24 y a 36, el resultado es:
+
+MCD(24, 36) = 12
+2. Función recursiva: método normal
+Implementa una función recursiva que calcule el MCD siguiendo el mismo procedimiento del método normal.
+
+La función deberá comprobar si un posible divisor divide exactamente a ambos números. Si lo hace, devolverá dicho divisor. Si no lo hace, deberá volver a llamarse utilizando como candidato el divisor inmediatamente inferior.
+
+La función finalizará cuando encuentre un divisor común y deberá devolver el resultado obtenido.
+
+Ejemplo: MCD de 24 y 36
+En este caso, la función se vuelve a llamar a sí misma con el candidato inmediatamente inferior cada vez que no encuentra un divisor común.
+
+mcd_normal(24, 36, 24)
+  ↓
+mcd_normal(24, 36, 23)
+  ↓
+mcd_normal(24, 36, 22)
+  ↓
+...
+  ↓
+mcd_normal(24, 36, 13)
+  ↓
+mcd_normal(24, 36, 12)
+Cuando el candidato es 12, la función encuentra un divisor común y devuelve ese valor. Las llamadas anteriores reciben el resultado.
+
+MCD(24, 36) = 12
+3. Función iterativa: algoritmo de Euclides
+Implementa una función que calcule el MCD mediante el algoritmo de Euclides, utilizando un bucle.
+
+Este algoritmo se basa en sustituir el primer número por el segundo y el segundo por el resto de la división entre ambos.
+
+El proceso se repite hasta que el segundo número sea cero. En ese momento, el primer número será el MCD.
+
+Ejemplo: MCD de 24 y 36
+Aplicamos el algoritmo de Euclides utilizando un bucle. En cada paso, sustituimos el primer número por el segundo y el segundo por el resto de la división.
+
+a = 24, b = 36
+
+a = 36, b = 24
+36 % 24 = 12
+
+a = 24, b = 12
+24 % 12 = 0
+
+a = 12, b = 0
+Cuando el segundo número es cero, el algoritmo finaliza y devuelve el primer número.
+
+MCD(24, 36) = 12
+4. Función recursiva: algoritmo de Euclides
+Implementa una función recursiva que aplique el algoritmo de Euclides.
+
+La función recibirá dos números y se llamará de nuevo utilizando como argumentos el segundo número y el resto de la división entre ambos.
+
+Cuando el segundo número sea cero, la función devolverá el primer número. Esta será la condición de finalización de la recursividad.
+
+Ejemplo: MCD de 24 y 36
+La función recursiva de Euclides se llama a sí misma utilizando como argumentos el segundo número y el resto de la división entre ambos.
+
+mcd_euclides(24, 36)
+  ↓
+mcd_euclides(36, 24)
+  ↓
+mcd_euclides(24, 12)
+  ↓
+mcd_euclides(12, 0)
+Cuando el segundo argumento es cero, se alcanza la condición de finalización y la función devuelve 12.
+
+MCD(24, 36) = 12
+3. Funcionamiento del programa
+El programa solicitará repetidamente dos números enteros positivos al usuario y mostrará el MCD calculado mediante las cuatro funciones implementadas.
+
+Después de mostrar los resultados, volverá a solicitar otros dos números. El programa finalizará cuando el usuario introduzca dos números iguales.
+
+Si los dos números son iguales, el programa finalizará inmediatamente, sin calcular ni mostrar el MCD de esa última pareja.
+
+Ejemplo de funcionamiento
+Introduce el primer número: 24
+Introduce el segundo número: 36
+
+MCD mediante el método normal iterativo: 12
+MCD mediante el método normal recursivo: 12
+MCD mediante Euclides iterativo: 12
+MCD mediante Euclides recursivo: 12
+
+Introduce el primer número: 8
+Introduce el segundo número: 8
+Los dos números son iguales. Fin del programa.
+4. Requisitos del programa
+Implementa cada uno de los cuatro algoritmos en una función independiente.
+Las cuatro funciones de cálculo del MCD deben implementar los algoritmos solicitados de forma independiente. No se permite utilizar una de las cuatro funciones para obtener el resultado de otra.
+Solicita dos números enteros positivos en cada iteración.
+Comprueba que los datos introducidos son válidos. Si alguno de ellos no es un entero positivo, muestra un mensaje de error y vuelve a solicitar el/los datos.
+Si los dos números introducidos son iguales, finaliza el programa sin calcular ni mostrar su MCD.
+Muestra los resultados de las cuatro funciones para cada pareja válida de números distintos.
+Utiliza nombres descriptivos para las funciones y las variables.
+Evita repetir código innecesariamente.
+Incluye comentarios cuando ayuden a comprender el funcionamiento del programa, sin sobrecargar el código.
+Puedes definir funciones auxiliares para organizar y simplificar el código, siempre que se mantengan las cuatro funciones de cálculo independientes.
+5. Pruebas
+Realiza las pruebas necesarias para comprobar que las cuatro funciones funcionan correctamente.
+
+Comprueba, al menos, los siguientes casos:
+
+Dos números cuyo MCD sea distinto de 1, como 24 y 36.
+Dos números en los que uno sea divisor del otro, como 12 y 36.
+Dos números primos entre sí, como 8 y 15.
+Dos números iguales, para comprobar la finalización del programa.
+Entradas no válidas, como texto, números negativos o el número cero.
+Entrega: entrega únicamente el archivo con el código fuente del programa. Incluye los comentarios que consideres necesarios para facilitar su comprensión, procurando que sean claros, útiles y no excesivos. No es necesario adjuntar las pruebas realizadas ni documentación adicional.

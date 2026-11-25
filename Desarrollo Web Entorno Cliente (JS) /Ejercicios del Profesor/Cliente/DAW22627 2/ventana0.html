@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana 0</title>
+    <script>
+        var miVentana;
+        function abreNuevaVentana() {
+            var texto = document.getElementById("miTexto").value.trim();
+            miVentana = window.open("", "", "width=500,height=500");
+            miVentana.document.open();
+            miVentana.document.write("<!DOCTYPE html><html><head><title>Venatana Creada");
+            miVentana.document.write("</title></head><body>");
+            miVentana.document.write("<h1>Buenos días " + texto + "</h1>");
+            miVentana.document.write("<input type='button' value='Cerrar ventana' onclick='window.close()'/>");
+            /* miVentana.document.write("<script>");
+             miVentana.document.write("setTimeout('window.close()', 3000)");
+             miVentana.document.write("<\/script>");*/
+            miVentana.document.write("</body></html > ");
+            miVentana.document.close();
+            miVentana.moveBy(300, 200);
+
+        }
+        function cerrarVentana() {
+            miVentana.window.close();
+        }
+    </script>
+</head>
+
+<body>
+    Introduzca Nombre: <input type="text" id="miTexto"><br>
+    <input type="button" value="Crear ventana" onclick="abreNuevaVentana()" />
+    <input type="button" value="Cerrar ventana" onclick="cerrarVentana()" />
+</body>
+
+</html>

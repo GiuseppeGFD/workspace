@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>Edad Par Impar</title>
+   <script>
+    function resultado(){
+        var numero = parseInt(document.getElementById("numero").value);
+        var resultado=" El número " + numero + " es divisible entre ";
+        if ((numero % 2) == 0){
+           resultado += 2;
+        }
+        else if ((numero % 3) == 0){
+           resultado += 3;
+        }
+        else if ((numero % 5) == 0){
+           resultado += 5;
+        } 
+        else if ((numero % 7) == 0){
+           resultado += 7;
+        }
+        else
+        {
+           resultado =" El numero no es divisible entre ningún número menor de 10";
+        }
+               
+        document.getElementById("miDiv").innerHTML = resultado;
+       }
+</script>
+</head>
+<body>
+   <br>
+   <form>
+        <label>Introduzca un número:</label> <input type="text" id="numero"/>
+        <br><br>
+        <input type="button" onclick="resultado()" value="Evalúa número"/>    
+        <div id="miDiv"></div>
+    </form>
+</body>
+</html>

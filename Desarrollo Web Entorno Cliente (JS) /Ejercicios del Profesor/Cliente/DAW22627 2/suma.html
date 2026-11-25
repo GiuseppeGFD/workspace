@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calculaSuma() {
+            var sumando1 = parseInt(document.getElementById("texto1").value);
+            var sumando2 = parseInt(document.getElementById("texto2").value);
+            var resultado = sumando1 + sumando2;
+            var texto = "";
+            texto = "El sesultado de sumar " + sumando1 + " \+ " + sumando2 + " es \= a " + resultado;
+            document.getElementById("miDiv").innerHTML = texto;
+        }
+    </script>
+</head>
+
+<body>
+    Numero 1 <input type="text" id="texto1" /><br>
+    Numero 2 <input type="text" id="texto2" /><br>
+    <input type="button" value="Sumar" onclick="calculaSuma()" />
+    <div id="miDiv"></div>
+</body>
+
+</html>

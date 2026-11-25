@@ -1,0 +1,46 @@
+body {
+    background-image: url('canchaTenis.png');
+    background-size: cover;
+    margin: 0;
+}
+
+#Contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#pelota {
+    background-image: url('pelota.png');
+    background-size: cover;
+    margin-top: 450px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    animation:
+        rebotar 0.5s ease-out alternate infinite,
+        rotar 3s linear infinite;
+}
+
+
+@keyframes rebotar {
+    from {
+        translate: 0 0;
+    }
+
+    to {
+        translate: 0 -100px;
+    }
+}
+
+
+@keyframes rotar {
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}

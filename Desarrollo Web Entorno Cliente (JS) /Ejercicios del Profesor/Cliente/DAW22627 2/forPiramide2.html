@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>For pirámide 1</title>
+    
+</head>
+<body>
+    <div id="miDiv"></div>
+    <script>
+        var i, j;
+        var texto="";
+        for (i=1;i<=9;i++){
+            for (j=1; j<=i; j++){
+                texto+=i;
+            }
+            texto +="<br>"
+        }
+        document.getElementById("miDiv").innerHTML=texto;
+    </script>
+</body>
+</html>

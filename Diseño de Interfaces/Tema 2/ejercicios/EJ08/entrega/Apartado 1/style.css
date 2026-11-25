@@ -1,0 +1,195 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+#contenedor input,
+#contenedor select {
+    border-radius: 4%;
+}
+
+#contenedor {
+    padding: 30px;
+    margin: 20px auto;
+    width: 850px;
+    background-color: white;
+    box-shadow: 0px 0px 3px #ccc;
+    border: 1px solid #d3d3d3;
+}
+
+#contenedor h2 {
+    margin-top: 0;
+    font-size: 1.8em;
+    font-weight: normal;
+}
+
+#contenedor ul {
+    padding: 0;
+    margin: 0;
+}
+
+
+#contenedor li label:first-child,
+#contenedor li label span {
+    display: inline-block;
+}
+
+#contenedor li {
+    list-style: none;
+    display: inline-block;
+    vertical-align: top;
+    width: 48%;
+    margin-bottom: 25px;
+    padding: 10px;
+}
+
+.titulo {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.requerido {
+    color: red;
+}
+
+#contenedor span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#contenedor span label {
+    display: block;
+    font-size: 0.8em;
+    color: #333;
+    margin-top: 3px;
+}
+
+input,
+select {
+    border: 1px solid #767676;
+    padding: 4px;
+    font-size: 0.9em;
+}
+
+#nombre {
+    width: 170px;
+}
+
+#apellido1 {
+    width: 320px;
+}
+
+#apellido2 {
+    width: 320px;
+}
+
+/* Dirección */
+#direccion {
+    width: 340px;
+}
+
+#codigopostal {
+    width: 100px;
+}
+
+#municipio {
+    width: 200px;
+}
+
+#codigopostal,
+#municipio {
+    display: inline-block;
+}
+
+#provincia {
+    width: 100px;
+}
+
+#pais {
+    width: 200px;
+}
+
+#provincia,
+#pais {
+    display: inline-block;
+}
+
+#contenedor li:nth-child(2) span:nth-child(2),
+#contenedor li:nth-child(2) span:nth-child(4) {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+#contenedor li:nth-child(2) span:nth-child(3),
+#contenedor li:nth-child(2) span:nth-child(5) {
+    display: inline-block;
+}
+
+
+#email {
+    width: 320px;
+}
+
+
+#telefonofijo {
+    width: 160px;
+}
+
+#telefonomovil {
+    width: 160px;
+}
+
+#telefonofijo,
+#telefonomovil {
+    display: inline-block;
+}
+
+#contenedor li:nth-child(4) span {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+
+.ayuda {
+    display: none;
+}
+
+
+#contenedor li:last-child {
+    width: 100%;
+    text-align: right;
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+}
+
+#alta {
+    padding: 6px 12px;
+    font-size: 1em;
+    background-color: #f0f0f0;
+    border: 1px solid #767676;
+}
+
+
+#contenedor li:hover {
+    background-color: #FF9;
+}
+
+#contenedor li:last-child input:hover {
+    box-shadow: 0px 0px 6px black;
+}
+
+#contenedor li:last-child:hover {
+    background-color: white;
+}
+
+input:focus,
+select:focus {
+    border: 2px solid #E6B700;
+    outline: none;
+}

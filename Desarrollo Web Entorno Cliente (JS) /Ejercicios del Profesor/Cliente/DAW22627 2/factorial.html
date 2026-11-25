@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Factorial Iterativo</title>
+
+</head>
+
+<body>
+
+    <div>
+        <h2>Factorial Iterativo</h2>
+
+        <!-- Input de tipo texto para asegurar que HTML no filtre los datos -->
+        <input type="text" id="numeroInput" placeholder="Introduce un número entero">
+        <div id="errorMensaje"></div>
+
+        <button onclick="procesarFactorial()">Calcular Factorial</button>
+
+        <div id="resultadoContenedor"></div>
+    </div>
+
+    <script>
+        function procesarFactorial() {
+            const inputVal = document.getElementById('numeroInput').value.trim();
+            const errorDiv = document.getElementById('errorMensaje');
+            const resultadoDiv = document.getElementById('resultadoContenedor');
+
+            // Limpiar estados anteriores
+            errorDiv.innerHTML = '';
+            resultadoDiv.innerHTML = '';
+
+            var numeros = "0123456789";
+            if (inputVal.trim().length > 0) {
+                var esLetra = false;
+                for (i = 0; i < inputVal.length; i++) {
+                    /* si no es un número es erroneo*/
+                    if (numeros.indexOf(inputVal.charAt(i)) == -1) {
+                        esLetra = true;
+                    }
+                }
+                if (esLetra) {
+                    // No se permiten caracteres no numericos
+                    document.getElementById("errorMensaje").innerHTML = "<font color='red'>La cadena de caracteres contiene caracteres no numericos<font>"
+                    return;
+                }
+            }
+            // Convertir a entero tras pasar la validación por texto
+            const numero = parseInt(inputVal, 10);
+
+            // Evitar problemas de rendimiento o desbordamiento (Infinity) en números gigantes
+            if (numero > 170) {
+                errorDiv.innerText = "Error: El número es demasiado alto (máximo 170 para Javascript).";
+                errorDiv.style.display = 'block';
+                return;
+            }
+            // 1. FACTORIAL RECURSIVO
+            var recursivo = factorialRecursivo(numero)
+
+            // 2. CÁLCULO DEL FACTORIAL SIN RECURSIVIDAD (Bucle iterativo)
+            let factorial = 1;
+            for (let i = 2; i <= numero; i++) {
+                factorial *= i;
+            }
+            // 3. CÁLCULO DEL FACTORIAL SIN RECURSIVIDAD (Bucle While)
+
+            let resultado = 1;
+            var aux = numero
+            while (aux > 1) {
+                resultado *= aux;
+                aux--;
+            }
+
+            // Mostrar el resultado obtenido
+            resultadoDiv.innerText = "El factorial de " + numero + " es: " + recursivo;
+        }
+
+        function factorialRecursivo(n) {
+            if (n < 0) return -1;
+            if (n === 0 || n === 1) return 1;
+            return n * factorialRecursivo(n - 1);
+        }
+    </script>
+
+</body>
+
+</html>

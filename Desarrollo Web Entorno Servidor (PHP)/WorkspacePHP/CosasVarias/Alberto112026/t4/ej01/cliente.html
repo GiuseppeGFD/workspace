@@ -1,0 +1,32 @@
+<head>
+    <script type="text/javascript">
+        var xmlhttp;
+
+        function accionAJAX() {
+            document.getElementById("idDiv").innerHTML = xmlhttp.responseText; // Sustitución quirúrgica
+        }
+
+        function usarAJAX() {
+            var nombre = document.getElementById('idNombre').value;
+            var query_string = 'nombre=' + nombre + '&apellido=' + apellido;
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.open('POST', 'ajax.php', true);
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlhttp.send(query_string);
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    accionAJAX();
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>SALUDADOR</h1>
+    Introduce tu nombre
+    <input id="idNombre" type="text" />
+    <br />
+    <button onclick="usarAJAX()">Saludar</button>
+    <div id="idDiv"></div>
+</body>

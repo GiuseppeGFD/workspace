@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function mostrar() {
+            caracteres = document.getElementById("numero").value;
+            // Todos estos valores equivalen al número 15 en decimal
+            const decimal = 15;
+            const hexadecimal = 0xF;   // 0x seguido de F
+            const octal = 0o17;  // 0o seguido de 17
+            const binario = 0b1111; // 0b seguido de 1111
+
+            var texto = "<font color='blue' size += 5>El valor introducido con el usuario según isNan(), es numérico? </font>";
+            if (!isNaN(caracteres)) {
+                texto += "<font color=purple size += 5>" + !isNaN(caracteres) + "</font>";
+            }
+            else {
+                texto += "<font color=red size += 5>" + !isNaN(caracteres) + "</font>";
+            }
+            document.getElementById("parrafo1").innerHTML = texto;
+        }
+    </script>
+</head>
+
+<body>
+    Introduzca un número para descomponerlo en factores: <INPUT type=text id="numero" />
+    <input type="button" value="Mostrar" onClick="mostrar();">
+    <div ID="parrafo1"></div>
+</body>
+
+</html>

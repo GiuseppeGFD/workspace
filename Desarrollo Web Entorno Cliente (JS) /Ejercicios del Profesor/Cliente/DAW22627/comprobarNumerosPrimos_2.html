@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>while 1</title>
+	<script>
+		function mostrar() {
+			var resultado = "";
+			//var divisores=2;
+			var p = parseInt(document.getElementById("miNumero").value);
+			i = 2;
+
+			var esPrimo = true;
+			/*
+			while ((i<=Math.sqrt(p)) && esPrimo){
+				if (p%i == 0){
+				   esPrimo=false;				   
+				}	
+				 i++;
+			}
+			*/
+			while ((i < (p / 2)) && esPrimo) {
+				if (p % i == 0) {
+					esPrimo = false;
+				}
+				i++;
+			}
+			if (esPrimo) {
+				resultado = "El número " + p + " <font color=blue>SI</font> es primo";
+			}
+			else {
+				resultado = "El número " + p + " <font color=red>NO</font> es primo";
+			}
+			document.getElementById("miDiv").innerHTML = resultado;
+		}		
+	</script>
+</head>
+
+<body>
+	Introduzca un número para comprobar si es primo:
+	<input type="text" id="miNumero" />
+	<input type="button" value="Mostrar" onclick="mostrar();" />
+	<div id="miDiv"></div>
+</body>
+
+</html>

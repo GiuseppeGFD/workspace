@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4 - Input</title>
+
+    <script>
+        function mostrarValor(idDiv) {
+            document.getElementById(idDiv).innerHTML = document.getElementById('cajaInput').value;
+        }
+
+        window.onload = function () {
+            var caja = document.getElementById('cajaInput');
+
+            caja.onkeydown = function () { mostrarValor('keydown'); };
+            caja.onkeypress = function () { mostrarValor('keyPress'); };
+            caja.onchange = function () { mostrarValor('change'); };
+            caja.onkeyup = function () { mostrarValor('keyup'); };
+            caja.oninput = function () { mostrarValor('input'); };
+        };
+    </script>
+
+</head>
+
+<body style="margin-top: 200px;">
+    <center>
+        <input type="text" id="cajaInput"><br>
+        KeyDown:<div id="keydown"></div>
+        KeyPress:<div id="keyPress"></div>
+        Change:<div id="change"></div>
+        KeyUp:<div id="keyup"></div>
+        Input: <div id="input"></div>
+    </center>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var parar = "";
+        /*function muestraRelog() {
+            parar = setInterval("muestra()", 1000);
+        }*/
+
+        function iniciarParar(valor) {
+            document.getElementById("idIniciar").disabled = valor;
+            document.getElementById("idParar").disabled = !valor;
+        }
+        function inicia() {
+            parar = setInterval("muestra()", 1000);
+            iniciarParar(true)
+            // document.getElementById("idIniciar").disabled = true;
+            // document.getElementById("idParar").disabled = false;
+        }
+        function para() {
+            clearInterval(parar)
+            iniciarParar(false);
+            //document.getElementById("idIniciar").disabled = false;
+            //document.getElementById("idParar").disabled = true;
+        }
+
+        function muestra() {
+            var miFecha = new Date();
+            var hora = miFecha.getHours();
+            var minuto = miFecha.getMinutes();
+            var segundo = miFecha.getSeconds();
+            if (hora < 10) { hora = "0" + hora }
+            if (minuto < 10) { minuto = "0" + minuto }
+            if (segundo < 10) { segundo = "0" + segundo }
+            var texto = hora + ":" + minuto + ":" + segundo;
+            document.getElementById("miDiv").innerHTML = texto;
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" id="idIniciar" onclick="inicia()" value="Iniciar" />
+    <input type="button" id="idParar" onclick="para()" value="Parar" /><br>
+
+    <div id="miDiv"></div>
+</body>
+
+</html>

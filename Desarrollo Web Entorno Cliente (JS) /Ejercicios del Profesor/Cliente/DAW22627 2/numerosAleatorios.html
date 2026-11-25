@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script> 
+      var numerosArr=[];
+      function mostrar(){  
+        var texto = "";
+        var numeros = parseInt(document.getElementById("numerosAGenerar").value);
+        var menor = parseInt(document.getElementById("numeroMenor").value);
+        var mayor = parseInt(document.getElementById("numeroMayor").value);
+        if (!isNaN(numeros) && !isNaN(menor) && !isNaN(mayor) && numeros>0 && menor >0 && mayor >0)
+         {
+           if (menor > mayor){
+             var aux = menor;
+             menor = mayor;
+             mayor = aux;
+           }
+           if (numeros > ((mayor- menor)+1)){
+               texto = "<font color=red>El número de elementos a generar es inferior a la diferencia "
+               texto += "entre el</font> <font color=blue>mayor</font> ";
+               texto +="<font color=red>y el </font><font color=blue>menor</font> "
+               }else
+               {
+               numerosArr=[];  
+               texto = generaNumeros(numeros, mayor, menor);
+               texto += ordenarArray();
+               }
+         }
+         else
+         {
+          texto = "<font color=red>Debe introducir números en todas las cajas de texto "
+          texto += "o los valores numéricos deben ser mayor que 0</font>"  
+
+         }        
+        document.getElementById("miDiv").innerHTML=texto;        
+      }  
+      function ordenarArray(){
+        var k=0;
+        var miTexto="";
+        for (var i=1; i<numerosArr.length;i++){
+             for(var j=0; j<(numerosArr.length-1); j++){
+               if (numerosArr[j]>numerosArr[j+1]){
+                   k = numerosArr[j+1];
+                   numerosArr[j+1] = numerosArr[j];
+                   numerosArr[j] = k;     
+               }
+             }
+        }
+        miTexto= "<br><font color=blue>Array ordenado ascendentemente</font><br>"+numerosArr;
+        return miTexto;    
+      }
+      function generaNumeros(elem, min, max){
+        var texto2 ="";
+        var existe="";
+        var res="";
+        do{
+            existe = false;  // variable para controlar los posibles elementos duplicados en el array
+            res = Math.floor(Math.random() * ((max +1)-min) + min); 
+            for (i=0; i<=numerosArr.length-1; i++){
+                if (numerosArr[i]==res){
+                    existe=true;
+                }
+            }
+            if (!existe || numerosArr==0){
+                numerosArr[numerosArr.length]=res;
+                //numerosArr.push(res);
+            }
+        }while (numerosArr.length < elem);
+        texto2 = "<font color=blue>Array generado</font><br>" + numerosArr;
+        return texto2;
+      }
+    </script>
+</head>
+<body>
+    Introduzca el número de elementos a generar: <input type ="text" id ="numerosAGenerar"/><br>
+    Introduzca el número menor: <input type="text" id ="numeroMenor"/><br>
+    Introduzca el número mayor: <input type="text" id ="numeroMayor"/><br>
+    <button onclick="mostrar()" type="button">Muestra</button>
+    <div id="miDiv"></div>
+</body>
+</html>

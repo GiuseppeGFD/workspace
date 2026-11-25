@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8">
+	<title>Objeto Location</title>
+</head>
+<body>
+	<script type="text/javascript">
+		document.write("URL completa: " + location.href + "<br>");
+		document.write("Pathname: " + location.pathname + "<br>");
+		document.write("Protocolo: " + location.protocol + "<br>"); 
+        document.write("Puerto: " + location.port+ "<br>"); 
+        document.write("Servidor: " + location.host + "<br>");
+        document.write("Host Name: " + location.hostname + "<br>"); 
+	</script>
+	<form>
+		<input type="button" value="Recargar" onClick="location.reload();">
+		<input type="button" name="Button" value="redireccionar" onClick="location.href='https://www.nasa.gov/es/'">
+		<input type="button" name="Button" value="reemplazar" onClick="location.replace('http://www.google.es')">
+	</form>
+</body>
+</html>

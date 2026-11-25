@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página principal</title>
+    <script src="assets/javascript/Humano.js"></script>
+    <script src="assets/javascript/script.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body onload="iniciar()">
+    <div class="container">
+        <form action="">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" placeholder="Nombre...">
+            <label for="peso">Peso:</label>
+            <input type="text" id="peso" placeholder="Peso...">
+            <label for="edad">Edad:</label>
+            <input type="text" id="edad" placeholder="Edad...">
+
+            <div id="error" style="color: red; margin: 10px 0;"></div>
+
+            <br>
+            <input type="button" id="btnPrimera" value="Primera" onclick="primera()">
+            <input type="button" id="btnAnterior" value="<< Anterior" onclick="anterior()">
+            <input type="button" id="btnSiguiente" value=">> Siguiente" onclick="siguiente()">
+            <input type="button" id="btnUltima" value="Última" onclick="ultima()">
+            <br><br>
+            <input type="button" id="btnComer" value="Comer" onclick="comer()">
+            <input type="button" id="btnCorrer" value="Correr" onclick="correr()">
+            <br><br>
+            <input type="button" id="btnAlta" value="Alta" onclick="alta()">
+            <input type="button" id="btnBaja" value="Baja" onclick="baja()">
+            <input type="button" id="btnModificacion" value="Modificacion" onclick="modificacion()">
+            <input type="button" id="btnListado" value="Listado" onclick="listado()">
+            <input type="button" id="btnOtroListado" value="Otro Listado" onclick="otroListado()">
+            <input type="button" id="btnMuestraUna" value="Muestra una persona" onclick="muestraUnaPersona()">
+            <input type="button" id="btnAceptar" value="Aceptar" onclick="aceptar()">
+            <input type="button" id="btnCancelar" value="Cancelar" onclick="cancelar()">
+        </form>
+    </div>
+</body>
+
+</html>

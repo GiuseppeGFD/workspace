@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Swith</title>
+	<script>
+		function evalua() {
+			var fabricante = document.getElementById("fabricante").value.toLowerCase();
+			var resultado = "El vehículo de la marca <font color=blue >" + fabricante + "</font>tiene que llevarlo a <font color=blue>";
+			switch (fabricante) {
+				case "ford":
+					resultado += " Talleres Pepito</font>";
+					break;
+				case "peugeot":
+					resultado += " Talleres Pardiñas</font>";
+					break;
+				case "citroen":
+					resultado += " Talleres Álvarez</font>";
+					break;
+				case "seat":
+					resultado += " Talleres Perez</font>";
+					break;
+				default:
+					resultado = "Lo sentimos NO existen talleres concertados para este fabricante";
+			}
+			document.getElementById("miDiv").innerHTML = resultado;
+		}		
+	</script>
+</head>
+
+<body>
+	<form>
+		<label>Introduzca la marca de coche:</label>
+		<input type="text" id="fabricante" />
+		<br>
+		<input type="button" value="Mostrar Taller" onclick="evalua();" />
+	</form>
+	<div id="miDiv"></div>
+</body>
+
+</html>

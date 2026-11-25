@@ -1,0 +1,19 @@
+1. ¿QUÉ DEBES SABER PARA EL EXAMEN?
+Esta unidad pretende que comprendas cómo las tecnologías digitales modifican la forma de trabajar de las empresas, cómo se organizan sus procesos y qué relación existe entre los sistemas informáticos y los sistemas que controlan procesos físicos.
+
+No se trata únicamente de memorizar definiciones. Debes ser capaz de analizar situaciones empresariales y proponer mejoras razonables.
+
+Relación con el resultado de aprendizaje
+RA1. Analiza el concepto de digitalización y su repercusión en los sectores productivos teniendo en cuenta la actividad de la empresa e identificando entornos IT y OT característicos.
+
+Los criterios de evaluación que se trabajan son:
+
+Criterio	Qué debes saber hacer
+RA1.a	Explicar qué es la digitalización.
+RA1.b	Relacionar la tecnología digital con la organización y los procesos de una empresa.
+RA1.c	Diferenciar los entornos IT y OT e identificar sus similitudes.
+RA1.d	Identificar departamentos empresariales que forman parte del entorno IT.
+RA1.e	Reconocer y seleccionar tecnologías digitales utilizadas en el negocio y en planta.
+RA1.f	Explicar por qué es importante conectar los entornos IT y OT.
+RA1.g	Analizar las ventajas de digitalizar una empresa industrial de extremo a extremo.
+Importante: el examen puede incluir definiciones, ejemplos, identificación de tecnologías, interpretación de esquemas y pequeños casos prácticos.

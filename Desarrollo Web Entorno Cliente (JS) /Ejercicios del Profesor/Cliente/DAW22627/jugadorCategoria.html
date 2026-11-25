@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function mostrar() {
+            var laEdad = parseInt(document.getElementById("txtEdad").value);
+            texto = "";
+            switch (laEdad) {
+                case 5:
+                case 6:
+                case 7:
+                    texto = "La categoría del jugador o jugadora es Pre-benjamín";
+                    break;
+                case 8:
+                case 9:
+                    texto = "La categoría del jugador o jugadora es Benjamín";
+                    break;
+                case 10:
+                case 11:
+                    texto = "La categoría del jugador o jugadora es Alevín";
+                    break;
+                case 12:
+                case 13:
+                    texto = "La categoría del jugador o jugadora es Infantil";
+                    break;
+                case 14:
+                case 15:
+                    texto = "La categoría del jugador o jugadora es Cadete";
+                    break;
+                case 16:
+                case 17:
+                case 18:
+                    texto = "La categoría del jugador o jugadora es Juvenil";
+                    break;
+                default:
+                    texto = "El jugador o juygadora está fuera de categoría";
+            }
+            document.getElementById("miDiv").innerHTML = texto;
+        }
+    </script>
+
+</head>
+
+<body>
+    Introduzca la edad: <input type="text" id="txtEdad" /><br>
+    <input type="button" value="Mostrar categoría" onclick="mostrar()" />
+    <div id="miDiv"></div>
+</body>
+
+</html>

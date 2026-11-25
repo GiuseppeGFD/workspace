@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		div {
+			font-size: 56px;
+			color: blue;
+			font-weight: true;
+		}
+	</style>
+</head>
+
+<body>
+	<form name="form1">
+		Texto:<input type="text" name="txt1" id="txt1"><br /><br />
+		Tiempo en segundos: <input type="text" id="segundos"></br></br>
+		<input type="button" name="boton1" id="boton1" value="Gira Izquierda" onclick="iniciarIzquierda();">
+		<input type="button" name="boton2" id="boton2" value="Gira Derecha" onclick="iniciarDerecha();"><br />
+		<input type="button" name="boton3" id="boton3" value="Modificar Tiempo" onclick="modificarTiempo();">
+		<div id="miDiv"></div>
+		<div id="miError"></div>
+	</form>
+
+	<script>
+		var var1 = "";
+		var var2 = "";
+		var posicion = 0;
+		var tiempo = 1000;
+		var texto = "";
+		function iniciarIzquierda() {
+			//texto = " " + document.getElementById("txt1").value + " ";
+			texto = document.getElementById("txt1").value.trim();
+			clearInterval(var1);
+			clearInterval(var2);
+			document.getElementById("miError").innerHTML = "";
+			var1 = window.setInterval(imprimeCaracterIzquierda, tiempo);
+		}
+		function iniciarDerecha() {
+			//texto = " " + document.getElementById("txt1").value+ " ";
+			texto = document.getElementById("txt1").value.trim();
+			clearInterval(var1);
+			clearInterval(var2);
+			document.getElementById("miError").innerHTML = "";
+			var2 = window.setInterval(imprimeCaracterDerecha, tiempo);
+		}
+		function imprimeCaracterIzquierda() {
+			document.getElementById("miDiv").innerHTML = texto;
+			var c = texto.charAt(texto.length - 1);
+			texto = c + texto.substring(0, texto.length - 1);
+		}
+		function imprimeCaracterDerecha() {
+			document.getElementById("miDiv").innerHTML = texto;
+			var c = texto.charAt(0);
+			texto = texto.substring(1) + c;
+		}
+		function modificarTiempo() {
+			var misNumeros = "0123456789";
+			var HayNoNumericos = true;
+			var numeros = document.getElementById("segundos").value.trim();
+
+			for (var i = 0; i < numeros.length; i++) {
+
+				if (misNumeros.indexOf(numeros.charAt(i)) == -1) {
+					HayNoNumericos = false;
+				}
+
+			}
+			if (!HayNoNumericos) {
+				document.getElementById("miError").innerHTML = "Solamente puede introducir números";
+			}
+			else {
+				tiempo = parseInt(document.getElementById("segundos").value) * 1000;
+				iniciarIzquierda();
+			}
+		}			
+	</script>
+</body>
+
+</html>

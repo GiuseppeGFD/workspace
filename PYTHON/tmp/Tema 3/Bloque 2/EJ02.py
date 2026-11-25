@@ -1,15 +1,14 @@
-#Imprimir de 1 a n. Recibe un entero n e imprime los números desde 1 hasta n.
-
+# Imprimir de 1 a n. Recibe un entero n e imprime los números desde 1 hasta n.
 
 #=========================== FUNCION IMPRIMIR ===============================
 
 def imprimirNumero(final, valor=1):
-    if valor > final:
-        print('Fin')
-        return
+    if (valor < final):
+        print(f"{valor}")
+        return imprimirNumero(final, valor+1)
+    else:
+        print(f"{valor}")
     
-    print(valor)
-    imprimirNumero(final, valor + 1)
 
 #========================================================================
 

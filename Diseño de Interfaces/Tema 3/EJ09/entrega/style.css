@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+.menu-vertical {
+    list-style: none;
+    padding: 0;
+    margin: 20px;
+    width: 220px;
+    border: 1px solid #000;
+}
+
+.menu-vertical li {
+    border-bottom: 1px solid #000;
+}
+
+.menu-vertical li:last-child {
+    border-bottom: none;
+}
+
+.menu-vertical a {
+    display: block;
+    padding: 8px 12px 8px 35px;
+    color: #000;
+    text-decoration: none;
+    font-family: Times New Roman, serif;
+    font-size: 16px;
+    background-color: #d3d3d3;
+    background-image: url('flecha_inactiva.png');
+    background-repeat: no-repeat;
+    background-position: 8px center;
+}
+
+.menu-vertical a:hover {
+    background-image: url('flecha_activa.png');
+}

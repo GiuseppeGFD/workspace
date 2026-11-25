@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="miDiv"></div>
+    <script>
+        var numero1 = 23;
+        var numero2 = 23.4;
+        var texto = "Hola espero que lo disfrutes";
+        var buleana = true;
+        var miFecha = new Date();
+        var sinDefinir;
+        var resultado = '';
+        resultado = "La variable \'numero1\' que contiene: " + numero1 + " es del tipo: " + typeof (numero1) + "<br>";
+        resultado = resultado + "La variable \'numero2\' que contiene: " + numero2 + " es del tipo: " + typeof numero2 + "<br>";
+        resultado += "La variable \'texto\' que contiene: \'" + texto + "\'' es del tipo: " + typeof (texto) + "<br>";
+        resultado += "La variable \'buleana\' que contiene: " + buleana + " es del tipo: " + typeof buleana + "<br>";
+        resultado += "La variable \'miFecha\' que contiene: " + miFecha + " es del tipo: " + typeof (miFecha) + "<br>";
+        resultado += "La variable \'sinDefinir\' que contiene: " + sinDefinir + " es del tipo: " + typeof (sinDefinir) + "<br>";
+        document.getElementById("miDiv").innerHTML = resultado;
+    </script>
+</body>
+
+</html>

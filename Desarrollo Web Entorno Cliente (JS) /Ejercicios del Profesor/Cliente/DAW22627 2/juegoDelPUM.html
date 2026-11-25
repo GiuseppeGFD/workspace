@@ -1,0 +1,21 @@
+<html> 
+<body> 
+  <div id="miDiv"></div>
+<script> 
+  var i; 
+  var texto="";
+  for (i=1;i<=100;i++) { 
+    if (i % 7 != 0) { 
+      if (i % 10 != 7) { 
+        texto+=i+','; 
+      } else { 
+        texto+='PUM<BR>'; 
+      } 
+    } else { 
+        texto+='PUM<BR>'; 
+    } 
+    document.getElementById("miDiv").innerHTML=texto;
+  } 
+</script> 
+</body> 
+</html> 

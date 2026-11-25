@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function valida() {
+            var edadLuis = parseInt(document.getElementById("edad1").value);
+            var edadJuan = parseInt(document.getElementById("edad2").value);
+            var texto1 = "Luis tiene " + edadLuis + "<br> Juan tiene " + edadJuan + "<br>"
+            var texto = "Luis es ";
+            if (edadLuis > edadJuan) {
+                texto1 += texto + "mayor que Juan";
+            } else if (edadLuis < edadJuan) {
+                texto1 += texto + "menor que Juan";
+            }
+            else if (edadLuis == edadJuan) {
+                texto1 += "Luis y Juan tienen la misma edad";
+            }
+            document.getElementById("miDiv").innerHTML = texto1;
+        }
+    </script>
+</head>
+
+<body>
+    Luis: <input type="text" id="edad1"><br>
+    Juan: <input type="text" id="edad2"><br>
+    <input type="button" value="Aceptar" onclick="valida()" />
+    <div id="miDiv"></div>
+</body>
+
+</html>

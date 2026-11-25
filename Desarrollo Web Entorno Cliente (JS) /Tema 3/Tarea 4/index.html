@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personas</title>
+    <script src="Persona.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="iniciar()">
+    <div class="container">
+        <h2>Personas</h2>
+        <label for="nombre">Nombre</label><input type="text" id="nombre"><br>
+        <label for="apellidos">Apellidos</label><input type="text" id="apellidos"><br>
+        <label for="direccion">Dirección</label><input type="text" id="direccion"><br>
+        <label for="fechaNacimiento">Fecha de nacimiento</label><input type="text" id="fechaNacimiento"
+            placeholder="dd/mm/aaaa"><br>
+        <label for="genero">Género</label><input type="text" id="genero" placeholder="Masculino o Femenino"><br>
+        <label for="codigoPostal">Código postal</label><input type="text" id="codigoPostal"><br>
+
+        <div id="info"></div>
+        <div id="mensaje"></div>
+
+        <p>
+            <input type="button" id="btnPrimera" value="Primera" onclick="primera()">
+            <input type="button" id="btnAnterior" value="&lt;&lt; Anterior" onclick="anterior()">
+            <input type="button" id="btnSiguiente" value="Siguiente &gt;&gt;" onclick="siguiente()">
+            <input type="button" id="btnUltima" value="Última" onclick="ultima()">
+        </p>
+        <p>
+            <input type="button" id="btnAlta" value="Alta" onclick="alta()">
+            <input type="button" id="btnBaja" value="Baja" onclick="baja()">
+            <input type="button" id="btnModificacion" value="Modificación" onclick="modificacion()">
+            <input type="button" id="btnAceptar" value="Aceptar" onclick="aceptar()">
+            <input type="button" id="btnCancelar" value="Cancelar" onclick="cancelar()">
+        </p>
+        <p>
+            <input type="button" id="btnListado" value="Listado (estático)" onclick="listado()">
+            <input type="button" id="btnMuestraUna" value="Mostrar una (instancia)" onclick="muestraUnaPersona()">
+        </p>
+    </div>
+</body>
+
+</html>

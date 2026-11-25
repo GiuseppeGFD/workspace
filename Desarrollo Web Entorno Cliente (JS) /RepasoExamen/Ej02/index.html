@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - Moto</title>
+</head>
+
+<body>
+    <!--marca, modelo, matricula, anioFabricacion, cilindrada, precio-->
+    Nombre de moto: <input type="text" id="marca" placeholder="marca">
+    <div id="errorMarca"></div><br>
+    Modelo de la moto: <input type="text" id="modelo" placeholder="modelo">
+    <div id="errorModelo"></div><br>
+    Matricula de vehiculo: <input type="text" id="matricula" placeholder="matricula">
+    <div id="errorMatricula"></div><br>
+    Año de fabricacion: <input type="text" id="anioFabricacion" placeholder="anioFabricacion">
+    <div id="errorAnio"></div><br>
+    Cilindrada del vehiculo: <input type="text" id="cilindrada" placeholder="cilindrada">
+    <div id="errorCilindrada"></div><br>
+    Precio del vehiculo: <input type="text" id="precio" placeholder="precio">
+    <div id="errorPrecio"></div><br>
+    <div id="respuesta"></div>
+    <div id="contador"></div><br>
+
+    <!-- Parte 4: navegador -->
+    <input type="button" id="btnPrimero" value="|&lt;" onclick="primero()">
+    <input type="button" id="btnAnterior" value="&lt;" onclick="anterior()">
+    <input type="button" id="btnSiguiente" value="&gt;" onclick="siguiente()">
+    <input type="button" id="btnUltimo" value="&gt;|" onclick="ultimo()"><br><br>
+
+    <!-- Parte 4: operaciones (solo cambian el modo) -->
+    <input type="button" id="btnAlta" value="Alta" onclick="iniciarAlta()">
+    <input type="button" id="btnBaja" value="Baja" onclick="iniciarBaja()">
+    <input type="button" id="btnModificar" value="Modificar" onclick="iniciarModificar()">
+    <input type="button" id="btnAceptar" value="Aceptar" onclick="aceptar()" hidden>
+    <input type="button" id="btnCancelar" value="Cancelar" onclick="cancelar()" hidden><br><br>
+
+    <!-- Parte 3: listados y baja por matrícula -->
+    <input type="button" id="btnListado" value="Listado" onclick="listado()">
+    <input type="button" id="btnClasicas" value="Listar clásicas" onclick="listarClasicas()"><br><br>
+    Matrícula a eliminar: <input type="text" id="matriculaBaja" placeholder="1234BCD">
+    <input type="button" id="btnBajaMat" value="Baja por matrícula" onclick="bajaPorMatricula()">
+
+    <script src="Moto.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

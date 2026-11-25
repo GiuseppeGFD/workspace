@@ -1,0 +1,27 @@
+{
+    "editor.inlineSuggest.enabled":  false,
+    "editor.quickSuggestions":  {
+                                    "other":  "off",
+                                    "comments":  "off",
+                                    "strings":  "off"
+                                },
+    "editor.suggestOnTriggerCharacters":  false,
+    "editor.wordBasedSuggestions":  "off",
+    "editor.snippetSuggestions":  "none",
+    "editor.parameterHints.enabled":  false,
+    "[php]":  {
+                  "editor.inlineSuggest.enabled":  false,
+                  "editor.quickSuggestions":  {
+                                                  "other":  "off",
+                                                  "comments":  "off",
+                                                  "strings":  "off"
+                                              },
+                  "editor.suggestOnTriggerCharacters":  false,
+                  "editor.wordBasedSuggestions":  "off"
+              },
+    "intelliphp.inlineSuggestionsEnabled":  false,
+    "php.suggest.basic":  false,
+    "editor.fontSize": 16,
+    "fiveServer.php.executable": "C:\\xampp\\php\\php.exe",
+    "php.validate.executablePath": "C:\\xampp\\php\\php.exe"
+}

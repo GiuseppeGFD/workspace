@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadenas 2</title>
+    <script>
+        function valida() {
+            var texto = "";
+            var nombre = document.getElementById("miNombre").value.trim();
+            var apel1 = document.getElementById("miApel1").value.trim();
+            var apel2 = document.getElementById("miApel2").value.trim();
+            if (nombre == "") {
+                texto = "El nombre no puede estar vacío";
+                document.getElementById("miNombre").focus();
+            }
+            else if (apel1 == "") {
+                texto = "El primer apellido no puede estar vacío";
+                document.getElementById("miApel1").focus();
+            }
+            else if (apel2 == "") {
+                texto = "El segundo apellido no puede estar vacío";
+                document.getElementById("miApel2").focus();
+            }
+            else {
+                /*texto = nombre.charAt(0).toUpperCase() + nombre.slice(1).toLowerCase() + " ";
+                texto += apel1.charAt(0).toUpperCase() + apel1.substr(1).toLowerCase() + " ";
+                texto += apel2.charAt(0).toUpperCase() + apel2.substring(1).toLowerCase() + " ";*/
+                texto = componTexto(nombre) + componTexto(apel1) + componTexto(apel2);
+            }
+
+            document.getElementById("miDiv").innerHTML = texto;
+        }
+        function componTexto(variable) {
+            /*var resultado = "";
+            resultado = variable.charAt(0).toUpperCase() + variable.substr(1).toLowerCase() + " ";
+            return resultado;*/
+            var resultado = "";
+            var miVar = variable.split(" ");
+            for (var i = 0; i < miVar.length; i++) {
+                resultado += miVar[i].charAt(0).toUpperCase() + miVar[i].substr(1).toLowerCase() + " ";
+            }
+            return resultado;
+        }
+    </script>
+</head>
+
+<body>
+    Nombre: <input type="text" id="miNombre" /><br>
+    Primer Apellido: <input type="text" id="miApel1" /><br>
+    Segundo Apellido: <input type="tex" id="miApel2" /><br>
+    <input type="button" onclick="valida()" value="Aceptar" />
+    <div id="miDiv"></div>
+</body>
+
+</html>
